@@ -10,6 +10,73 @@ body, a, button {
   list-style: none;
 }
 
+#header.menu {
+	position: relative;
+	margin: 0;
+	padding: 0;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+#header.menu li {
+	list-style: none;
+	padding: 20px;
+}
+
+#header.menu li a {
+	color: #000;
+}
+
+#header.menu a:hover {
+	color: #000;
+}
+
+#header.menu li a:active {
+	color: #000;
+}
+
+.sub-menu {
+	display: none;
+}
+
+#menu-item-112 {
+	position: absolute;
+	top:15px;
+	left: -15px;
+	right: 0;
+	bottom: 0;
+	width: 340px;
+	height: 285px;
+	background: #fff;
+	color: #000;
+	border-radius: 22px;
+  padding: 15px;
+}
+
+#menu-item-112 a {
+  text-decoration: none;
+	padding: 15px;
+  display: block;
+  text-align: left;
+	font-size: 18px;
+	line-height: 20px;
+}
+
+#menu-item-106:hover .sub-menu  {
+	display: block;
+}
+
+.sub-menu {
+	margin: 0;
+}
+
+@media (max-width: 992px){
+	.menu {
+		display: none;
+	}
+}
+
 .Chess-wrapper {
   padding: 94px 0;
 }
