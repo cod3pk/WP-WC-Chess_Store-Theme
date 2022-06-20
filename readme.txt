@@ -1,6 +1,5 @@
-=== chess store ===
+=== Chess Store ===
 
-Contributors: automattic
 Tags: custom-background, custom-logo, custom-menu, featured-images, threaded-comments, translation-ready
 
 Requires at least: 4.5
