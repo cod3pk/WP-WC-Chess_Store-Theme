@@ -115,10 +115,23 @@
 			<ul class="ul flx-order-2 nav-logo-wrapper ms-0">
 				<?php the_custom_logo(); ?>
 			</ul>
-			<?php wp_nav_menu(array(
-				'theme_location' => 'header',
-				'menu_id' => 'header'
-			)); ?>
+			<?php
+				// wp_nav_menu(array(
+				// 	'theme_location' => 'header',
+				// 	'menu_id' => 'header'
+				// ));
+
+				wp_nav_menu( array(
+					'theme_location'  => 'header',
+					'depth'           => 2, // 1 = no dropdowns, 2 = with dropdowns.
+					'container'       => 'div',
+					'menu_class'      => 'menu',
+					'menu_id'		=> 'header',
+					'items_wrap' => '<ul id="%1$s" class="%2$s">%3$s</ul>',
+					'fallback_cb'     => 'WP_Bootstrap_Navwalker::fallback',
+					'walker'          => new WP_Bootstrap_Navwalker(),
+				) );
+			?>
 
 			<ul class="hamburger mb-0 ms-0 ps-0">
 				<button class="hamburger-btn"><img src="<?php echo wp_get_attachment_image_src(100)[0] ?>" alt="Menu"></button>

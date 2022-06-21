@@ -150,7 +150,7 @@ function chess_store_scripts()
 
 	wp_style_add_data('chess-store-style', 'rtl', get_template_directory_uri() . 'style.rtl.css');
 
-	wp_enqueue_script('chess-store-navigation', get_template_directory_uri() . '/js/navigation.js', array(), true);
+	wp_enqueue_script('chess-store-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '', true);
 
 
 	if (is_singular() && comments_open() && get_option('thread_comments')) {
@@ -180,6 +180,11 @@ require get_template_directory() . '/inc/custom-header.php';
  * Custom template tags for this theme.
  */
 require get_template_directory() . '/inc/template-tags.php';
+
+/**
+ * Nav Walker into WordPress.
+ */
+require get_template_directory() . '/inc/class-wp-bootstrap-navwalker.php';
 
 /**
  * Functions which enhance the theme by hooking into WordPress.
