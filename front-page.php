@@ -25,6 +25,7 @@
 
             <?php
             $categories = get_homepage_categories();
+
             foreach ($categories as $cat) :
                 // get the thumbnail id using the queried category term_id
                 $thumbnail_id = get_term_meta($cat->term_id, 'thumbnail_id', true);

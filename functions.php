@@ -102,6 +102,8 @@ function chess_store_setup()
 			'flex-height' => true,
 		)
 	);
+
+	add_image_size('cat-background', '336', '257', true);
 }
 add_action('after_setup_theme', 'chess_store_setup');
 
@@ -268,15 +270,14 @@ function get_products_in_category()
  */
 function get_homepage_categories() {
 
-	$args = array(
-		'taxonomy'			=> 'product_cat',
-		'posts_per_page'	=> 8
-	);
+	$terms = get_terms([
+		'taxonomy'		=> 'product_cat',
+		'hide_empty'	=> false,
+		'parent'		=> 0,
+		'number'		=> 8
+	]);
 
-	$categories = get_categories( $args );
-	wp_reset_query();
-
-	return $categories;
+	return $terms;
 }
 
 /**
