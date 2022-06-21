@@ -280,16 +280,26 @@ function get_homepage_categories() {
 }
 
 /**
- * Promoted Products by Tag
+ * Promoted Featured Products
  */
 function get_promoted_products() {
-	$args = array(
-		'post_type'			=> 'product',
-		'posts_per_page'	=> 4,
-		'product_tag'		=> 'promoted-products'
+
+	// Tax Query
+	$tax_query[] = array(
+		'taxonomy' => 'product_visibility',
+		'field'    => 'name',
+		'terms'    => 'featured',
+		'operator' => 'IN',
 	);
 
-	$products = new WP_Query($args);
+	$products = new WP_Query(array(
+		'post_type'           => 'product',
+		'post_status'         => 'publish',
+		'ignore_sticky_posts' => 1,
+		'posts_per_page'      => 4,
+		'tax_query'           => $tax_query
+	));
+
 	wp_reset_query();
 
 	return $products->posts;
