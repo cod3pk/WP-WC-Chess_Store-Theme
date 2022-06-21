@@ -1,8 +1,9 @@
 const hamburger = document.querySelector('.hamburger-btn');
-const nav = document.querySelector('.page_items-wrapper-2');
+const nav = document.querySelector('.menu-header-container');
 
 hamburger.addEventListener('click', function () {
-  nav.classList.toggle('hidden');
+  if (nav.classList.toggle('block')) {
+  }
 });
 
 // Category Page
@@ -20,3 +21,4 @@ if (hamburgerList) {
     }
   });
 }
+document.getElementById('menu-item-126').classList.remove('nav-hover');

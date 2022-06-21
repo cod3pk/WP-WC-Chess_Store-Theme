@@ -123,7 +123,7 @@
 
 				wp_nav_menu( array(
 					'theme_location'  => 'header',
-					'depth'           => 2, // 1 = no dropdowns, 2 = with dropdowns.
+					'depth'           => 3, // 1 = no dropdowns, 2 = with dropdowns.
 					'container'       => 'div',
 					'menu_class'      => 'menu',
 					'menu_id'		=> 'header',
@@ -146,57 +146,3 @@
 			</ul>
 		</div>
 	</nav>
-
-	<!-- Mobile Menu -->
-	<ul class="navbar-nav page_items-wrapper-2 hidden">
-		<div class="sidenav">
-			<?php
-			wp_nav_menu(
-				array(
-					'theme_location'	=> 'Header',
-					'menu_id'			=> 'header'
-				)
-			);
-			?>
-		</div>
-	</ul>
-
-	<!-- Mobile Menu -->
-	<!-- <ul class="navbar-nav page_items-wrapper-2 hidden">
-		<div class="sidenav">
-			<a href="#about">Home</a>
-			<button class="dropdown-btn">Sets
-				<img class="fa-caret-down" src="./assets/imgs/arrow-down.png" alt="arrow-down">
-			</button>
-			<div class="dropdown-container">
-				<a href="#">Link 1</a>
-				<a href="#">Link 2</a>
-				<a href="#">Link 3</a>
-			</div>
-
-			<button class="dropdown-btn">Gear
-				<img class="fa-caret-down" src="./assets/imgs/arrow-down.png" alt="arrow-down">
-			</button>
-			<div class="dropdown-container">
-				<a href="#">Chess clocks</a>
-				<a href="#">Chess boxes, bags and suitcases</a>
-				<a href="#">Chess books</a>
-				<a href="#">Chess tables</a>
-				<a href="#">Street Chess</a>
-				<a href="#">Chess software</a>
-				<a href="#">Chess equipment for classes, clubs and competitions</a>
-			</div>
-			<button class="dropdown-btn">Specials
-				<img class="fa-caret-down" src="./assets/imgs/arrow-down.png" alt="arrow-down">
-			</button>
-			<div class="dropdown-container">
-				<a href="#">Link 1</a>
-				<a href="#">Link 2</a>
-				<a href="#">Link 3</a>
-			</div>
-			<a href="#">Blog</a>
-			<a href="#clients">About</a>
-			<a href="#contact">Company</a>
-		</div>
-	</ul> -->
-	<!-- End Header -->

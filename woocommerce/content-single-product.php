@@ -11,7 +11,7 @@ global $product;
 // WooCommerce Breadcrumbs
 woocommerce_breadcrumb(array(
 	'delimiter'		=> ' > ',
-	'wrap_before'	=> '<section class="product-top-heading px-2">',
+	'wrap_before'	=> '<section class="product-top-heading pt-3 ps-3">',
 	'wrap_after'	=> '</section>',
 ));
 
