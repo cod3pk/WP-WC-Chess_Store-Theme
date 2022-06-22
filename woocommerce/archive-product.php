@@ -94,193 +94,9 @@ $archive_description = substr($archive_description, 0, -5);
 					<?php echo woocommerce_page_title() . " " . __('Products', 'chess-store'); ?>
 				</h1>
 			</div>
-
-			<!-- <div class="mobile-slider hide-on-desktop">
-				<div class="swiper">
-					<div class="swiper-wrapper">
-						<div class="swiper-slide">
-							<div class="chess-items">
-								<img class="mb-3 img-fluid chess-item-img" src="./assets/imgs/Chess-item.png" alt="Chess">
-								<p class="mb-2 item-desc-1  mbl-width">שם מוצר ארוך יכול להכיל לעיתים עד 2 שורות. גובה
-									יהיה קבוע
-									בהתאמה
-									למקס
-								</p>
-								<p class="mb-2 item-price  mbl-width">₪100</p>
-								<p class="mb-4 item-desc-2  mbl-width">ועניב היושבב שערש שמחויט - שלושע ותלברו חשלו
-									שעותלשך וחאית
-									נובש
-									ערששף. </p>
-								<div class="text-center">
-									<a href="#"><button class="chess-item-btn">לרכישה</button></a>
-								</div>
-							</div>
-						</div>
-						<div class="swiper-slide">
-							<div class="chess-items">
-								<img class="mb-3 img-fluid chess-item-img" src="./assets/imgs/Chess-item.png" alt="Chess">
-								<p class="mb-2 item-desc-1  mbl-width">שם מוצר ארוך יכול להכיל לעיתים עד 2 שורות. גובה
-									יהיה קבוע
-									בהתאמה
-									למקס
-								</p>
-								<p class="mb-2 item-price  mbl-width">₪100</p>
-								<p class="mb-4 item-desc-2  mbl-width">ועניב היושבב שערש שמחויט - שלושע ותלברו חשלו
-									שעותלשך וחאית
-									נובש
-									ערששף. </p>
-								<div class="text-center">
-									<a href="#"><button class="chess-item-btn">לרכישה</button></a>
-								</div>
-							</div>
-						</div>
-						<div class="swiper-slide">
-							<div class="chess-items">
-								<img class="mb-3 img-fluid chess-item-img" src="./assets/imgs/Chess-item.png" alt="Chess">
-								<p class="mb-2 item-desc-1  mbl-width">שם מוצר ארוך יכול להכיל לעיתים עד 2 שורות. גובה
-									יהיה קבוע
-									בהתאמה
-									למקס
-								</p>
-								<p class="mb-2 item-price  mbl-width">₪100</p>
-								<p class="mb-4 item-desc-2  mbl-width">ועניב היושבב שערש שמחויט - שלושע ותלברו חשלו
-									שעותלשך וחאית
-									נובש
-									ערששף. </p>
-								<div class="text-center">
-									<a href="#"><button class="chess-item-btn">לרכישה</button></a>
-								</div>
-							</div>
-						</div>
-					</div>
-					<!-- Add Pagination -->
-			<div class="swiper-pagination"></div>
-			<!-- Add Navigation -->
-			<div class="swiper-button-prev"></div>
-			<div class="swiper-button-next"></div>
 		</div>
 	</div>
 
-	<!-- Hamburger for Mobo version -->
-
-	<!-- <div class="col-6 col-xxxl-3 col-xxl-3 col-lg-3 col-md-6 col-sm-6 category-chess-products slider-naxt-item-top">
-				<div class="chess-items">
-					<img class="mb-3 img-fluid chess-item-img" src="./assets/imgs/Chess-item.png" alt="Chess">
-					<p class="mb-2 item-desc-1">שם מוצר ארוך יכול להכיל לעיתים עד 2 שורות. גובה יהיה קבוע בהתאמה
-						למקס
-					</p>
-					<p class="mb-2 item-price">₪100</p>
-					<p class="mb-5 item-desc-2">ועניב היושבב שערש שמחויט - שלושע ותלברו חשלו שעותלשך וחאית נובש
-						ערששף. </p>
-					<div class="text-center">
-						<a href="#"><button class="chess-item-btn">לרכישה</button></a>
-					</div>
-				</div>
-			</div>
-
-			<div class="col-6 col-xxxl-3 col-xxl-3 col-lg-3 col-md-6 col-sm-6 category-chess-products slider-naxt-item-top">
-				<div class="chess-items">
-					<img class="mb-3 img-fluid chess-item-img" src="./assets/imgs/Chess-item.png" alt="Chess">
-					<p class="mb-2 item-desc-1">שם מוצר ארוך יכול להכיל לעיתים עד 2 שורות. גובה יהיה קבוע בהתאמה
-						למקס
-					</p>
-					<p class="mb-2 item-price">₪100</p>
-					<p class="mb-5 item-desc-2">ועניב היושבב שערש שמחויט - שלושע ותלברו חשלו שעותלשך וחאית נובש
-						ערששף. </p>
-					<div class="text-center">
-						<a href="#"><button class="chess-item-btn">לרכישה</button></a>
-					</div>
-				</div>
-			</div>
-
-			<div class="col-6 col-xxxl-3 col-xxl-3 col-lg-3 col-md-6 col-sm-6 category-chess-products">
-				<div class="chess-items">
-					<img class="mb-3 img-fluid chess-item-img" src="./assets/imgs/Chess-item.png" alt="Chess">
-					<p class="mb-2 item-desc-1">שם מוצר ארוך יכול להכיל לעיתים עד 2 שורות. גובה יהיה קבוע בהתאמה
-						למקס
-					</p>
-					<p class="mb-2 item-price">₪100</p>
-					<p class="mb-5 item-desc-2">ועניב היושבב שערש שמחויט - שלושע ותלברו חשלו שעותלשך וחאית נובש
-						ערששף. </p>
-					<div class="text-center">
-						<a href="#"><button class="chess-item-btn">לרכישה</button></a>
-					</div>
-				</div>
-			</div>
-
-			<div class="col-6 col-xxxl-3 col-xxl-3 col-lg-3 col-md-6 col-sm-6 category-chess-products">
-				<div class="chess-items">
-					<img class="mb-3 img-fluid chess-item-img" src="./assets/imgs/Chess-item.png" alt="Chess">
-					<p class="mb-2 item-desc-1">שם מוצר ארוך יכול להכיל לעיתים עד 2 שורות. גובה יהיה קבוע בהתאמה
-						למקס
-					</p>
-					<p class="mb-2 item-price">₪100</p>
-					<p class="mb-5 item-desc-2">ועניב היושבב שערש שמחויט - שלושע ותלברו חשלו שעותלשך וחאית נובש
-						ערששף. </p>
-					<div class="text-center">
-						<a href="#"><button class="chess-item-btn">לרכישה</button></a>
-					</div>
-				</div>
-			</div>
-
-			<div class="col-6 col-xxxl-3 col-xxl-3 col-lg-3 col-md-6 col-sm-6 category-chess-products mbl-none-products">
-				<div class="chess-items">
-					<img class="mb-3 img-fluid chess-item-img" src="./assets/imgs/Chess-item.png" alt="Chess">
-					<p class="mb-2 item-desc-1">שם מוצר ארוך יכול להכיל לעיתים עד 2 שורות. גובה יהיה קבוע בהתאמה
-						למקס
-					</p>
-					<p class="mb-2 item-price">₪100</p>
-					<p class="mb-5 item-desc-2">ועניב היושבב שערש שמחויט - שלושע ותלברו חשלו שעותלשך וחאית נובש
-						ערששף. </p>
-					<div class="text-center">
-						<a href="#"><button class="chess-item-btn">לרכישה</button></a>
-					</div>
-				</div>
-			</div>
-
-			<div class="col-6 col-xxxl-3 col-xxl-3 col-lg-3 col-md-6 col-sm-6 category-chess-products mbl-none-products">
-				<div class="chess-items">
-					<img class="mb-3 img-fluid chess-item-img" src="./assets/imgs/Chess-item.png" alt="Chess">
-					<p class="mb-2 item-desc-1">שם מוצר ארוך יכול להכיל לעיתים עד 2 שורות. גובה יהיה קבוע בהתאמה
-						למקס
-					</p>
-					<p class="mb-2 item-price">₪100</p>
-					<p class="mb-5 item-desc-2">ועניב היושבב שערש שמחויט - שלושע ותלברו חשלו שעותלשך וחאית נובש
-						ערששף. </p>
-					<div class="text-center">
-						<a href="#"><button class="chess-item-btn">לרכישה</button></a>
-					</div>
-				</div>
-			</div>
-
-			<div class="col-6 col-xxxl-3 col-xxl-3 col-lg-3 col-md-6 col-sm-6 category-chess-products mbl-none-products">
-				<div class="chess-items">
-					<img class="mb-3 img-fluid chess-item-img" src="./assets/imgs/Chess-item.png" alt="Chess">
-					<p class="mb-2 item-desc-1">שם מוצר ארוך יכול להכיל לעיתים עד 2 שורות. גובה יהיה קבוע בהתאמה
-						למקס
-					</p>
-					<p class="mb-2 item-price">₪100</p>
-					<p class="mb-5 item-desc-2">ועניב היושבב שערש שמחויט - שלושע ותלברו חשלו שעותלשך וחאית נובש
-						ערששף. </p>
-					<div class="text-center">
-						<a href="#"><button class="chess-item-btn">לרכישה</button></a>
-					</div>
-				</div>
-			</div>
-
-			<div class="col-6 col-xxxl-3 col-xxl-3 col-lg-3 col-md-6 col-sm-6 category-chess-products mbl-none-products"> -->
-	<!-- <div class="chess-items">
-				<img class="mb-3 img-fluid chess-item-img" src="./assets/imgs/Chess-item.png" alt="Chess">
-				<p class="mb-2 item-desc-1">שם מוצר ארוך יכול להכיל לעיתים עד 2 שורות. גובה יהיה קבוע בהתאמה
-					למקס
-				</p>
-				<p class="mb-2 item-price">₪100</p>
-				<p class="mb-5 item-desc-2">ועניב היושבב שערש שמחויט - שלושע ותלברו חשלו שעותלשך וחאית נובש
-					ערששף. </p>
-				<div class="text-center">
-					<a href="#"><button class="chess-item-btn">לרכישה</button></a>
-				</div>
-			</div> -->
 	<?php
 	if (woocommerce_product_loop()) {
 
@@ -342,9 +158,7 @@ $archive_description = substr($archive_description, 0, -5);
 		 */
 		do_action('woocommerce_no_products_found');
 	} ?>
-	</div>
-	</div>
-	</div>
+
 </section>
 
 <?php if (get_the_archive_description()) : ?>
@@ -354,7 +168,7 @@ $archive_description = substr($archive_description, 0, -5);
 			<div class="row">
 				<div class="col-12 ">
 					<h1 class="h1 mb-2">
-						<?php woocommerce_page_title(); ?>
+						<?php echo __('Description', 'chess-store'); ?>
 					</h1>
 					<p class="lh-base"><?php echo get_the_archive_description(); ?></p>
 				</div>
