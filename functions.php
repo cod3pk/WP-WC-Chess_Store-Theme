@@ -335,8 +335,7 @@ function custom_url_taxonomy_edit_meta_field($term)
 {
 	$t_id = $term->term_id;
 
-	$term_meta = get_option("taxonomy_$t_id");
-	var_dump($term_meta['header_subtitle']); ?>
+	$term_meta = get_option("taxonomy_$t_id"); ?>
 
 	<tr class="form-field">
 		<th scope="row" valign="top"><label><?php echo __('Header Subtitle', 'chess-store'); ?></label></th>
