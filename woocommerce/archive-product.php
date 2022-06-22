@@ -26,8 +26,8 @@ $archive_description = substr($archive_description, 0, -5);
 
 	<!-- WooCommerce Breadcrumbs -->
 	<?php woocommerce_breadcrumb(array(
-		'delimiter' => ' > ',
-		'wrap_before' => '<p class="position-absolute w-100 bottom-0 category-hero-desc mb-0 ps-4 pb-3">',
+		'delimiter' => '<span class="white-links breadcrumbs-arrow"> > </span>',
+		'wrap_before' => '<p class="chess-breadcrumbs position-absolute w-100 bottom-0 category-hero-desc mb-0 ps-4 pb-3">',
 		'wrap_after' => '</p>',
 	)); ?>
 </section>
@@ -37,8 +37,8 @@ $archive_description = substr($archive_description, 0, -5);
 
 	<!-- WooCommerce Breadcrumbs -->
 	<?php woocommerce_breadcrumb(array(
-		'delimiter' => ' > ',
-		'wrap_before' => '<div class="text-center py-2 lh-base current-page mb-2">',
+		'delimiter' => '<span class="black-links breadcrumbs-arrow"> > </span>',
+		'wrap_before' => '<div class="chess-breadcrumbs text-center py-2 lh-base current-page mb-2">',
 		'wrap_after' => '</div>',
 	)); ?>
 

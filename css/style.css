@@ -89,6 +89,10 @@ body, a, button {
   border: none;
 }
 
+.chess-breadcrumbs{
+  color: #79b2f7 !important;
+}
+
 a:visited {
   color: #000;
 }
@@ -1010,6 +1014,10 @@ a:visited {
   font-size: 12px;
   color: #fff;
   line-height: 17px;
+}
+
+.category-hero-desc > a {
+  color: #fff;
 }
 
 .category-hero {
