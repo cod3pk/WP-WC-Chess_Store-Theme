@@ -11,10 +11,23 @@ get_header();
 // Sanitized Description
 $archive_description = substr(get_the_archive_description(), 3);
 $archive_description = substr($archive_description, 0, -5);
+
+$current_cat_id = get_queried_object_id();
+$terms = get_terms([
+	'taxonomy'		=> 'product_cat',
+	'hide_empty'	=> false,
+	'parent'		=> $current_cat_id
+]);
+
+// get the thumbnail id using the queried category term_id
+$thumbnail_id = get_term_meta($current_cat_id, 'thumbnail_id', true);
+
+// get the image URL
+$image = wp_get_attachment_url($thumbnail_id);
 ?>
 
 <!-- Category Header -->
-<section class="category-hero container-fluid position-relative overflow-hidden" style="background: url(<?php echo wp_get_attachment_image_src(86)[0] ?>) no-repeat center center;">
+<section class="category-hero container-fluid position-relative overflow-hidden" style="background: url(<?php echo $image ?>) no-repeat center center; object-fit: cover">
 	<h1 class="h1 d-flex justify-content-center align-items-center category-hero-title mb-0">
 		<?php woocommerce_page_title(); ?>
 		<?php if ($archive_description) : ?>
@@ -52,16 +65,6 @@ $archive_description = substr($archive_description, 0, -5);
 		</p>
 	</div>
 </section>
-
-
-<?php
-$current_cat_id = get_queried_object_id();
-$terms = get_terms([
-	'taxonomy'		=> 'product_cat',
-	'hide_empty'	=> false,
-	'parent'		=> $current_cat_id
-]);
-?>
 
 <?php if (!empty($terms)) : ?>
 	<!-- Categories Grid -->
