@@ -164,13 +164,14 @@ add_action('wp_enqueue_scripts', 'chess_store_scripts');
 /**
  * Add Custom Font
  */
-function register_custom_font () {
+function register_custom_font()
+{
 	wp_register_style('Heebo', 'https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;600;700&display=swap');
 	wp_enqueue_style('Heebo');
 	wp_register_style('Inter', 'https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700&display=swap');
 	wp_enqueue_style('Inter');
 }
-add_action( 'wp_enqueue_scripts','register_custom_font' );
+add_action('wp_enqueue_scripts', 'register_custom_font');
 
 
 /**
@@ -268,7 +269,8 @@ function get_products_in_category()
 /**
  * Get Homepage Product Categories
  */
-function get_homepage_categories() {
+function get_homepage_categories()
+{
 
 	$terms = get_terms([
 		'taxonomy'		=> 'product_cat',
@@ -283,7 +285,8 @@ function get_homepage_categories() {
 /**
  * Promoted Featured Products
  */
-function get_promoted_products() {
+function get_promoted_products()
+{
 
 	// Tax Query
 	$tax_query[] = array(
@@ -304,5 +307,63 @@ function get_promoted_products() {
 	wp_reset_query();
 
 	return $products->posts;
-
 }
+
+/**
+ * Custom Field for taxonomy
+ *
+ * @param [type] $term
+ * @return void
+ */
+
+// Add term page
+function custom_url_taxonomy_add_new_meta_field()
+{
+	// this will add the custom meta field to the add new term page
+?>
+	<div class="form-field">
+		<label><?php echo __('Header Subtitle', 'chess-store'); ?></label>
+		<input type="text" name="header_subtitle" id="header_subtitle">
+		<p class="description"><?php echo __('This comes in the header under the title for Archive Page', 'chess-store') ?></p>
+	</div>
+<?php
+}
+add_action('product_cat_add_form_fields', 'custom_url_taxonomy_add_new_meta_field', 10, 2);
+
+// Edit term page
+function custom_url_taxonomy_edit_meta_field($term)
+{
+	$t_id = $term->term_id;
+
+	$term_meta = get_option("taxonomy_$t_id");
+	var_dump($term_meta['header_subtitle']); ?>
+
+	<tr class="form-field">
+		<th scope="row" valign="top"><label><?php echo __('Header Subtitle', 'chess-store'); ?></label></th>
+		<td>
+			<input type="text" name="header_subtitle" id="header_subtitle" value="<?php echo esc_attr($term_meta['header_subtitle']) ? esc_attr($term_meta['header_subtitle']) : ''; ?>">
+			<p class="description"><?php echo __('This comes in the header under the title for Archive Page', 'chess-store') ?></p>
+		</td>
+	</tr>
+<?php
+}
+add_action('product_cat_edit_form_fields', 'custom_url_taxonomy_edit_meta_field', 10, 2);
+
+// Save extra taxonomy fields callback function.
+function save_taxonomy_custom_meta($term_id)
+{
+	if (isset($_POST['term_meta'])) {
+		$t_id = $term_id;
+		$term_meta = get_option("taxonomy_$t_id");
+		$cat_keys = array_keys($_POST['term_meta']);
+		foreach ($cat_keys as $key) {
+			if (isset($_POST['term_meta'][$key])) {
+				$term_meta[$key] = $_POST['term_meta'][$key];
+			}
+		}
+		// Save the option array.
+		update_option("taxonomy_$t_id", $term_meta);
+	}
+}
+add_action('edited_product_cat', 'save_taxonomy_custom_meta', 10, 2);
+add_action('create_product_cat', 'save_taxonomy_custom_meta', 10, 2);

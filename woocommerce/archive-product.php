@@ -24,15 +24,18 @@ $thumbnail_id = get_term_meta($current_cat_id, 'thumbnail_id', true);
 
 // get the image URL
 $image = wp_get_attachment_url($thumbnail_id);
+
+$cat_header_subtitle = get_option("taxonomy_$current_cat_id");
+
 ?>
 
 <!-- Category Header -->
 <section class="category-hero container-fluid position-relative overflow-hidden" style="background: url(<?php echo $image ?>) no-repeat center center; object-fit: cover">
 	<h1 class="h1 d-flex justify-content-center align-items-center category-hero-title mb-0">
 		<?php woocommerce_page_title(); ?>
-		<?php if ($archive_description) : ?>
+		<?php if ($cat_header_subtitle[header_subtitle]) : ?>
 			<span class="d-block fs-5 category-hero-span">
-				<?php echo $archive_description; ?>
+				<?php  echo($cat_header_subtitle[header_subtitle]); ?>
 			</span>
 		<?php endif; ?>
 	</h1>
