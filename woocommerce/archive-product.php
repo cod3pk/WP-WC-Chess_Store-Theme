@@ -4,9 +4,9 @@
  * The Template for displaying product archives, including the main shop page which is a post type archive
  */
 
-defined('ABSPATH') || exit;
-
 get_header();
+
+defined('ABSPATH') || exit;
 
 // Sanitized Description
 $archive_description = substr(get_the_archive_description(), 3);

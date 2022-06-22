@@ -8,6 +8,8 @@ defined('ABSPATH') || exit;
 
 global $product;
 
+// var_dump($product);
+// die();
 // WooCommerce Breadcrumbs
 woocommerce_breadcrumb(array(
 	'delimiter'		=> ' > ',
@@ -21,27 +23,27 @@ $attachment_ids = $product->get_gallery_image_ids();
 <section class="product-showcase container-lg container-md d-flex justify-content-between mb-5">
 	<!-- Product Gallery -->
 	<div class="product-left-side">
-			<div class="product-img-row d-flex">
-				<div class="thumb-img">
-					<?php foreach ($attachment_ids as $attachment_id) {
-						$image_link = wp_get_attachment_image_src($attachment_id);
-					?>
-						<div class="box-slider active-slider">
-							<img class="box-slider-img" src="<?php echo $image_link[0] ?>" onclick="window.open(this.src, '_blank');" alt="thumb" / />
-						</div>
-					<?php } ?>
-				</div>
-				<?php
-				$prod_image = wp_get_attachment_image_src(get_post_thumbnail_id($product->id), 'single-post-thumbnail');
+		<div class="product-img-row d-flex">
+			<div class="thumb-img">
+				<?php foreach ($attachment_ids as $attachment_id) {
+					$image_link = wp_get_attachment_image_src($attachment_id);
 				?>
-				<div class="product-main-img">
-					<img src="<?php echo $prod_image[0]; ?>" onclick="window.open(this.src, '_blank');" data-id="<?php echo $loop->post->id; ?>" class="pro-img" alt="Product Image" />
-				</div>
+					<div class="box-slider active-slider">
+						<img class="box-slider-img" src="<?php echo $image_link[0] ?>" onclick="window.open(this.src, '_blank');" alt="thumb" / />
+					</div>
+				<?php } ?>
 			</div>
+			<?php
+			$prod_image = wp_get_attachment_image_src(get_post_thumbnail_id($product->id), 'single-post-thumbnail');
+			?>
+			<div class="product-main-img">
+				<img src="<?php echo $prod_image[0]; ?>" onclick="window.open(this.src, '_blank');" data-id="<?php echo $loop->post->id; ?>" class="pro-img" alt="Product Image" />
+			</div>
+		</div>
 	</div>
 
 	<!-- Product Information -->
-	<div class="product-right-side">
+	<div class="product-right-side col-12">
 
 		<!-- Product Title -->
 		<div class="product-right-heading">
@@ -83,7 +85,7 @@ $attachment_ids = $product->get_gallery_image_ids();
 		<?php if ($product->short_description) : ?>
 			<div class="product-right-para">
 				<p>
-					<?php echo $product->short_description; ?>
+					<?php echo apply_filters('the_excerpt', $product->post->post_excerpt); ?>
 				</p>
 			</div>
 		<?php endif; ?>
@@ -125,7 +127,9 @@ $attachment_ids = $product->get_gallery_image_ids();
 					do_action('woocommerce_after_add_to_cart_quantity');
 					?>
 
-					<a type="submit" name="add-to-cart" value="<?php echo esc_attr($product->get_id()); ?>" class="ms-2 text-decoration-none btn btn-primary add-to-cart-btn"><?php echo esc_html($product->single_add_to_cart_text()); ?></a>
+					<a type="submit" name="add-to-cart" value="<?php echo esc_attr($product->get_id()); ?>" class="ms-2 text-decoration-none btn btn-primary add-to-cart-btn">
+						<?php echo esc_html($product->single_add_to_cart_text()); ?>
+					</a>
 
 					<?php do_action('woocommerce_after_add_to_cart_button'); ?>
 				</form>
@@ -162,13 +166,11 @@ $attachment_ids = $product->get_gallery_image_ids();
 		<h3><?php echo __('Details', 'chess-store'); ?></h3>
 	</div>
 
-	<?php if (wc_display_product_attributes($product)) : ?>
-		<div class="detail-content">
-			<div class="detail-content-info d-flex">
-				<?php echo wc_display_product_attributes($product); ?>
-			</div>
+	<div class="detail-content">
+		<div class="detail-content-info d-flex">
+			<?php echo $product->short_description ?>
 		</div>
-	<?php endif; ?>
+	</div>
 
 </section>
 
