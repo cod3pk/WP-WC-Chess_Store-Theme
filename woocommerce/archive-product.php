@@ -53,40 +53,41 @@ $archive_description = substr($archive_description, 0, -5);
 	</div>
 </section>
 
-<!-- Categories Grid -->
-<section class="chess-materials container-fluid mb-4">
-	<div class="container-lg chess-material-container">
-		<div class="row">
-			<div class="col-12">
-				<div class="chess-pieces-wrapper d-flex text-center justify-content-center flex-wrap">
 
-					<?php
-					$terms = get_terms([
-						'taxonomy'		=> 'product_cat',
-						'hide_empty'	=> false,
-						'parent'		=> 0
-					]);
+<?php
+$current_cat_id = get_queried_object_id();
+$terms = get_terms([
+	'taxonomy'		=> 'product_cat',
+	'hide_empty'	=> false,
+	'parent'		=> $current_cat_id
+]);
+?>
 
-					foreach ($terms as $term) :
-					?>
-						<div class="chess-pieces mx-2 my-2">
-							<a href="<?php echo get_term_link($term) ?>">
-								<div class="chess-pieces-title d-flex justify-content-center align-items-center">
-									<?php echo $term->name ?>
-								</div>
-							</a>
-						</div>
-
-					<?php endforeach; ?>
-
+<?php if (!empty($terms)) : ?>
+	<!-- Categories Grid -->
+	<section class="chess-materials container-fluid mb-4">
+		<div class="container-lg chess-material-container">
+			<div class="row">
+				<div class="col-12">
+					<div class="chess-pieces-wrapper d-flex text-center justify-content-center flex-wrap">
+						<?php foreach ($terms as $term) : ?>
+							<div class="chess-pieces mx-2 my-2">
+								<a href="<?php echo get_term_link($term) ?>">
+									<div class="chess-pieces-title d-flex justify-content-center align-items-center">
+										<?php echo $term->name ?>
+									</div>
+								</a>
+							</div>
+						<?php endforeach; ?>
+					</div>
 				</div>
 			</div>
 		</div>
-	</div>
-</section>
+	</section>
+<?php endif; ?>
 
 <!-- Page Content -->
-<section class="chess-price">
+<section class="chess-price mt-4">
 	<div class="container-sm">
 		<div class="row">
 			<div class="col-12 pb-3 text-center product-title mbl-padding">
