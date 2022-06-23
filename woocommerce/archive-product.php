@@ -76,13 +76,15 @@ $cat_header_subtitle = get_term_meta($current_cat_id, 'header_subtitle', true);
 				<div class="col-12">
 					<div class="chess-pieces-wrapper d-flex text-center justify-content-center flex-wrap">
 
-						<div class="chess-pieces mx-2 my-2">
-							<a href="<?php echo get_term_link( $current_cat_id ); ?>">
-								<div class="cat-child-chess-active chess-pieces-title d-flex justify-content-center align-items-center">
-									<?php woocommerce_page_title(); ?>
-								</div>
-							</a>
-						</div>
+						<?php if (get_term($current_cat_id)->parent) : ?>
+							<div class="chess-pieces mx-2 my-2">
+								<a href="<?php echo get_term_link($current_cat_id); ?>">
+									<div class="cat-child-chess-active chess-pieces-title d-flex justify-content-center align-items-center">
+										<?php woocommerce_page_title(); ?>
+									</div>
+								</a>
+							</div>
+						<?php endif; ?>
 
 						<?php foreach ($terms as $term) : ?>
 							<div class="chess-pieces mx-2 my-2">
