@@ -225,7 +225,7 @@ function woocommerce_header_add_to_cart_fragment($fragments)
 
 ?>
 	<a class="cart-customlocation" href="<?php echo esc_url(wc_get_cart_url()); ?>" title="<?php _e('View your shopping cart', 'woothemes'); ?>"><?php echo sprintf(_n('%d item', '%d items', $woocommerce->cart->cart_contents_count, 'woothemes'), $woocommerce->cart->cart_contents_count); ?> – <?php echo $woocommerce->cart->get_cart_total(); ?></a>
-<?php
+	<?php
 	$fragments['a.cart-customlocation'] = ob_get_clean();
 	return $fragments;
 }
@@ -310,59 +310,59 @@ function get_promoted_products()
 }
 
 /**
- * Custom Field for taxonomy
+ * Custom Field in Terms
  *
- * @param [type] $term
+ * @param Category $term
  * @return void
  */
-
-// Add term page
-function custom_url_taxonomy_add_new_meta_field()
+function custom_category_fields($term)
 {
-	// this will add the custom meta field to the add new term page
-?>
-	<div class="form-field">
-		<label><?php echo __('Header Subtitle', 'chess-store'); ?></label>
-		<input type="text" name="header_subtitle" id="header_subtitle">
-		<p class="description"><?php echo __('This comes in the header under the title for Archive Page', 'chess-store') ?></p>
-	</div>
+
+	if (current_filter() == 'product_cat_edit_form_fields') {
+		$header_subtitle = get_term_meta($term->term_id, 'header_subtitle', true);
+	?>
+		<tr class="form-field">
+			<th valign="top" scope="row">
+				<label for="term_fields[header_subtitle]">
+					<?php echo __('Header Subtitle', 'chess-store'); ?>
+				</label>
+			</th>
+			<td>
+				<input type="text" size="40" value="<?php echo esc_attr($header_subtitle); ?>" id="term_fields[header_subtitle]" name="term_fields[header_subtitle]"><br />
+				<span class="description">
+					<?php echo __('This comes under the page title in Cat Archive', 'chess-store'); ?>
+				</span>
+			</td>
+		</tr>
+	<?php } elseif (current_filter() == 'product_cat_add_form_fields') {
+	?>
+		<div class="form-field">
+			<label for="term_fields[header_subtitle]">
+				<?php echo __('Please enter the Header Subtitle', 'chess-store'); ?>
+			</label>
+			<input type="text" size="40" value="" id="term_fields[header_subtitle]" name="term_fields[header_subtitle]">
+			<p class="description">
+				<?php echo __('This comes under the page title in Cat Archive','chess-store'); ?>
+			</p>
+		</div>
 <?php
-}
-add_action('product_cat_add_form_fields', 'custom_url_taxonomy_add_new_meta_field', 10, 2);
-
-// Edit term page
-function custom_url_taxonomy_edit_meta_field($term)
-{
-	$t_id = $term->term_id;
-
-	$term_meta = get_option("taxonomy_$t_id"); ?>
-
-	<tr class="form-field">
-		<th scope="row" valign="top"><label><?php echo __('Header Subtitle', 'chess-store'); ?></label></th>
-		<td>
-			<input type="text" name="header_subtitle" id="header_subtitle" value="<?php echo esc_attr($term_meta['header_subtitle']) ? esc_attr($term_meta['header_subtitle']) : ''; ?>">
-			<p class="description"><?php echo __('This comes in the header under the title for Archive Page', 'chess-store') ?></p>
-		</td>
-	</tr>
-<?php
-}
-add_action('product_cat_edit_form_fields', 'custom_url_taxonomy_edit_meta_field', 10, 2);
-
-// Save extra taxonomy fields callback function.
-function save_taxonomy_custom_meta($term_id)
-{
-	if (isset($_POST['term_meta'])) {
-		$t_id = $term_id;
-		$term_meta = get_option("taxonomy_$t_id");
-		$cat_keys = array_keys($_POST['term_meta']);
-		foreach ($cat_keys as $key) {
-			if (isset($_POST['term_meta'][$key])) {
-				$term_meta[$key] = $_POST['term_meta'][$key];
-			}
-		}
-		// Save the option array.
-		update_option("taxonomy_$t_id", $term_meta);
 	}
 }
-add_action('edited_product_cat', 'save_taxonomy_custom_meta', 10, 2);
-add_action('create_product_cat', 'save_taxonomy_custom_meta', 10, 2);
+
+add_action('product_cat_add_form_fields', 'custom_category_fields', 10, 2);
+add_action('product_cat_edit_form_fields', 'custom_category_fields', 10, 2);
+
+
+function custom_save_category_fields($term_id)
+{
+	if (!isset($_POST['term_fields'])) {
+		return;
+	}
+
+	foreach ($_POST['term_fields'] as $key => $value) {
+		update_term_meta($term_id, $key, sanitize_text_field($value));
+	}
+}
+
+add_action('edited_product_cat', 'custom_save_category_fields', 10, 2);
+add_action('create_product_cat', 'custom_save_category_fields', 10, 2);

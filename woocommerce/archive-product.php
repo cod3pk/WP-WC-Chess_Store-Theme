@@ -19,13 +19,10 @@ $terms = get_terms([
 	'parent'		=> $current_cat_id
 ]);
 
-// get the thumbnail id using the queried category term_id
 $thumbnail_id = get_term_meta($current_cat_id, 'thumbnail_id', true);
-
-// get the image URL
 $image = wp_get_attachment_url($thumbnail_id);
 
-$cat_header_subtitle = get_option("taxonomy_$current_cat_id");
+$cat_header_subtitle = get_term_meta($current_cat_id, 'header_subtitle', true);
 
 ?>
 
@@ -33,9 +30,10 @@ $cat_header_subtitle = get_option("taxonomy_$current_cat_id");
 <section class="category-hero container-fluid position-relative overflow-hidden" style="background: url(<?php echo $image ?>) no-repeat center center; object-fit: cover">
 	<h1 class="h1 d-flex justify-content-center align-items-center category-hero-title mb-0">
 		<?php woocommerce_page_title(); ?>
-		<?php if ($cat_header_subtitle[header_subtitle]) : ?>
+
+		<?php if ($cat_header_subtitle) : ?>
 			<span class="d-block fs-5 category-hero-span">
-				<?php  echo($cat_header_subtitle[header_subtitle]); ?>
+				<?php echo __($cat_header_subtitle, 'chess-store'); ?>
 			</span>
 		<?php endif; ?>
 	</h1>
