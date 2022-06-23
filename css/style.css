@@ -21,6 +21,18 @@ ins {
   background: #fff !important;
   text-decoration: none;
 }
+
+.woocommerce #respond input#submit.alt,
+.woocommerce a.button.alt,
+.woocommerce button.button.alt,
+.woocommerce input.button.alt {
+  background-color: #082042 !important;
+  color: #fff;
+  -webkit-font-smoothing: antialiased;
+}
+
+
+
 /* Nav - Menu */
 
 .desktop-nav {
