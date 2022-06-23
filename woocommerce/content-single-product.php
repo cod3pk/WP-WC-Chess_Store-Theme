@@ -82,10 +82,12 @@ $attachment_ids = $product->get_gallery_image_ids();
 		<?php endif; ?>
 
 		<!-- Product Short Description -->
-		<?php if ($product->short_description) : ?>
+		<?php $short_description = get_post_meta($product->id, 'product_excerpt', true); ?>
+
+		<?php if ($short_description) : ?>
 			<div class="product-right-para">
 				<p>
-					<?php echo apply_filters('the_excerpt', $product->post->post_excerpt); ?>
+					<?php echo $short_description; ?>
 				</p>
 			</div>
 		<?php endif; ?>
