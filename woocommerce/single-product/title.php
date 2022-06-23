@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Single Product title
  *
@@ -15,8 +16,22 @@
  * @version    1.6.4
  */
 
-if ( ! defined( 'ABSPATH' ) ) {
+if (!defined('ABSPATH')) {
 	exit; // Exit if accessed directly.
 }
+?>
 
-the_title( '<h1 class="product_title entry-title">', '</h1>' );
+<!-- Product Title -->
+<div class="product-right-heading">
+	<?php the_title('<h1 class="product-title entry-title">', '</h1>'); ?>
+</div>
+
+<!-- Marketing Message -->
+<?php global $product; ?>
+<?php if ($product->is_on_sale()) : ?>
+	<div class="product-sub-heading">
+		<h2 class="p-sub-heading">
+			<?php echo __('On Sale', 'chess-store'); ?>
+		</h2>
+	</div>
+<?php endif; ?>

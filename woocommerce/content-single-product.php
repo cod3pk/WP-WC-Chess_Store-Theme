@@ -12,9 +12,9 @@ global $product;
 // die();
 // WooCommerce Breadcrumbs
 woocommerce_breadcrumb(array(
-	'delimiter'		=> ' > ',
-	'wrap_before'	=> '<section class="product-top-heading pt-3 ps-3">',
-	'wrap_after'	=> '</section>',
+	'delimiter'     => ' > ',
+	'wrap_before'   => '<section class="product-top-heading pt-3 ps-3">',
+	'wrap_after'    => '</section>',
 ));
 
 $attachment_ids = $product->get_gallery_image_ids();
@@ -45,101 +45,21 @@ $attachment_ids = $product->get_gallery_image_ids();
 	<!-- Product Information -->
 	<div class="product-right-side col-12">
 
-		<!-- Product Title -->
-		<div class="product-right-heading">
-			<h1 class="product-right-main-heading">
-				<?php woocommerce_template_single_title(); ?>
-			</h1>
-		</div>
-
-		<!-- Marketing Message -->
-		<?php if ($product->sale_price) : ?>
-			<div class="product-sub-heading">
-				<h2 class="p-sub-heading">
-					<?php echo __('On Sale', 'chess-store'); ?>
-				</h2>
-			</div>
-		<?php endif; ?>
-
-		<!-- Sale Price & Regular Price -->
-		<?php if ($product->sale_price) : ?>
-			<div class="product-info-price">
-				<div class="product-price d-flex">
-					<span class="old-price position-relative">
-						<?php echo get_woocommerce_currency_symbol() . $product->regular_price; ?>
-					</span>
-					<span class="new-price">
-						<?php echo get_woocommerce_currency_symbol() . $product->sale_price; ?>
-					</span>
-				</div>
-			</div>
-		<?php else : ?>
-			<div class="product-info-price">
-				<span class="new-price">
-					<?php echo get_woocommerce_currency_symbol() . $product->regular_price; ?>
-				</span>
-			</div>
-		<?php endif; ?>
-
-		<!-- Product Short Description -->
-		<?php $short_description = get_post_meta($product->id, 'product_excerpt', true); ?>
-
-		<?php if ($short_description) : ?>
-			<div class="product-right-para">
-				<p>
-					<?php echo $short_description; ?>
-				</p>
-			</div>
-		<?php endif; ?>
-
-		<!-- Stock Check -->
-		<?php if ($product->stock_status == 'instock') : ?>
-			<div class="stock-options-heading">
-				<h2><?php __('In Stock', 'chess-store') ?> </h2>
-			</div>
-		<?php else : ?>
-			<div class="stock-options-heading">
-				<h2><?php __('Out of Stock', 'chess-store') ?> </h2>
-			</div>
-		<?php endif; ?>
-
-		<!-- Add to Cart Button -->
-		<div class="choose-product-quantity">
-			<?php
-			echo wc_get_stock_html($product); // WPCS: XSS ok.
-
-			if ($product->is_in_stock()) : ?>
-
-				<?php do_action('woocommerce_before_add_to_cart_form'); ?>
-
-				<form class="cart d-flex align-items-center" action="<?php echo esc_url(apply_filters('woocommerce_add_to_cart_form_action', $product->get_permalink())); ?>" method="post" enctype='multipart/form-data'>
-					<?php do_action('woocommerce_before_add_to_cart_button'); ?>
-
-					<?php
-					do_action('woocommerce_before_add_to_cart_quantity');
-
-					woocommerce_quantity_input(
-						array(
-							'min_value'   => apply_filters('woocommerce_quantity_input_min', $product->get_min_purchase_quantity(), $product),
-							'max_value'   => apply_filters('woocommerce_quantity_input_max', $product->get_max_purchase_quantity(), $product),
-							'input_value' => isset($_POST['quantity']) ? wc_stock_amount(wp_unslash($_POST['quantity'])) : $product->get_min_purchase_quantity(), // WPCS: CSRF ok, input var ok.
-						)
-					);
-
-					do_action('woocommerce_after_add_to_cart_quantity');
-					?>
-
-					<a type="submit" name="add-to-cart" value="<?php echo esc_attr($product->get_id()); ?>" class="ms-2 text-decoration-none btn btn-primary add-to-cart-btn">
-						<?php echo esc_html($product->single_add_to_cart_text()); ?>
-					</a>
-
-					<?php do_action('woocommerce_after_add_to_cart_button'); ?>
-				</form>
-
-				<?php do_action('woocommerce_after_add_to_cart_form'); ?>
-
-			<?php endif; ?>
-		</div>
+		<?php
+		/**
+		 * Hook: woocommerce_single_product_summary.
+		 *
+		 * @hooked woocommerce_template_single_title - 5
+		 * @hooked woocommerce_template_single_rating - 10
+		 * @hooked woocommerce_template_single_price - 10
+		 * @hooked woocommerce_template_single_excerpt - 20
+		 * @hooked woocommerce_template_single_add_to_cart - 30
+		 * @hooked woocommerce_template_single_meta - 40
+		 * @hooked woocommerce_template_single_sharing - 50
+		 * @hooked WC_Structured_Data::generate_product_data() - 60
+		 */
+		do_action('woocommerce_single_product_summary');
+		?>
 
 		<!-- Additional Info -->
 		<div class="product-icons d-flex flex-direction flex-column">

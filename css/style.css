@@ -16,6 +16,11 @@ body, a, button {
   background: #7DB8FF !important;
 }
 
+mark,
+ins {
+  background: #fff !important;
+  text-decoration: none;
+}
 /* Nav - Menu */
 
 .desktop-nav {
