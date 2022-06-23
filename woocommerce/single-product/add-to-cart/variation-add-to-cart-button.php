@@ -29,7 +29,7 @@ global $product;
 	do_action('woocommerce_after_add_to_cart_quantity');
 	?>
 
-	<a type="submit" class="ms-2 text-decoration-none btn btn-primary add-to-cart-btn"><?php echo esc_html($product->single_add_to_cart_text()); ?></a>
+	<button type="submit" class="ms-2 text-decoration-none btn btn-primary add-to-cart-btn"><?php echo esc_html($product->single_add_to_cart_text()); ?></button>
 
 	<?php do_action('woocommerce_after_add_to_cart_button'); ?>
 

@@ -23,7 +23,6 @@ $thumbnail_id = get_term_meta($current_cat_id, 'thumbnail_id', true);
 $image = wp_get_attachment_url($thumbnail_id);
 
 $cat_header_subtitle = get_term_meta($current_cat_id, 'header_subtitle', true);
-
 ?>
 
 <!-- Category Header -->
@@ -68,58 +67,66 @@ $cat_header_subtitle = get_term_meta($current_cat_id, 'header_subtitle', true);
 </section>
 
 <?php if ($terms) : ?>
-<!-- Categories Grid -->
-<section class="chess-materials container-fluid mb-4">
-	<div class="container-lg chess-material-container">
-		<div class="row">
-			<div class="col-12">
-				<div class="chess-pieces-wrapper d-flex text-center justify-content-center flex-wrap">
+	<!-- Categories Grid -->
+	<section class="chess-materials container-fluid mb-4">
+		<div class="container-lg chess-material-container">
+			<div class="row">
+				<div class="col-12">
+					<div class="chess-pieces-wrapper d-flex text-center justify-content-center flex-wrap">
 
-					<?php if (get_term($current_cat_id)->parent) : ?>
-						<div class="chess-pieces mx-2 my-2">
-							<a href="<?php echo get_term_link($current_cat_id); ?>">
-								<div class="cat-child-chess-active chess-pieces-title d-flex justify-content-center align-items-center">
-									<?php woocommerce_page_title(); ?>
+						<?php if (get_term($current_cat_id)->parent) : ?>
+
+							<div class="chess-pieces mx-2 my-2">
+								<a href="<?php echo get_term_link($current_cat_id); ?>">
+									<div class="cat-child-chess-active chess-pieces-title d-flex justify-content-center align-items-center">
+										<?php woocommerce_page_title(); ?>
+									</div>
+								</a>
+							</div>
+
+							<?php
+
+							$term = get_term($current_cat_id, 'product_cat');
+							$termParent = ($term->parent == 0) ? $term : get_term($term->parent, 'product_cat');
+
+							$cat = get_terms([
+								'taxonomy'		=> 'product_cat',
+								'hide_empty'	=> false,
+								'parent'		=> $termParent->term_id,
+								'exclude'		=> $current_cat_id
+							]);
+
+							?>
+
+							<?php foreach ($cat as $term) : ?>
+								<div class="chess-pieces mx-2 my-2">
+									<a href="<?php echo get_term_link($term) ?>">
+										<div class="chess-pieces-title d-flex justify-content-center align-items-center">
+											<?php echo $term->name ?>
+										</div>
+									</a>
 								</div>
-							</a>
-						</div>
-						<?php
-						$term = get_term($current_cat_id, 'product_cat');
-						$termParent = ($term->parent == 0) ? $term : get_term($term->parent, 'product_cat');
+							<?php endforeach;
 
-						$cat = get_terms([
-							'taxonomy'		=> 'product_cat',
-							'hide_empty'	=> false,
-							'parent'		=> $termParent->term_id,
-							'exclude'		=> $current_cat_id
-						]);
-						?>
+						else :
 
-						<?php foreach ($cat as $term) : ?>
-							<div class="chess-pieces mx-2 my-2">
-								<a href="<?php echo get_term_link($term) ?>">
-									<div class="chess-pieces-title d-flex justify-content-center align-items-center">
-										<?php echo $term->name ?>
-									</div>
-								</a>
-							</div>
+							foreach ($terms as $term) : ?>
+								<div class="chess-pieces mx-2 my-2">
+									<a href="<?php echo get_term_link($term) ?>">
+										<div class="chess-pieces-title d-flex justify-content-center align-items-center">
+											<?php echo $term->name ?>
+										</div>
+									</a>
+								</div>
 						<?php endforeach;
-					else : ?>
-						<?php foreach ($terms as $term) : ?>
-							<div class="chess-pieces mx-2 my-2">
-								<a href="<?php echo get_term_link($term) ?>">
-									<div class="chess-pieces-title d-flex justify-content-center align-items-center">
-										<?php echo $term->name ?>
-									</div>
-								</a>
-							</div>
-						<?php endforeach; ?>
-					<?php endif; ?>
+
+						endif; ?>
+
+					</div>
 				</div>
 			</div>
 		</div>
-	</div>
-</section>
+	</section>
 <?php endif; ?>
 
 <!-- Page Content -->
