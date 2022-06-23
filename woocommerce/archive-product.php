@@ -66,7 +66,6 @@ $cat_header_subtitle = get_term_meta($current_cat_id, 'header_subtitle', true);
 	</div>
 </section>
 
-<?php if ($terms) : ?>
 	<!-- Categories Grid -->
 	<section class="chess-materials container-fluid mb-4">
 		<div class="container-lg chess-material-container">
@@ -95,7 +94,6 @@ $cat_header_subtitle = get_term_meta($current_cat_id, 'header_subtitle', true);
 								'parent'		=> $termParent->term_id,
 								'exclude'		=> $current_cat_id
 							]);
-
 							?>
 
 							<?php foreach ($cat as $term) : ?>
@@ -127,7 +125,7 @@ $cat_header_subtitle = get_term_meta($current_cat_id, 'header_subtitle', true);
 			</div>
 		</div>
 	</section>
-<?php endif; ?>
+
 
 <!-- Page Content -->
 <section class="chess-price mt-4">
