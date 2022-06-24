@@ -8,9 +8,8 @@ defined('ABSPATH') || exit;
 
 global $product;
 
-// var_dump($product);
-// die();
-// WooCommerce Breadcrumbs
+do_action('woocommerce_before_single_product');
+
 woocommerce_breadcrumb(array(
 	'delimiter'     => ' > ',
 	'wrap_before'   => '<section class="product-top-heading pt-3 ps-3">',
