@@ -14,7 +14,7 @@ if (empty($product) || !$product->is_visible()) {
 }
 ?>
 
-<div class="col-6 col-xxxl-3 col-xxl-3 col-lg-3 col-md-6 col-sm-6 chess-prdct">
+<div class="col-6 col-xxxl-3 col-xxl-3 col-lg-3 col-md-6 col-sm-6 chess-prdct mb-5">
 
 	<?
 	$product_data = wc_get_product($product->id);

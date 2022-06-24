@@ -147,35 +147,21 @@ $cat_header_subtitle = get_term_meta($current_cat_id, 'header_subtitle', true);
 				<div class="container-sm">
 					<div class="row">
 
-						<?php while (have_posts()) {
+						<?php while (have_posts()) :
+
 							the_post();
-							/**
-							 * Hook: woocommerce_shop_loop.
-							 */
+
 							do_action('woocommerce_shop_loop');
 
 							global $product;
-							$product_data = wc_get_product($product->id);
-							$product_meta = get_post_meta($product->id);
-						?>
-							<div class="col-6 col-xxxl-3 col-xxl-3 col-lg-3 col-md-6 col-sm-6 category-chess-products">
-								<div class="chess-items">
-									<a href="<?php echo get_permalink($product->id) ?>" class="text-decoration-none">
-										<img class="mb-3 img-fluid chess-item-img" src="<?php echo wp_get_attachment_image_src(get_post_thumbnail_id($product->id), 'single-post-thumbnail')[0]; ?>" alt="<?php echo $product->name; ?>">
-										<p class="mb-2 item-desc-1 black-links"><?php echo $product->name; ?></p>
-									</a>
-									<p class="mb-2 item-price"><?php echo get_woocommerce_currency_symbol() . $product_data->get_price(); ?></p>
-									<p class="mb-5 item-desc-2 mbl-none-products"><?php echo wp_trim_words($product_data->get_description(), 15) ?></p>
-									<div class="text-center">
-										<a href="/?add-to-cart=<?php echo $product->id ?>" class="chess-item-btn ajax_add_to_cart text-decoration-none" data-product_id="<?php echo $product->id ?>">
-											Buy
-										</a>
-									</div>
-								</div>
-							</div>
 
-						<?php
-						} ?>
+							$post_object = get_post($product->ID);
+
+							setup_postdata($GLOBALS['post'] = &$post_object);
+
+							wc_get_template_part('content', 'product');
+
+						endwhile; ?>
 					</div>
 				</div>
 			</section>
