@@ -50,7 +50,7 @@
         <?php if (count($categories) > 8 ) : ?>
         <div class="slider text-center">
             <a href="#">
-                <img class="pe-3" src="<?php echo wp_get_attachment_image_src(149)[0];   ?>" alt="Load">
+                <img class="pe-3" id="cat_load_more_btn" src="<?php echo wp_get_attachment_image_src(149)[0]; ?>" alt="Load">
                 <span>
                     <?php echo __( 'Load More', 'chess-store' ); ?></span>
             </a>
