@@ -6,7 +6,6 @@
  */
 
 defined('ABSPATH') || exit;
-
 global $product;
 
 // Ensure visibility.
@@ -32,9 +31,13 @@ if (empty($product) || !$product->is_visible()) {
 		<p class="mb-2 item-price"><?php echo get_woocommerce_currency_symbol() . $product_data->get_price(); ?></p>
 		<p class="mb-5 item-desc-2 mbl-none-products"><?php echo wp_trim_words($product_data->get_description(), 15) ?></p>
 		<div class="text-center">
-			<a href="/?add-to-cart=<?php echo $product->id ?>" class="black-links chess-item-btn ajax_add_to_cart text-decoration-none" data-product_id="<?php echo $product->id ?>">
-				Buy
-			</a>
+			<form action="<?php echo esc_url(apply_filters('woocommerce_add_to_cart_form_action', $product->get_permalink())); ?>" method="post" enctype='multipart/form-data'>
+				<?php do_action('woocommerce_before_add_to_cart_button'); ?>
+
+				<button type="submit" name="add-to-cart" value="<?php echo esc_attr($product->get_id()); ?>" class="black-links chess-item-btn ajax_add_to_cart text-decoration-none"><?php echo __( 'Buy', 'chess-store' ); ?></button>
+
+				<?php do_action('woocommerce_after_add_to_cart_button'); ?>
+			</form>
 		</div>
 	</div>
 </div>

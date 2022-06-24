@@ -227,7 +227,7 @@ function woocommerce_header_add_to_cart_fragment($fragments)
 	<a class="cart-customlocation" href="<?php echo esc_url(wc_get_cart_url()); ?>" title="<?php _e('View your shopping cart', 'woothemes'); ?>">
 		<?php echo sprintf(_n('%d item', '%d items', $woocommerce->cart->cart_contents_count, 'woothemes'), $woocommerce->cart->cart_contents_count); ?> – <?php echo $woocommerce->cart->get_cart_total(); ?>
 	</a>
-	<?php
+<?php
 	$fragments['a.cart-customlocation'] = ob_get_clean();
 	return $fragments;
 }
@@ -289,8 +289,8 @@ function get_homepage_categories()
  */
 function get_promoted_products()
 {
+	$meta_query  = WC()->query->get_meta_query();
 
-	// Tax Query
 	$tax_query[] = array(
 		'taxonomy' => 'product_visibility',
 		'field'    => 'name',
@@ -298,17 +298,35 @@ function get_promoted_products()
 		'operator' => 'IN',
 	);
 
-	$products = new WP_Query(array(
+	$args = array(
 		'post_type'           => 'product',
 		'post_status'         => 'publish',
-		'ignore_sticky_posts' => 1,
 		'posts_per_page'      => 4,
-		'tax_query'           => $tax_query
-	));
+		'meta_query'          => $meta_query,
+		'tax_query'           => $tax_query,
+	);
 
-	wp_reset_query();
+	$products = new WP_Query($args);
+?>
+	<section class="chess-price">
+		<div class="row">
 
-	return $products->posts;
+			<?php foreach ($products->posts as $product) : ?>
+
+				<?php
+				$post_object = get_post($product->ID);
+
+				setup_postdata($GLOBALS['post'] = &$post_object);
+
+				wc_get_template_part('content', 'product');
+				?>
+
+			<?php endforeach; ?>
+		</div>
+	</section>
+
+	<?php
+	wp_reset_postdata();
 }
 
 /**

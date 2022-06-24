@@ -58,33 +58,7 @@
                     <?php echo __('Promoted Products', 'chess-store') ?>
                 </h1>
             </div>
-
-            <?php
-            $products = get_promoted_products();
-            foreach ($products as $product) :
-                $product_data = wc_get_product($product->ID);
-                $product_meta = get_post_meta($product->ID);
-            ?>
-
-                <div class="col-6 col-xxxl-3 col-xxl-3 col-lg-3 col-md-6 col-sm-6 chess-prdct">
-                    <div class="chess-items">
-                        <a href="<?php echo get_permalink($product->ID) ?>" class="text-decoration-none">
-
-                            <img class="mb-3 img-fluid chess-item-img" src="<?php echo wp_get_attachment_image_src(get_post_thumbnail_id($product->ID), 'single-post-thumbnail')[0]; ?>" alt="<?php echo $product->post_title; ?>">
-
-                            <p class="mb-2 item-desc-1 black-links"><?php echo $product->post_title; ?></p>
-                        </a>
-                        <p class="mb-2 item-price"><?php echo get_woocommerce_currency_symbol() . $product_data->get_price(); ?></p>
-                        <p class="mb-5 item-desc-2 mbl-none-products"><?php echo wp_trim_words($product_data->get_description(), 15) ?></p>
-                        <div class="text-center">
-                            <a href="/?add-to-cart=<?php echo $product->ID ?>" class="chess-item-btn ajax_add_to_cart text-decoration-none" data-product_id="<?php echo $product->ID ?>">
-                                Buy
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-            <?php endforeach; ?>
+            <?php get_promoted_products(); ?>
         </div>
     </div>
 </section>
