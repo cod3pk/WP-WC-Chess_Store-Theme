@@ -278,7 +278,7 @@ function get_homepage_categories()
 		'taxonomy'		=> 'product_cat',
 		'hide_empty'	=> false,
 		'parent'		=> 0,
-		'number'		=> 8
+		// 'number'		=> 8,
 	]);
 
 	return $terms;
