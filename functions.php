@@ -224,7 +224,9 @@ function woocommerce_header_add_to_cart_fragment($fragments)
 	ob_start();
 
 ?>
-	<a class="cart-customlocation" href="<?php echo esc_url(wc_get_cart_url()); ?>" title="<?php _e('View your shopping cart', 'woothemes'); ?>"><?php echo sprintf(_n('%d item', '%d items', $woocommerce->cart->cart_contents_count, 'woothemes'), $woocommerce->cart->cart_contents_count); ?> – <?php echo $woocommerce->cart->get_cart_total(); ?></a>
+	<a class="cart-customlocation" href="<?php echo esc_url(wc_get_cart_url()); ?>" title="<?php _e('View your shopping cart', 'woothemes'); ?>">
+		<?php echo sprintf(_n('%d item', '%d items', $woocommerce->cart->cart_contents_count, 'woothemes'), $woocommerce->cart->cart_contents_count); ?> – <?php echo $woocommerce->cart->get_cart_total(); ?>
+	</a>
 	<?php
 	$fragments['a.cart-customlocation'] = ob_get_clean();
 	return $fragments;
@@ -342,7 +344,7 @@ function custom_category_fields($term)
 			</label>
 			<input type="text" size="40" value="" id="term_fields[header_subtitle]" name="term_fields[header_subtitle]">
 			<p class="description">
-				<?php echo __('This comes under the page title in Cat Archive','chess-store'); ?>
+				<?php echo __('This comes under the page title in Cat Archive', 'chess-store'); ?>
 			</p>
 		</div>
 <?php
