@@ -23,38 +23,41 @@
                 <h1 class="h1"><?php echo __('Popular Categories', 'chess-store'); ?></h1>
             </div>
 
-            <?php
-            $categories = get_homepage_categories();
+            <div class="row" id="loadmore-categories">
+                <?php
+                $categories = get_homepage_categories();
 
-            foreach ($categories as $cat) :
-                // get the thumbnail id using the queried category term_id
-                $thumbnail_id = get_term_meta($cat->term_id, 'thumbnail_id', true);
+                foreach ($categories as $cat) :
+                    // get the thumbnail id using the queried category term_id
+                    $thumbnail_id = get_term_meta($cat->term_id, 'thumbnail_id', true);
 
-                // get the image URL
-                $image = wp_get_attachment_url($thumbnail_id);
-            ?>
+                    // get the image URL
+                    $image = wp_get_attachment_url($thumbnail_id);
+                ?>
 
-                <div class="col-6 col-xxxl-3 col-xxl-3 col-lg-3 col-md-6 col-sm-6 mb-4">
-                    <a href="<?php echo get_term_link($cat->term_id, 'product_cat') ?>" class="text-decoration-none">
-                        <div class="Chess-wrapper Chess-wrapper-2 position-relative text-center" style="background: url(<?php echo $image; ?>) no-repeat;border-radius: 20px; background-size: cover; background-position: center;height: auto;">
-                            <h1 class="w-100 align-items-center d-flex justify-content-center flex-wrap chess-title px-2">
-                                <?php echo __($cat->name, 'chess-store'); ?>
-                            </h1>
-                        </div>
-                    </a>
+                    <div class="col-6 col-xxxl-3 col-xxl-3 col-lg-3 col-md-6 col-sm-6 mb-4">
+                        <a href="<?php echo get_term_link($cat->term_id, 'product_cat') ?>" class="text-decoration-none">
+                            <div class="Chess-wrapper Chess-wrapper-2 position-relative text-center" style="background: url(<?php echo $image; ?>) no-repeat;border-radius: 20px; background-size: cover; background-position: center;height: auto;">
+                                <h1 class="w-100 align-items-center d-flex justify-content-center flex-wrap chess-title px-2">
+                                    <?php echo __($cat->name, 'chess-store'); ?>
+                                </h1>
+                            </div>
+                        </a>
+                    </div>
+
+                <?php endforeach; ?>
+            </div>
+        </div>
+
+        <?php if (get_total_categories_num() > 8) : ?>
+            <div class="slider text-center">
+                <div id="cat_load_more_btn">
+                    <img class="pe-3" src="<?php echo wp_get_attachment_image_src(149)[0]; ?>" alt="Load">
+                    <span>
+                        <?php echo __('Load More', 'chess-store'); ?>
+                    </span>
                 </div>
-
-            <?php endforeach; ?>
-        </div>
-
-        <?php if (count($categories) > 8 ) : ?>
-        <div class="slider text-center">
-            <a href="#">
-                <img class="pe-3" id="cat_load_more_btn" src="<?php echo wp_get_attachment_image_src(149)[0]; ?>" alt="Load">
-                <span>
-                    <?php echo __( 'Load More', 'chess-store' ); ?></span>
-            </a>
-        </div>
+            </div>
         <?php endif; ?>
     </div>
 </section>

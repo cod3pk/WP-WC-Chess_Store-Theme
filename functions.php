@@ -154,6 +154,14 @@ function chess_store_scripts()
 
 	wp_enqueue_script('chess-store-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '', true);
 
+	wp_enqueue_script('chess-store-loadmore', get_template_directory_uri() . '/js/loadmore.js', array('jquery'));
+	/**
+	 * Localizing AJAX for Load more
+	 */
+	wp_localize_script('chess-store-loadmore', 'ajax_posts', array(
+		'ajaxUrl' 		=> admin_url('admin-ajax.php'),
+		'noPosts' 		=> __('No Categories found', 'chess-store'),
+	));
 
 	if (is_singular() && comments_open() && get_option('thread_comments')) {
 		wp_enqueue_script('comment-reply');
@@ -273,16 +281,76 @@ function get_products_in_category()
  */
 function get_homepage_categories()
 {
-
 	$terms = get_terms([
 		'taxonomy'		=> 'product_cat',
-		'hide_empty'	=> false,
+		'hide_empty'	=> true,
 		'parent'		=> 0,
-		// 'number'		=> 8,
+		'number'		=> 8,
 	]);
 
 	return $terms;
 }
+
+/**
+ * Get total number of Product Cat
+ */
+function get_total_categories_num()
+{
+	global $wp_query;
+	$terms = get_terms([
+		'taxonomy'		=> 'product_cat',
+		'hide_empty'	=> true,
+		'parent'		=> 0,
+	]);
+
+	return count($terms);
+}
+
+/**
+ * Load More Categories with AJAX
+ */
+function load_more_categories()
+{
+	header("Content-Type: text/html");
+
+	$offset = (isset($_POST['offset'])) ? $_POST['offset'] : 8;
+
+	$categories = get_terms([
+		'taxonomy'		=> 'product_cat',
+		'hide_empty'	=> true,
+		'parent'		=> 0,
+		'number'		=> 8,
+		'offset'		=> $offset
+	]);
+
+	$more_cat = '';
+
+	if ($categories) :
+		foreach ($categories as $cat) :
+			// get the thumbnail id using the queried category term_id
+			$thumbnail_id = get_term_meta($cat->term_id, 'thumbnail_id', true);
+
+			// get the image URL
+			$image = wp_get_attachment_url($thumbnail_id);
+			$more_cat .=  '<div class="col-6 col-xxxl-3 col-xxl-3 col-lg-3 col-md-6 col-sm-6 mb-4">
+                    <a href="' .  get_term_link($cat->term_id, 'product_cat') . '" class="text-decoration-none">
+                        <div class="Chess-wrapper Chess-wrapper-2 position-relative text-center"
+						style="background: url(' . $image . ') no-repeat;border-radius: 20px; background-size: cover; background-position: center;height: auto;">
+                            <h1 class="w-100 align-items-center d-flex justify-content-center flex-wrap chess-title px-2">' .
+				__($cat->name, 'chess-store') .
+				'</h1>
+                        </div>
+                    </a>
+                </div>';
+
+		endforeach;
+	endif;
+
+	wp_die($more_cat);
+}
+
+add_action('wp_ajax_nopriv_load_more_categories', 'load_more_categories');
+add_action('wp_ajax_load_more_categories', 'load_more_categories');
 
 /**
  * Promoted Featured Products
