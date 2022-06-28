@@ -89,7 +89,8 @@ $attachment_ids = $product->get_gallery_image_ids();
 
 	<div class="detail-content">
 		<div class="detail-content-info d-flex">
-			<?php echo $product->short_description ?>
+			<?php echo $product->short_description; ?>
+
 		</div>
 	</div>
 
