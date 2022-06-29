@@ -10,6 +10,7 @@ body, a, button {
 
 .qty{
   background: #EFEFEF;
+  padding: 13.5px 3px !important;
 }
 
 .cat-child-chess-active{
@@ -207,6 +208,17 @@ a:visited {
 .sub-menu > li {
 	margin: 0 !important;
   padding: 0 !important;
+}
+
+/* Footer Nav */
+.menu-footer-container > ul > li > a:hover,
+.menu-footer-container > ul > li > a:active {
+  color: #0B55B1 !important;
+}
+
+.product-content-wrapper {
+  min-height: 69px !important;
+  max-height: 69px !important;
 }
 
 @media (max-width: 992px){
@@ -1262,7 +1274,7 @@ a {
 
 .product-img-row {
   max-width: 100%;
-  margin: 0 39px 0 0;
+  margin: 0 55px 0 0;
 }
 
 .box-slider-img {
@@ -1296,7 +1308,7 @@ a {
 }
 
 .product-right-main-heading {
-  font-family: 'DM Sans';
+  font-family: 'DM Sans', sans-serif;
   font-style: normal;
   font-weight: 400;
   font-size: 26px;
@@ -1305,7 +1317,7 @@ a {
 }
 
 .p-sub-heading {
-  font-family: 'DM Sans';
+  font-family: 'DM Sans', sans-serif;
   font-style: normal;
   font-weight: 700;
   font-size: 16px;
@@ -1319,7 +1331,7 @@ a {
 }
 
 .old-price {
-  font-family: 'DM Sans';
+  font-family: 'DM Sans', sans-serif;
   font-style: normal;
   font-weight: 500;
   font-size: 20px;
@@ -1343,7 +1355,7 @@ a {
 }
 
 .new-price {
-  font-family: 'DM Sans';
+  font-family: 'DM Sans', sans-serif;
   font-style: normal;
   font-weight: 500;
   font-size: 20px;
@@ -1353,7 +1365,7 @@ a {
 }
 
 .product-right-para p {
-  font-family: 'DM Sans';
+  font-family: 'DM Sans', sans-serif;
   font-style: normal;
   font-weight: 400;
   font-size: 16px;
@@ -1386,7 +1398,7 @@ a {
 }
 
 .product-shipping {
-  margin: 0 0 11px 0;
+  margin: 20px 0 11px 0;
 }
 
 .product-shipping img {
@@ -1396,7 +1408,7 @@ a {
 }
 
 .product-shipping p {
-  font-family: 'DM Sans';
+  font-family: 'DM Sans', sans-serif;
   font-style: normal;
   font-weight: 700;
   font-size: 16px;
@@ -1418,7 +1430,7 @@ a {
 }
 
 .product-lock p {
-  font-family: 'DM Sans';
+  font-family: 'DM Sans', sans-serif;
   font-style: normal;
   font-weight: 700;
   font-size: 16px;
@@ -1446,7 +1458,7 @@ a {
 }
 
 .detail-heading h3 {
-  font-family: 'DM Sans';
+  font-family: 'DM Sans', sans-serif;
   font-style: normal;
   font-weight: 400;
   font-size: 20px;
@@ -1456,7 +1468,7 @@ a {
 }
 
 .detail-content-info h4 {
-  font-family: 'DM Sans';
+  font-family: 'DM Sans', sans-serif;
   font-style: normal;
   font-weight: 700;
   font-size: 16px;
@@ -1466,7 +1478,7 @@ a {
 }
 
 .detail-content-info p {
-  font-family: 'DM Sans';
+  font-family: 'DM Sans', sans-serif;
   font-style: normal;
   font-weight: 400;
   font-size: 16px;
@@ -1480,7 +1492,7 @@ a {
 }
 
 .more-details-heading h3 {
-  font-family: 'DM Sans';
+  font-family: 'DM Sans', sans-serif;
   font-style: normal;
   font-weight: 400;
   font-size: 20px;
