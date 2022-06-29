@@ -209,6 +209,17 @@ a:visited {
   padding: 0 !important;
 }
 
+/* Footer Nav */
+.menu-footer-container > ul > li > a:hover,
+.menu-footer-container > ul > li > a:active {
+  color: #0B55B1 !important;
+}
+
+.product-content-wrapper {
+  min-height: 69px !important;
+  max-height: 69px !important;
+}
+
 @media (max-width: 992px){
 
   .desktop-nav > div > .nav-logo-wrapper {

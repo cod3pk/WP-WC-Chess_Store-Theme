@@ -26,9 +26,11 @@ if (empty($product) || !$product->is_visible()) {
 
 			<img class="mb-3 img-fluid chess-item-img" src="<?php echo wp_get_attachment_image_src(get_post_thumbnail_id($product->id), 'single-post-thumbnail')[0]; ?>" alt="<?php echo $product->name; ?>">
 
-			<p class="mb-2 item-desc-1 black-links"><?php echo $product->name; ?></p>
 		</a>
-		<p class="mb-2 item-price"><?php echo get_woocommerce_currency_symbol() . $product_data->get_price(); ?></p>
+		<div class="product-content-wrapper" >
+			<p class="mb-2 item-desc-1 black-links"><?php echo $product->name; ?></p>
+			<p class="mb-2 item-price"><?php echo get_woocommerce_currency_symbol() . $product_data->get_price(); ?></p>
+		</div>
 		<p class="mb-5 item-desc-2 mbl-none-products"><?php echo wp_trim_words($product_data->get_description(), 15) ?></p>
 		<div class="text-center">
 			<form action="<?php echo esc_url(apply_filters('woocommerce_add_to_cart_form_action', $product->get_permalink())); ?>" method="post" enctype='multipart/form-data'>
