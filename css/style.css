@@ -1308,7 +1308,7 @@ a {
 }
 
 .product-right-main-heading {
-  font-family: 'DM Sans';
+  font-family: 'DM Sans', sans-serif;
   font-style: normal;
   font-weight: 400;
   font-size: 26px;
@@ -1317,7 +1317,7 @@ a {
 }
 
 .p-sub-heading {
-  font-family: 'DM Sans';
+  font-family: 'DM Sans', sans-serif;
   font-style: normal;
   font-weight: 700;
   font-size: 16px;
@@ -1331,7 +1331,7 @@ a {
 }
 
 .old-price {
-  font-family: 'DM Sans';
+  font-family: 'DM Sans', sans-serif;
   font-style: normal;
   font-weight: 500;
   font-size: 20px;
@@ -1355,7 +1355,7 @@ a {
 }
 
 .new-price {
-  font-family: 'DM Sans';
+  font-family: 'DM Sans', sans-serif;
   font-style: normal;
   font-weight: 500;
   font-size: 20px;
@@ -1365,7 +1365,7 @@ a {
 }
 
 .product-right-para p {
-  font-family: 'DM Sans';
+  font-family: 'DM Sans', sans-serif;
   font-style: normal;
   font-weight: 400;
   font-size: 16px;
@@ -1408,7 +1408,7 @@ a {
 }
 
 .product-shipping p {
-  font-family: 'DM Sans';
+  font-family: 'DM Sans', sans-serif;
   font-style: normal;
   font-weight: 700;
   font-size: 16px;
@@ -1430,7 +1430,7 @@ a {
 }
 
 .product-lock p {
-  font-family: 'DM Sans';
+  font-family: 'DM Sans', sans-serif;
   font-style: normal;
   font-weight: 700;
   font-size: 16px;
@@ -1458,7 +1458,7 @@ a {
 }
 
 .detail-heading h3 {
-  font-family: 'DM Sans';
+  font-family: 'DM Sans', sans-serif;
   font-style: normal;
   font-weight: 400;
   font-size: 20px;
@@ -1468,7 +1468,7 @@ a {
 }
 
 .detail-content-info h4 {
-  font-family: 'DM Sans';
+  font-family: 'DM Sans', sans-serif;
   font-style: normal;
   font-weight: 700;
   font-size: 16px;
@@ -1478,7 +1478,7 @@ a {
 }
 
 .detail-content-info p {
-  font-family: 'DM Sans';
+  font-family: 'DM Sans', sans-serif;
   font-style: normal;
   font-weight: 400;
   font-size: 16px;
@@ -1492,7 +1492,7 @@ a {
 }
 
 .more-details-heading h3 {
-  font-family: 'DM Sans';
+  font-family: 'DM Sans', sans-serif;
   font-style: normal;
   font-weight: 400;
   font-size: 20px;
