@@ -147,27 +147,6 @@ function footer_settings($wp_customize)
 		'description'	=> __('Please set the values for Footer', 'chess-store')
 	));
 
-	$wp_customize->add_setting('footer_options_facebook', array());
-	$wp_customize->add_control('footer_options_facebook', array(
-		'label'		=> __('Facebook Address', 'chess-store'),
-		'section'	=> 'footer_options_section',
-		'priority'	=> 1
-	));
-
-	$wp_customize->add_setting('footer_options_insta', array());
-	$wp_customize->add_control('footer_options_insta', array(
-		'label'		=> __('Instagram Address', 'chess-store'),
-		'section'	=> 'footer_options_section',
-		'priority'	=> 2
-	));
-
-	$wp_customize->add_setting('footer_options_whatsapp', array());
-	$wp_customize->add_control('footer_options_whatsapp', array(
-		'label'		=> __('WhatsApp Number', 'chess-store'),
-		'section'	=> 'footer_options_section',
-		'priority'	=> 3
-	));
-
 	$wp_customize->add_setting('footer_options_phone_one', array());
 	$wp_customize->add_control('footer_options_phone_one', array(
 		'label'		=> __('Phone Number 1', 'chess-store'),

@@ -15,20 +15,20 @@
 <footer class="footer container-fluid">
 	<div class="footer-content container-xxl container-sm d-flex justify-content-between m-auto">
 		<div class="footer-social-links desktop-social-links d-flex align-self-end">
-			<?php if (get_theme_mod('footer_options_insta')) : ?>
-				<a href="<?php echo get_theme_mod('footer_options_insta'); ?>" target="_blank">
+			<?php if (get_theme_mod('topbar_options_insta')) : ?>
+				<a href="<?php echo get_theme_mod('topbar_options_insta'); ?>" target="_blank">
 					<img src="<?php echo wp_get_attachment_image_src(81)[0] ?>" alt="Instagram">
 				</a>
 			<?php endif; ?>
 
-			<?php if (get_theme_mod('footer_options_facebook')) : ?>
-				<a href="<?php echo get_theme_mod('footer_options_facebook'); ?>" target="_blank">
+			<?php if (get_theme_mod('topbar_options_facebook')) : ?>
+				<a href="<?php echo get_theme_mod('topbar_options_facebook'); ?>" target="_blank">
 					<img src="<?php echo wp_get_attachment_image_src(78)[0] ?>" alt="Facebook">
 				</a>
 			<?php endif; ?>
 
-			<?php if (get_theme_mod('footer_options_whatsapp')) : ?>
-				<a href="https://wa.me/<?php echo get_theme_mod('footer_options_whatsapp'); ?>" target="_blank">
+			<?php if (get_theme_mod('topbar_options_whatsapp')) : ?>
+				<a href="https://wa.me/<?php echo get_theme_mod('topbar_options_whatsapp'); ?>" target="_blank">
 					<img src="<?php echo wp_get_attachment_image_src(102)[0] ?>" alt="Whatsapp">
 				</a>
 			<?php endif; ?>
