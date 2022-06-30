@@ -225,6 +225,10 @@ a:visited {
   height: 69px;
 }
 
+.in-stock{
+  color: #00C814;
+}
+
 @media (max-width: 992px){
 
   .desktop-nav > div > .nav-logo-wrapper {
