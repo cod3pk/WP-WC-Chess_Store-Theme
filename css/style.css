@@ -221,6 +221,10 @@ a:visited {
   /* max-height: 69px !important; */
 }
 
+.product-cards-title{
+  height: 69px;
+}
+
 @media (max-width: 992px){
 
   .desktop-nav > div > .nav-logo-wrapper {
