@@ -67,7 +67,7 @@ $cat_header_subtitle = get_term_meta($current_cat_id, 'header_subtitle', true);
 </section>
 
 <!-- Categories Grid -->
-<section class="chess-materials container-fluid mb-4">
+<section class="chess-materials container-fluid mb-4 main-chess-section">
 	<div class="container-lg chess-material-container">
 		<div class="row">
 			<div class="col-12">
@@ -102,7 +102,7 @@ $cat_header_subtitle = get_term_meta($current_cat_id, 'header_subtitle', true);
 							</div>
 						<?php endforeach;
 
-					else :
+					elseif ($terms) :
 
 						foreach ($terms as $term) : ?>
 							<div class="chess-pieces mx-2 my-2">
@@ -114,6 +114,10 @@ $cat_header_subtitle = get_term_meta($current_cat_id, 'header_subtitle', true);
 							</div>
 					<?php endforeach;
 
+						else:
+							echo '<script>
+							document.querySelector(".main-chess-section").style.display = "none";
+							</script>';
 					endif; ?>
 
 				</div>
