@@ -369,6 +369,7 @@ function get_promoted_products()
 	$args = array(
 		'post_type'           => 'product',
 		'post_status'         => 'publish',
+		'orderby'			  => 'rand',
 		'posts_per_page'      => 4,
 		'meta_query'          => $meta_query,
 		'tax_query'           => $tax_query,

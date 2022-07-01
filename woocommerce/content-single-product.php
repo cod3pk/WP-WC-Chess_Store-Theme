@@ -107,21 +107,26 @@ $attachment_ids = $product->get_gallery_image_ids();
 
 <hr class="hr-line hr-line-mb-109 container-lg container-md">
 
+<!-- Related Products -->
 <section class="chess-price">
 	<div class="container-sm">
 		<div class="row">
-			<!-- Related Products -->
 			<?php woocommerce_output_related_products(); ?>
+		</div>
+	</div>
+</section>
 
-			<?php if (woocommerce_upsell_display()) : ?>
-
-				<!-- Horizontal Line -->
-				<hr class="hr-line hr-line-mb-109 container-lg container-md mb-5">
-
-				<!-- Upsell Products -->
-				<?php woocommerce_upsell_display(); ?>
-
-			<?php endif; ?>
+<hr class="hr-line hr-line-mb-109 container-lg container-md mb-5">
+<!-- Promoted Products -->
+<section class="chess-price">
+	<div class="container-sm">
+		<div class="row">
+			<div class="col-12 pb-5 product-title">
+				<h1 class="h1">
+					<?php echo __('Promoted Products', 'chess-store') ?>
+				</h1>
+			</div>
+			<?php get_promoted_products(); ?>
 		</div>
 	</div>
 </section>
