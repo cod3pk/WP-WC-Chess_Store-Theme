@@ -579,3 +579,21 @@ function custom_product_excerpt_product_tab_content()
 		echo apply_filters('the_content', $custom_product_excerpt);
 	}
 }
+
+/**
+ * Change Stock MEssage
+ * @param string $text
+ * @param WC_Product $product
+ * @return string
+ */
+function chess_get_woocommerce_get_availability_text($text, $product)
+{
+	if (!$product->is_in_stock()) {
+		$text = 'Out of Stock';
+	} else {
+		$text = 'In Stock';
+	}
+	return $text;
+}
+
+add_filter('woocommerce_get_availability_text', 'chess_get_woocommerce_get_availability_text', 999, 2);
