@@ -466,7 +466,8 @@ function woocommerce_template_single_excerpt()
 	$custom_product_excerpt = get_post_meta($post->ID, '_chess-store_custom_product_excerpt_wysiwyg', true); ?>
 
 	<div class="product-right-para mb-4">
-		<?php echo $custom_product_excerpt; // WPCS: XSS ok. ?>
+		<?php echo $custom_product_excerpt; // WPCS: XSS ok.
+		?>
 	</div>
 <?php }
 
