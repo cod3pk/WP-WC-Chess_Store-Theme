@@ -40,14 +40,14 @@ if (empty($product) || !$product->is_visible()) {
 
 		<?php $custom_product_excerpt = get_post_meta($post->ID, '_chess-store_custom_product_excerpt_wysiwyg', true); ?>
 
-		<?php if ($custom_product_excerpt): ?>
-		<a href="<?php echo get_permalink($product->id) ?>" class="text-decoration-none black-links">
-			<p class="mb-5 item-desc-2 mbl-none-products">
-				<?php echo $custom_product_excerpt; ?>
-			</p>
-		</a>
+		<?php if ($custom_product_excerpt) : ?>
+			<a href="<?php echo get_permalink($product->id) ?>" class="text-decoration-none black-links">
+				<p class="mb-5 item-desc-2 mbl-none-products">
+					<?php echo $custom_product_excerpt; ?>
+				</p>
+			</a>
 		<?php else : ?>
-			<a href="<?php echo get_permalink($product->id) ?>" class="text-decoration-none">
+			<a href="<?php echo get_permalink($product->id) ?>" class="text-decoration-none black-links">
 				<p class="mb-5 item-desc-2 mbl-none-products">
 					<?php echo wp_trim_words($product_data->get_description(), 15) ?>
 				</p>
