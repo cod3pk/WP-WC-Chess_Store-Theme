@@ -19,7 +19,7 @@ body, a, button {
 
 .about-container{
   max-width: 1170px;
-  margin: 15px;;
+  margin: auto;
 }
 
 mark,
