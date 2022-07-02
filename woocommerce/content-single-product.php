@@ -20,23 +20,24 @@ $attachment_ids = $product->get_gallery_image_ids();
 ?>
 
 <section class="product-showcase container-lg container-md d-flex justify-content-between mb-5">
+
 	<!-- Product Gallery -->
 	<div class="product-left-side">
 		<div class="product-img-row d-flex">
 			<div class="thumb-img">
 				<?php foreach ($attachment_ids as $attachment_id) {
-					$image_link = wp_get_attachment_image_src($attachment_id);
+					$image_link = wp_get_attachment_image_src(($attachment_id), 'single-post-thumbnail');
 				?>
-					<div class="box-slider active-slider">
-						<img class="box-slider-img" src="<?php echo $image_link[0] ?>" onclick="window.open(this.src, '_blank');" alt="thumb" / />
+					<div class="box-slider">
+						<img class="box-slider-img" id="single-product-gallery-img" src="<?php echo $image_link[0]; ?>" onclick="changeImage(this)" alt="thumb" />
 					</div>
 				<?php } ?>
 			</div>
-			<?php
-			$prod_image = wp_get_attachment_image_src(get_post_thumbnail_id($product->id), 'single-post-thumbnail');
-			?>
+
+			<?php $prod_image = wp_get_attachment_image_src(get_post_thumbnail_id($product->id), 'single-post-thumbnail'); ?>
+
 			<div class="product-main-img">
-				<img src="<?php echo $prod_image[0]; ?>" onclick="window.open(this.src, '_blank');" data-id="<?php echo $loop->post->id; ?>" class="pro-img" alt="Product Image" />
+				<img src="<?php echo $prod_image[0]; ?>" id="single-product-image" class="pro-img" alt="Product Image" />
 			</div>
 		</div>
 	</div>
@@ -95,6 +96,8 @@ $attachment_ids = $product->get_gallery_image_ids();
 	</div>
 
 </section>
+
+<hr class="hr-line container-lg container-md">
 
 <section class="more-details container-lg container-md">
 	<div class="more-details-heading">

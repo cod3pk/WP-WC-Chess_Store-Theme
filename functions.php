@@ -155,6 +155,9 @@ function chess_store_scripts()
 	wp_enqueue_script('chess-store-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '', true);
 
 	wp_enqueue_script('chess-store-loadmore', get_template_directory_uri() . '/js/loadmore.js', array('jquery'));
+
+	wp_enqueue_script('chess-store-slider', get_template_directory_uri() . '/js/slider.js', array('jquery'), '', true );
+
 	/**
 	 * Localizing AJAX for Load more
 	 */
