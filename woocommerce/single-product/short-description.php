@@ -14,9 +14,6 @@ if (!defined('ABSPATH')) {
 
 global $post;
 
-// var_dump($post);
-// die();
-
 $short_description = apply_filters('woocommerce_short_description', $post->post_excerpt);
 
 if (!$short_description) {
