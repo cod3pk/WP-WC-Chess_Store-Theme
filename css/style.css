@@ -17,6 +17,11 @@ body, a, button {
   background: #7DB8FF !important;
 }
 
+.about-container{
+  max-width: 1170px;
+  margin: 15px;;
+}
+
 mark,
 ins {
   background: #fff !important;
