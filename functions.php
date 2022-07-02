@@ -552,10 +552,9 @@ add_filter('woocommerce_product_tabs', 'custom_product_tabs');
 function custom_product_tabs($tabs)
 {
 	global $post;
-	$product_ingredients = get_post_meta($post->ID, '_chess-store_custom_product_excerpt_wysiwyg', true);
-	$product_benefits    = get_post_meta($post->ID, '_chess-store_benefits_wysiwyg', true);
+	$custom_product_excerpt = get_post_meta($post->ID, '_chess-store_custom_product_excerpt_wysiwyg', true);
 
-	if (!empty($product_ingredients))
+	if (!empty($custom_product_excerpt))
 		$tabs['custom_product_excerpt_tab'] = array(
 			'title'    => __('Custom Product Excerpt', 'woocommerce'),
 			'priority' => 45,
