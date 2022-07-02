@@ -225,8 +225,8 @@ a:visited {
   height: 69px;
 }
 
-.in-stock{
-  color: #00C814;
+.stock{
+  color: #00C814 !important;
 }
 
 @media (max-width: 992px){
