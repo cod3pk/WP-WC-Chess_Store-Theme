@@ -1836,3 +1836,43 @@ a {
     display: block !important;
   }
 }
+
+.border-line {
+  width: 100%;
+}
+
+.subscription {
+  background: rgb(249, 249, 249);
+}
+
+.subscription-input {
+  border: #ccc;
+}
+
+.subscription-btn {
+  background: #082042;
+  color: #fff;
+}
+
+.recent-blog-title {
+  color: #0B4385;
+}
+
+.blog-1 {
+  position: relative;
+}
+
+.blog-description {
+  padding: 10px;
+  font-size: 14px;
+  color: #fff;
+  width: 100%;
+  opacity: 70%;
+  z-index: 5555;
+  transform: translateY(-40px);
+  background: #072A53;
+}
+
+.border-line-2 {
+  margin: 0.7rem 0 1.5rem;
+}

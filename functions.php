@@ -129,8 +129,8 @@ function chess_store_widgets_init()
 {
 	register_sidebar(
 		array(
-			'name'          => esc_html__('Sidebar', 'chess-store'),
-			'id'            => 'sidebar-1',
+			'name'          => esc_html__(' Sidebar', 'chess-store'),
+			'id'            => 'sidebar-blog',
 			'description'   => esc_html__('Add widgets here.', 'chess-store'),
 			'before_widget' => '<section id="%1$s" class="widget %2$s">',
 			'after_widget'  => '</section>',
@@ -600,3 +600,17 @@ function chess_get_woocommerce_get_availability_text($text, $product)
 }
 
 add_filter('woocommerce_get_availability_text', 'chess_get_woocommerce_get_availability_text', 999, 2);
+
+/**
+ * Get Post Sidebar Categories
+ */
+function get_post_sidebar_categories()
+{
+	$terms = get_terms([
+		'taxonomy'		=> 'product_cat',
+		'hide_empty'	=> true,
+		'number'		=> 9,
+	]);
+
+	return $terms;
+}
