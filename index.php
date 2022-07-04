@@ -54,20 +54,12 @@ get_header();
 				<?php
 				if (have_posts()) :
 
-					if (is_home() && !is_front_page()) :
-				?>
-						<header>
-							<h1 class="page-title screen-reader-text"><?php single_post_title(); ?></h1>
-						</header>
-					<?php
-					endif;
-
 					/* Start the Loop */
 					while (have_posts()) :
 						the_post(); ?>
 
 						<a href="<?php echo get_the_permalink($post->ID) ?>">
-							<div class="blog-card d-flex align-items-center justify-content-center ">
+							<div class="blog-card d-flex align-items-center justify-content-center mb-25">
 								<div class="main-blog-recent-post d-inline-block">
 									<?php $image = wp_get_attachment_image_src(get_post_thumbnail_id($post->ID), 'single-post-thumbnail'); ?>
 									<img src="<?php echo $image[0]; ?>" alt="<?php echo get_the_title($post->ID) ?>" class="w-100 mb-2 blog-post-image">
