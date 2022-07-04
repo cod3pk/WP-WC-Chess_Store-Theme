@@ -1,14 +1,7 @@
 <?php
 
 /**
- * The main template file
- *
- * This is the most generic template file in a WordPress theme
- * and one of the two required files for a theme (the other being style.css).
- * It is used to display a page when nothing more specific matches a query.
- * E.g., it puts together the home page when no home.php file exists.
- *
- * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
+ * Template: All Posts
  *
  * @package chess_store
  */
@@ -16,43 +9,145 @@
 get_header();
 ?>
 
-<main id="primary" class="site-main header container mt-5">
+<!-- Featured Posts -->
+<section class="main-blog-header">
+	<div class="container container-xxl">
+		<div class="row">
+			<?php
+			$sticky_posts = get_sticky_posts();
+			foreach ($sticky_posts as $post) :
+			?>
+				<div class="col-12 col-sm-12 col-md-12 col-lg-4 col-xl-4 col-xxl-4 col-xxxl-4">
+					<a href="#">
+						<div class="blog-card">
+							<?php $image = wp_get_attachment_image_src(get_post_thumbnail_id($post->ID), 'single-post-thumbnail'); ?>
+							<img src="<?php echo $image[0]; ?>" alt="<?php echo get_the_title($post->ID) ?>" class="w-100 mb-2">
+							<p class="fs-3 mb-1 blog-card-text">
+								<?php echo get_the_title($post->ID) ?>
+							</p>
+							<p class="mb-1 blog-card-text">
+								<?php echo wp_trim_words(get_the_excerpt($post), 30) ?>
+							</p>
+							<p class="blog-card-text">
+								<?php
+								$post_date = get_the_date('M d Y');
+								echo $post_date;
+								?>
+							</p>
+						</div>
+					</a>
+				</div>
+			<?php endforeach; ?>
 
-	<?php
-	if (have_posts()) :
+		</div>
+		<hr class="w-100">
+	</div>
+</section>
 
-		if (is_home() && !is_front_page()) :
-	?>
-			<header>
-				<h1 class="page-title screen-reader-text"><?php single_post_title(); ?></h1>
-			</header>
-	<?php
-		endif;
+<!-- Main Posts Container -->
+<section class="main-blog-showcase">
+	<div class="container container-xxl">
+		<div class="row">
 
-		/* Start the Loop */
-		while (have_posts()) :
-			the_post();
+			<!-- All Posts -->
+			<div class="col-12 col-sm-12 col-md-12 col-xl-8 col-xxl-8 col-xxxl-8 mt-4">
+				<?php
+				if (have_posts()) :
 
-			/*
-				 * Include the Post-Type-specific template for the content.
-				 * If you want to override this in a child theme, then include a file
-				 * called content-___.php (where ___ is the Post Type name) and that will be used instead.
-				 */
-			get_template_part('template-parts/content', get_post_type());
+					if (is_home() && !is_front_page()) :
+				?>
+						<header>
+							<h1 class="page-title screen-reader-text"><?php single_post_title(); ?></h1>
+						</header>
+					<?php
+					endif;
 
-		endwhile;
+					/* Start the Loop */
+					while (have_posts()) :
+						the_post(); ?>
 
-		the_posts_navigation();
+						<a href="<?php echo get_the_permalink($post->ID) ?>">
+							<div class="blog-card">
+								<div class="main-blog-recent-post d-inline-block">
+									<?php $image = wp_get_attachment_image_src(get_post_thumbnail_id($post->ID), 'single-post-thumbnail'); ?>
+									<img src="<?php echo $image[0]; ?>" alt="<?php echo get_the_title($post->ID) ?>" class="w-100 mb-2">
+								</div>
+								<div class="d-inline-block content-width-card">
+									<p class="fs-3 mb-1 blog-card-text">
+										<?php echo get_the_title($post->ID) ?>
+									</p>
+									<p class="mb-1 blog-card-text">
+										<?php echo wp_trim_words(get_the_excerpt($post), 30) ?>
+									</p>
+									<p class="blog-card-text">
+										<?php
+										$post_date = get_the_date('M d Y');
+										echo $post_date;
+										?>
+									</p>
+								</div>
+							</div>
+						</a>
 
-	else :
+				<?php endwhile;
 
-		get_template_part('template-parts/content', 'none');
+					the_posts_navigation();
 
-	endif;
-	?>
+				else :
 
-</main><!-- #main -->
+					get_template_part('template-parts/content', 'none');
+
+				endif;
+				?>
+			</div>
+
+			<!-- Sidebar -->
+			<div class="col-12 col-sm-12 col-md-12 col-xl-4 col-xxl-4 col-xxxl-4 mt-4">
+
+				<!-- Subscription Form -->
+				<div class="subscription p-3">
+					<img src="<?php echo get_template_directory_uri() . '/images/email-message.jpeg' ?>" alt="email" class="mb-4" width="50px">
+					<p>
+						<?php echo __('Subscribe to our Newsletter', 'chess-store'); ?>
+					</p>
+					<form action="#" class="pb-3">
+						<input class="bg-white p-2 w-100 fs-5 mb-3 subscription-input" type="email" name="email" id="email" placeholder="<?php echo __('Enter your Email', 'chess-store'); ?>">
+						<button class="p-2 px-5 subscription-btn">
+							<?php echo __('Subscribe', 'chess-store') ?>
+						</button>
+					</form>
+				</div>
+
+				<!-- Categories -->
+				<h2 class="m-0 recent-blog-title fs-5 pt-4"><?php echo __('Categories', 'chess-store') ?></h2>
+				<hr class="border-line border-line-2">
+
+				<div class="row">
+					<?php
+					$cats = get_post_sidebar_categories();
+
+					foreach ($cats as $cat) :
+						// get the thumbnail id using the queried category term_id
+						$thumbnail_id = get_term_meta($cat->term_id, 'thumbnail_id', true);
+
+						// get the image URL
+						$image = wp_get_attachment_url($thumbnail_id);
+					?>
+						<div class="col-4 position-relative">
+							<a href="<?php echo get_term_link($cat->term_id, 'product_cat') ?>">
+								<img src="<?php echo $image; ?>" alt="<?php echo $cat->name; ?>" width="100%">
+								<p class="mb-0 blog-description">
+									<?php echo $cat->name ?>
+								</p>
+							</a>
+						</div>
+					<?php endforeach; ?>
+				</div>
+			</div>
+
+		</div>
+	</div>
+</section>
 
 <?php
-// get_sidebar();
 get_footer();

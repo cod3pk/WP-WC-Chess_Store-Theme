@@ -1876,3 +1876,23 @@ a {
 .border-line-2 {
   margin: 0.7rem 0 1.5rem;
 }
+
+.blog-card-text {
+  color: #4a4a4a;
+}
+
+.main-blog-recent-post {
+  max-width: 400px;
+}
+
+.content-width-card {
+  max-width: 50%;
+  padding-left: 1rem;
+}
+
+@media (max-width: 768px) {
+  .content-width-card {
+    max-width: 100%;
+    padding-left: 0;
+  }
+}
