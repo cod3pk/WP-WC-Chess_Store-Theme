@@ -9,8 +9,8 @@
 get_header();
 ?>
 
-<!-- Featured Posts -->
-<section class="main-blog-header">
+<!-- Sticky Posts -->
+<section class="main-blog-header pt-5">
 	<div class="container container-xxl">
 		<div class="row">
 			<?php
@@ -18,10 +18,10 @@ get_header();
 			foreach ($sticky_posts as $post) :
 			?>
 				<div class="col-12 col-sm-12 col-md-12 col-lg-4 col-xl-4 col-xxl-4 col-xxxl-4">
-					<a href="#">
+					<a href="<?php echo get_the_permalink($post->ID) ?>">
 						<div class="blog-card">
 							<?php $image = wp_get_attachment_image_src(get_post_thumbnail_id($post->ID), 'single-post-thumbnail'); ?>
-							<img src="<?php echo $image[0]; ?>" alt="<?php echo get_the_title($post->ID) ?>" class="w-100 mb-2">
+							<img src="<?php echo $image[0]; ?>" alt="<?php echo get_the_title($post->ID) ?>" class="w-100 mb-2 blog-post-image">
 							<p class="fs-3 mb-1 blog-card-text">
 								<?php echo get_the_title($post->ID) ?>
 							</p>
@@ -67,10 +67,10 @@ get_header();
 						the_post(); ?>
 
 						<a href="<?php echo get_the_permalink($post->ID) ?>">
-							<div class="blog-card">
+							<div class="blog-card d-flex align-items-center justify-content-center ">
 								<div class="main-blog-recent-post d-inline-block">
 									<?php $image = wp_get_attachment_image_src(get_post_thumbnail_id($post->ID), 'single-post-thumbnail'); ?>
-									<img src="<?php echo $image[0]; ?>" alt="<?php echo get_the_title($post->ID) ?>" class="w-100 mb-2">
+									<img src="<?php echo $image[0]; ?>" alt="<?php echo get_the_title($post->ID) ?>" class="w-100 mb-2 blog-post-image">
 								</div>
 								<div class="d-inline-block content-width-card">
 									<p class="fs-3 mb-1 blog-card-text">
@@ -135,7 +135,7 @@ get_header();
 					?>
 						<div class="col-4 position-relative">
 							<a href="<?php echo get_term_link($cat->term_id, 'product_cat') ?>">
-								<img src="<?php echo $image; ?>" alt="<?php echo $cat->name; ?>" width="100%">
+								<img src="<?php echo $image; ?>" alt="<?php echo $cat->name; ?>" class="sidebar-cat-img">
 								<p class="mb-0 blog-description">
 									<?php echo $cat->name ?>
 								</p>
