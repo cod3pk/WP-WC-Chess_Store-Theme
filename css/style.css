@@ -1920,6 +1920,15 @@ a {
 
 @media (max-width: 768px) {
   .blog-card {
+    align-items: left !important;
     flex-direction: column;
+  }
+
+  .content-width-card, .main-blog-recent-post{
+    max-width: 100%;
+  }
+
+  .blog-post-image{
+    min-width: 100%;
   }
 }
