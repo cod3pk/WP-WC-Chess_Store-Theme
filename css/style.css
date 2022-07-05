@@ -1930,5 +1930,6 @@ a {
 
   .blog-post-image{
     min-width: 100%;
+    max-width: 100%;
   }
 }
