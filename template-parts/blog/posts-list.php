@@ -14,7 +14,7 @@
             $blog_posts->the_post(); ?>
 
             <a href="<?php echo get_the_permalink($post->ID) ?>">
-                <div class="blog-card d-flex align-items-center justify-content-center mb-25">
+                <div class="blog-card d-flex align-items-center mb-25">
                     <div class="main-blog-recent-post d-inline-block">
                         <?php $image = wp_get_attachment_image_src(get_post_thumbnail_id($post->ID), 'single-post-thumbnail'); ?>
                         <img src="<?php echo $image[0]; ?>" alt="<?php echo get_the_title($post->ID) ?>" class="w-100 mb-2 blog-post-image">
