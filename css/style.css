@@ -1920,7 +1920,7 @@ a {
 
 @media (max-width: 768px) {
   .blog-card {
-    align-items: left !important;
+    align-items: flex-start !important;
     flex-direction: column;
   }
 
