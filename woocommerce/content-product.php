@@ -55,7 +55,7 @@ if (empty($product) || !$product->is_visible()) {
 		<?php endif; ?>
 
 		<div class="text-center">
-			<button type="submit" name="add-to-cart" value="<?php echo esc_attr($product->get_id()); ?>" class="black-links chess-item-btn ajax_add_to_cart text-decoration-none">
+			<button onclick="window.location='<?php echo get_permalink($product->get_id()); ?>'" class="black-links chess-item-btn ajax_add_to_cart text-decoration-none">
 				<?php echo __('Buy', 'chess-store'); ?>
 			</button>
 		</div>
