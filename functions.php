@@ -127,17 +127,14 @@ add_action('after_setup_theme', 'chess_store_content_width', 0);
  */
 function chess_store_widgets_init()
 {
-	register_sidebar(
-		array(
-			'name'          => esc_html__(' Sidebar', 'chess-store'),
-			'id'            => 'sidebar-blog',
-			'description'   => esc_html__('Add widgets here.', 'chess-store'),
-			'before_widget' => '<section id="%1$s" class="widget %2$s">',
-			'after_widget'  => '</section>',
-			'before_title'  => '<h2 class="widget-title">',
-			'after_title'   => '</h2>',
-		)
-	);
+	register_sidebar(array(
+		'name'          => __('Blog Sidebar', 'chess-store'),
+		'id'            => 'sidebar-1',
+		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+		'after_widget'  => '</aside>',
+		'before_title'  => '<h3 class="widget-title">',
+		'after_title'   => '</h3>',
+	));
 }
 add_action('widgets_init', 'chess_store_widgets_init');
 
@@ -156,7 +153,7 @@ function chess_store_scripts()
 
 	wp_enqueue_script('chess-store-loadmore', get_template_directory_uri() . '/js/loadmore.js', array('jquery'));
 
-	wp_enqueue_script('chess-store-slider', get_template_directory_uri() . '/js/slider.js', array('jquery'), '', true );
+	wp_enqueue_script('chess-store-slider', get_template_directory_uri() . '/js/slider.js', array('jquery'), '', true);
 
 	/**
 	 * Localizing AJAX for Load more
@@ -299,7 +296,6 @@ function get_homepage_categories()
  */
 function get_total_categories_num()
 {
-	global $wp_query;
 	$terms = get_terms([
 		'taxonomy'		=> 'product_cat',
 		'hide_empty'	=> true,
@@ -409,7 +405,6 @@ function get_promoted_products()
  */
 function custom_category_fields($term)
 {
-
 	if (current_filter() == 'product_cat_edit_form_fields') {
 		$header_subtitle = get_term_meta($term->term_id, 'header_subtitle', true);
 	?>
@@ -609,6 +604,7 @@ function get_post_sidebar_categories()
 	$terms = get_terms([
 		'taxonomy'		=> 'product_cat',
 		'hide_empty'	=> true,
+		'parent'		=> 0,
 		'number'		=> 9,
 	]);
 
@@ -618,7 +614,8 @@ function get_post_sidebar_categories()
 /**
  * Get Sticky Posts
  */
-function get_sticky_posts() {
+function get_sticky_posts()
+{
 	$args = array(
 		'posts_per_page' => 3,
 		'post__in' => get_option('sticky_posts'),
@@ -626,4 +623,24 @@ function get_sticky_posts() {
 	);
 	$query = new WP_Query($args);
 	return $query->posts;
+}
+
+/**
+ * Sidebar Newsletter Form Widget Code
+ */
+add_shortcode('chess_newsletter_form', 'get_sidebar_newsletter_form');
+
+function get_sidebar_newsletter_form()
+{
+	get_template_part('template-parts/sidebar/subscription', 'form');
+}
+
+/**
+ * Sidebar Categories Widget ShortCode
+ */
+add_shortcode('chess_sidebar_categories', 'get_sidebar_categories');
+
+function get_sidebar_categories()
+{
+	get_template_part('template-parts/sidebar/categories', 'list');
 }
