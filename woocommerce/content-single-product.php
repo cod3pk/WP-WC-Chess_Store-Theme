@@ -29,7 +29,7 @@ $attachment_ids = $product->get_gallery_image_ids();
 					$image_link = wp_get_attachment_image_src(($attachment_id), 'single-post-thumbnail');
 				?>
 					<div class="box-slider">
-						<img class="box-slider-img" id="single-product-gallery-img" src="<?php echo $image_link[0]; ?>" onclick="changeImage(this)" alt="thumb" />
+						<img class="box-slider-img mx-1" id="single-product-gallery-img" src="<?php echo $image_link[0]; ?>" onclick="changeImage(this)" alt="thumb" />
 					</div>
 				<?php } ?>
 			</div>
