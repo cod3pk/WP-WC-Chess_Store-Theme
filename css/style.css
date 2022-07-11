@@ -47,11 +47,12 @@ ins {
 
 .desktop-nav > div {
   padding: 0 !important;
+  margin-left: 30px;
+  margin-right: 30px;
 }
 
 .desktop-nav > div > .nav-logo-wrapper {
   margin: 0 !important;
-  padding-left: 53px !important;
 }
 
 .menu {

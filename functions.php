@@ -144,15 +144,13 @@ add_action('widgets_init', 'chess_store_widgets_init');
 function chess_store_scripts()
 {
 	wp_enqueue_style('chess-store-style', get_stylesheet_uri(), array());
-	wp_enqueue_style('chess-store-main-style', get_template_directory_uri() . '/css/main.css');
 	wp_enqueue_style('chess-store-main-style-extend', get_template_directory_uri() . '/css/style.css');
+	wp_enqueue_style('chess-store-main-style', get_template_directory_uri() . '/css/main.css');
+	wp_style_add_data('chess-store-rtl-style', 'rtl', 'style-rtl.css');
 
-	wp_style_add_data('chess-store-style', 'rtl', get_template_directory_uri() . 'style.rtl.css');
 
 	wp_enqueue_script('chess-store-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '', true);
-
 	wp_enqueue_script('chess-store-loadmore', get_template_directory_uri() . '/js/loadmore.js', array('jquery'));
-
 	wp_enqueue_script('chess-store-slider', get_template_directory_uri() . '/js/slider.js', array('jquery'), '', true);
 
 	/**

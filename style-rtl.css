@@ -959,3 +959,9 @@ textarea {
 	margin-left: auto;
 	margin-bottom: 1.5em;
 }
+
+.desktop-nav > div{
+	padding: 0 !important;
+    margin-right: 30px !important;
+    margin-left: 30px !important;
+}
