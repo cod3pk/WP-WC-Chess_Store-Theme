@@ -22,6 +22,10 @@ body, a, button {
   margin: auto;
 }
 
+.quantity{
+  margin-left: 5px !important;
+}
+
 mark,
 ins {
   background: #fff !important;
@@ -36,8 +40,6 @@ ins {
   color: #fff;
   -webkit-font-smoothing: antialiased;
 }
-
-
 
 /* Nav - Menu */
 
