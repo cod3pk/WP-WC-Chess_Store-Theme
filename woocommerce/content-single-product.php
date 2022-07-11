@@ -12,7 +12,7 @@ do_action('woocommerce_before_single_product');
 
 woocommerce_breadcrumb(array(
 	'delimiter'     => ' > ',
-	'wrap_before'   => '<section class="product-top-heading pt-3 ps-3">',
+	'wrap_before'   => '<section class="product-top-heading pt-3 ps-3 mx-4">',
 	'wrap_after'    => '</section>',
 ));
 
