@@ -66,13 +66,17 @@ $attachment_ids = $product->get_gallery_image_ids();
 			<a class="text-decoration-none" href="#">
 				<div class="product-shipping d-flex align-items-center">
 					<img src="<?php echo wp_get_attachment_image_src(96)[0]; ?>">
-					<p>Shipping</p><span> > </span>
+					<p>
+						<?php echo __( 'Shipping', 'chess-store' ); ?>
+					</p><span> > </span>
 				</div>
 			</a>
 			<a class="text-decoration-none" href="#">
 				<div class="product-lock d-flex align-items-center">
 					<img src="<?php echo wp_get_attachment_image_src(95)[0]; ?>">
-					<p>Secure</p>
+					<p>
+						<?php echo __( 'Secure', 'chess-store' ) ?>
+					</p>
 				</div>
 			</a>
 		</div>
