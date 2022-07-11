@@ -579,17 +579,17 @@ function custom_product_excerpt_product_tab_content()
 }
 
 /**
- * Change Stock MEssage
+ * Change Stock Message
  * @param string $text
  * @param WC_Product $product
  * @return string
  */
-function chess_get_woocommerce_get_availability_text($text, $product)
+function chess_get_woocommerce_get_availability_text( $text, $product )
 {
 	if (!$product->is_in_stock()) {
-		$text = 'Out of Stock';
+		$text = __( 'Out of Stock', 'chess-store' );
 	} else {
-		$text = 'In Stock';
+		$text = __( 'In Stock', 'chess-store' );
 	}
 	return $text;
 }
