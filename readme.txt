@@ -7,10 +7,6 @@ Tested up to: 5.4
 Requires PHP: 5.6
 Stable tag: 1.0.0
 
-== Description ==
-
-Description
-
 == Installation ==
 
 1. In your admin panel, go to Appearance > Themes and click the Add New button.
