@@ -25,14 +25,14 @@ defined( 'ABSPATH' ) || exit;
 	// phpcs:disable WordPress.Security.EscapeOutput.OutputNotEscaped
 	?>
 
-	<a href="<?php echo esc_url( get_comment_link( $comment->comment_ID ) ); ?>">
+    <a href="<?php echo esc_url( get_comment_link( $comment->comment_ID ) ); ?>">
 		<?php echo $product->get_image(); ?>
-		<span class="product-title"><?php echo wp_kses_post( $product->get_name() ); ?></span>
-	</a>
+        <span class="product-title"><?php echo wp_kses_post( $product->get_name() ); ?></span>
+    </a>
 
 	<?php echo wc_get_rating_html( intval( get_comment_meta( $comment->comment_ID, 'rating', true ) ) ); ?>
 
-	<span class="reviewer">
+    <span class="reviewer">
 	<?php
 	/* translators: %s: Comment author. */
 	echo sprintf( esc_html__( 'by %s', 'woocommerce' ), get_comment_author( $comment->comment_ID ) );

@@ -4,7 +4,7 @@
  * Template: Single Product
  */
 
-if (!defined('ABSPATH')) {
+if ( !defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly
 }
 
@@ -17,10 +17,10 @@ get_header();
  * @hooked woocommerce_breadcrumb - 20
  */
 
-while (have_posts()) :
+while ( have_posts() ) :
 	the_post();
 
-	wc_get_template_part('content', 'single-product');
+	wc_get_template_part( 'content', 'single-product' );
 
 endwhile; // end of the loop.
 
