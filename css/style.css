@@ -946,7 +946,7 @@ a:visited {
 }
 
 @media screen and (max-width: 768px) {
-  .nav-top-content {
+  .nav-top-section .nav-top-content {
     display: none !important;
   }
 
