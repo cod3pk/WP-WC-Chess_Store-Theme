@@ -244,9 +244,9 @@ a:visited {
     padding: 10px 0 !important;
   }
 
-  .desktop-nav > div > .hamburger {
+  /* .desktop-nav > div > .hamburger {
     padding-left: 32px !important;
-  }
+  } */
 
   .desktop-nav > div > .hamburger > button {
     padding: 0 !important;
@@ -1773,7 +1773,9 @@ a {
     position: absolute;
     background: transparent;
     width: 100%;
-    top: 0px;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, -50%);
     display: none;
   }
 
@@ -1900,6 +1902,10 @@ a {
   .content-width-card {
     max-width: 100%;
     padding-left: 0;
+  }
+
+  nav .ils-wrapper {
+    padding: 0 !important;
   }
 }
 

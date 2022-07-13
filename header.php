@@ -140,7 +140,7 @@
             </button>
         </ul>
 
-        <ul class="ul pe-3 flx-order-3 d-flex align-items-center mb-0 ms-0 ps-0">
+        <ul class="ils-wrapper ul pe-3 flx-order-3 d-flex align-items-center mb-0 ms-0 ps-0">
 
 
 			<?php if ( WC()->cart->get_cart_contents_count() != 0 ) : ?>
