@@ -632,7 +632,7 @@ a:visited {
   margin: 0;
 }
 
-.footer-info-text ul li:not(:last-child) {
+.footer-info-text ul li {
   margin: 0 15px 0 0;
 }
 
@@ -1015,6 +1015,11 @@ a:visited {
     background: #fff;
     width: 1px;
     margin-right: 10px;
+    margin-left: 10px;
+  }
+
+  .header-whatsapp-link {
+    margin: 5px !important;
   }
 
   /* .telephone-img {
