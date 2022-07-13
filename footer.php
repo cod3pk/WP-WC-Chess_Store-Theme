@@ -14,6 +14,7 @@
 
 <footer class="footer container-fluid">
     <div class="footer-content container-xxl container-sm d-flex justify-content-between m-auto">
+
         <div class="footer-social-links desktop-social-links d-flex align-self-end">
 			<?php if ( get_theme_mod( 'topbar_options_insta' ) ) : ?>
                 <a href="<?php echo get_theme_mod( 'topbar_options_insta' ); ?>" target="_blank">
@@ -33,6 +34,7 @@
                 </a>
 			<?php endif; ?>
         </div>
+
         <div class="footer-contect-num d-flex justify-content-between align-self-end">
 			<?php if ( get_theme_mod( 'footer_options_phone_one' ) ) : ?>
                 <a href="tel:<?php echo get_theme_mod( 'footer_options_phone_one' ); ?>"
@@ -48,6 +50,7 @@
                 </a>
 			<?php endif; ?>
         </div>
+
         <div class="footer-info-text d-flex align-self-end align-items-center">
 			<?php
 			wp_nav_menu( array(
@@ -56,9 +59,11 @@
 			) );
 			?>
         </div>
+
         <div class="footer-nav-links d-flex">
 			<?php wp_nav_menu( 'footer' ); ?>
         </div>
+
         <div class="footer-logo">
 			<?php if ( get_theme_mod( 'footer_logo_image' ) ) : ?>
                 <a href="<?php echo site_url(); ?>">
@@ -66,6 +71,7 @@
                 </a>
 			<?php endif; ?>
         </div>
+
         <div class="footer-social-links mobile-social-links d-flex align-self-end">
 			<?php if ( get_theme_mod( 'footer_options_insta' ) ) : ?>
                 <a href="<?php echo get_theme_mod( 'footer_options_insta' ); ?>" target="_blank">
@@ -87,6 +93,7 @@
         </div>
     </div>
 </footer>
+
 
 <section class="footer-bottom-link d-flex justify-content-center m-auto">
 	<?php if ( get_theme_mod( 'footer_options_credit' ) ) : ?>
