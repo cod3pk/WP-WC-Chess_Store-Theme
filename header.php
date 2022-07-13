@@ -41,7 +41,7 @@
 				<?php endif; ?>
 
 				<?php if ( get_theme_mod( 'topbar_options_whatsapp' ) ) : ?>
-                    <a href="https://wa.me/<?php echo get_theme_mod( 'topbar_options_whatsapp' ); ?>" target="_blank"
+                    <a href="https://wa.me/<?php echo get_theme_mod( 'topbar_options_whatsapp' ); ?>" target="_blank">
                         <img src="<?php echo wp_get_attachment_image_src( 102 )[ 0 ] ?>" alt="Whatsapp">
                     </a>
 				<?php endif; ?>
