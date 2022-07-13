@@ -542,11 +542,11 @@ a:visited {
 }
 
 .footer-social-links :not(:last-child) {
-  margin: 0 5px 0 0;
+  margin: 0 15px 0 0;
 }
 
 .footer-contect-num {
-  width: 355px;
+  width: 300px;
 }
 
 .footer-contect-num p {
