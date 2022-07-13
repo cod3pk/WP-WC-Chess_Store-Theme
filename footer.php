@@ -12,29 +12,32 @@
 
 ?>
 
+<!-- Footer-Star -->
 <footer class="footer container-fluid">
     <div class="footer-content container-xxl container-sm d-flex justify-content-between m-auto">
 
+        <!-- Footer Social Icons -->
         <div class="footer-social-links desktop-social-links d-flex align-self-end">
 			<?php if ( get_theme_mod( 'topbar_options_insta' ) ) : ?>
                 <a href="<?php echo get_theme_mod( 'topbar_options_insta' ); ?>" target="_blank">
-                    <img src="<?php echo wp_get_attachment_image_src( 81 )[ 0 ] ?>" alt="Instagram">
+                    <img src="<?php echo wp_get_attachment_image_src( 81 )[ 0 ] ?>" alt="<?php echo __( 'Instagram', 'chess-store' ) ?>">
                 </a>
 			<?php endif; ?>
 
 			<?php if ( get_theme_mod( 'topbar_options_facebook' ) ) : ?>
                 <a href="<?php echo get_theme_mod( 'topbar_options_facebook' ); ?>" target="_blank">
-                    <img src="<?php echo wp_get_attachment_image_src( 78 )[ 0 ] ?>" alt="Facebook">
+                    <img src="<?php echo wp_get_attachment_image_src( 78 )[ 0 ] ?>" alt="<?php echo __( 'Facebook', 'chess-store' ) ?>">
                 </a>
 			<?php endif; ?>
 
 			<?php if ( get_theme_mod( 'topbar_options_whatsapp' ) ) : ?>
                 <a href="https://wa.me/<?php echo get_theme_mod( 'topbar_options_whatsapp' ); ?>" target="_blank">
-                    <img src="<?php echo wp_get_attachment_image_src( 102 )[ 0 ] ?>" alt="Whatsapp">
+                    <img src="<?php echo wp_get_attachment_image_src( 102 )[ 0 ] ?>" alt="<?php echo __( 'Whatsapp', 'chess-store' ) ?>">
                 </a>
 			<?php endif; ?>
         </div>
 
+        <!-- Footer Contact INFO -->
         <div class="footer-contect-num d-flex justify-content-between align-self-end">
 			<?php if ( get_theme_mod( 'footer_options_phone_one' ) ) : ?>
                 <a href="tel:<?php echo get_theme_mod( 'footer_options_phone_one' ); ?>"
@@ -51,19 +54,18 @@
 			<?php endif; ?>
         </div>
 
+        <!-- Footer Navigation -->
         <div class="footer-info-text d-flex align-self-end align-items-center">
 			<?php
 			wp_nav_menu( array(
-				'theme_location' => 'footer',
-				'menu_id' => 'footer'
+				'theme_location'    => 'footer',
+				'menu_id'           => 'footer',
+                'menu_class'        => 'd-flex align-items-center'
 			) );
 			?>
         </div>
 
-        <div class="footer-nav-links d-flex">
-			<?php wp_nav_menu( 'footer' ); ?>
-        </div>
-
+        <!-- Footer Logo -->
         <div class="footer-logo">
 			<?php if ( get_theme_mod( 'footer_logo_image' ) ) : ?>
                 <a href="<?php echo site_url(); ?>">
@@ -72,29 +74,11 @@
 			<?php endif; ?>
         </div>
 
-        <div class="footer-social-links mobile-social-links d-flex align-self-end">
-			<?php if ( get_theme_mod( 'footer_options_insta' ) ) : ?>
-                <a href="<?php echo get_theme_mod( 'footer_options_insta' ); ?>" target="_blank">
-                    <img src="<?php echo wp_get_attachment_image_src( 81 )[ 0 ] ?>" alt="Instagram">
-                </a>
-			<?php endif; ?>
-
-			<?php if ( get_theme_mod( 'footer_options_facebook' ) ) : ?>
-                <a href="<?php echo get_theme_mod( 'footer_options_facebook' ); ?>" target="_blank">
-                    <img src="<?php echo wp_get_attachment_image_src( 78 )[ 0 ] ?>" alt="Facebook">
-                </a>
-			<?php endif; ?>
-
-			<?php if ( get_theme_mod( 'footer_options_whatsapp' ) ) : ?>
-                <a href="https://wa.me/<?php echo get_theme_mod( 'footer_options_whatsapp' ); ?>" target="_blank">
-                    <img src="<?php echo wp_get_attachment_image_src( 102 )[ 0 ] ?>" alt="Whatsapp">
-                </a>
-			<?php endif; ?>
-        </div>
     </div>
 </footer>
+<!-- Footer-END -->
 
-
+<!-- Bottom Bar -->
 <section class="footer-bottom-link d-flex justify-content-center m-auto">
 	<?php if ( get_theme_mod( 'footer_options_credit' ) ) : ?>
         <p class="footer-btm-desc"> <?php echo get_theme_mod( 'footer_options_credit' ); ?> </p>
