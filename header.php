@@ -158,10 +158,10 @@
                 <span class="nav-ils-text fs-4">ILS</span>
 			<?php else: ?>
                 <a class=" text-decoration-none " href="<?php echo wc_get_cart_url(); ?>">
-                    <img class="shopping-cart pe-3 align-bottom"
+                    <img class="shopping-cart align-bottom"
                          src="<?php echo wp_get_attachment_image_src( 75 )[ 0 ] ?>" alt="Cart">
                 </a>
-                <span class="vertical-line">|</span>
+                <span class="vertical-line ps-3">|</span>
                 <span class="nav-ils-text fs-4">ILS</span>
 			<?php endif; ?>
         </ul>

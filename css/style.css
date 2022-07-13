@@ -472,8 +472,8 @@ a:visited {
 }
 
 .shopping-cart {
-  width: 38px;
-  height: 38px;
+  width: 25px;
+  height: 25px;
 }
 
 .nav-ils-text {
@@ -542,7 +542,7 @@ a:visited {
   padding: 34px 0 39px 0;
 }
 
-.footer-social-links :not(:last-child) {
+.footer-social-links > a {
   margin: 0 15px 0 0;
 }
 
@@ -1014,11 +1014,12 @@ a:visited {
     height: 100%;
     background: #fff;
     width: 1px;
+    margin-right: 10px;
   }
 
-  .telephone-img {
+  /* .telephone-img {
     padding-left: 10px;
-  }
+  } */
 
   hr:not([size]) {
     width: 100% !important;
