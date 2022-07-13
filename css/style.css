@@ -54,6 +54,7 @@ ins {
 }
 
 .desktop-nav > div > .nav-logo-wrapper {
+  padding-left: 23px;
   margin: 0 !important;
 }
 
@@ -1971,5 +1972,17 @@ a {
     max-height: 0px;
     overflow: none;
     visibility: hidden;
+  }
+}
+
+@media (min-width: 993px) and (max-width: 1116px) {
+
+  .custom-logo-link {
+    max-width: 125px;
+  }
+
+  #header.menu li a {
+    padding: 30px 15px;
+    font-size: 15px;
   }
 }
