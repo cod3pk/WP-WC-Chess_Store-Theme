@@ -7,6 +7,8 @@
 
 defined( 'ABSPATH' ) || exit;
 global $product;
+$product_data = wc_get_product( $product->id );
+$product_meta = get_post_meta( $product->id );
 
 // Ensure visibility.
 if ( empty( $product ) || !$product->is_visible() ) {
@@ -15,11 +17,6 @@ if ( empty( $product ) || !$product->is_visible() ) {
 ?>
 
 <div class="col-6 col-xxxl-3 col-xxl-3 col-lg-3 col-md-6 col-sm-6 chess-prdct mb-5">
-
-	<?
-	$product_data = wc_get_product( $product->id );
-	$product_meta = get_post_meta( $product->id );
-	?>
 
     <div class="chess-items">
 
@@ -35,7 +32,11 @@ if ( empty( $product ) || !$product->is_visible() ) {
 					<?php echo $product->name; ?>
                 </p>
 
-                
+                <?php if ( $product_data->get_price() ) : ?>
+                    <p class="mb-2 item-price">
+                        <?php echo get_woocommerce_currency_symbol() . $product_data->get_price(); ?>
+                    </p>
+                <?php endif; ?>
             </div>
         </a>
 
