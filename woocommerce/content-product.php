@@ -35,6 +35,8 @@ if ( empty( $product ) || !$product->is_visible() ) {
 					<?php echo $product->name; ?>
                 </p>
 
+
+                <?php var_dump($product_data->get_price()); ?>
                 <?php if ( $product_data->get_price() ) : ?>
                     <p class="mb-2 item-price">
                         <?php echo get_woocommerce_currency_symbol() . $product_data->get_price(); ?>
