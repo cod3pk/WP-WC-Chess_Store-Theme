@@ -967,7 +967,7 @@ textarea {
 }
 
 .phone-numbers{
-	direction: rtl !important;
+	direction: ltr !important;
 }
 
 @media screen and (min-width: 993px){

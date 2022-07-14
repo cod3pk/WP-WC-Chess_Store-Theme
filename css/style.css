@@ -1905,7 +1905,7 @@ a {
 }
 
 .phone-numbers{
-  direction: rtl !important;
+  direction: ltr !important;
 }
 
 @media (max-width: 768px) {
