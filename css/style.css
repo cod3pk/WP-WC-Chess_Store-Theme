@@ -1904,6 +1904,10 @@ a {
   padding-left: 1rem;
 }
 
+.phone-numbers{
+  direction: rtl !important;
+}
+
 @media (max-width: 768px) {
   .content-width-card {
     max-width: 100%;
