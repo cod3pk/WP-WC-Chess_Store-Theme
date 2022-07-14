@@ -42,14 +42,14 @@
 			<?php if ( get_theme_mod( 'footer_options_phone_one' ) ) : ?>
                 <a href="tel:<?php echo get_theme_mod( 'footer_options_phone_one' ); ?>"
                    class="text-decoration-none white-links" target="_blank">
-                    <p><?php echo get_theme_mod( 'footer_options_phone_one' ); ?></p>
+                    <p class="phone-numbers"><?php echo get_theme_mod( 'footer_options_phone_one' ); ?></p>
                 </a>
 			<?php endif; ?>
 
 			<?php if ( get_theme_mod( 'footer_options_phone_two' ) ) : ?>
                 <a href="tel:<?php echo get_theme_mod( 'footer_options_phone_two' ); ?>"
                    class="text-decoration-none white-links" target="_blank">
-                    <p><?php echo get_theme_mod( 'footer_options_phone_two' ); ?></p>
+                    <p class="phone-numbers"><?php echo get_theme_mod( 'footer_options_phone_two' ); ?></p>
                 </a>
 			<?php endif; ?>
         </div>
