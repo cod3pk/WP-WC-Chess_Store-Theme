@@ -302,9 +302,9 @@ function get_homepage_categories ()
 function get_total_categories_num ()
 {
 	$terms = get_terms( [
-		'taxonomy' => 'product_cat',
-		'hide_empty' => true,
-		'parent' => 0,
+		'taxonomy'		=> 'product_cat',
+		'hide_empty' 	=> true,
+		'parent'		=> 0,
 	] );
 
 	return count( $terms );
@@ -560,9 +560,9 @@ function custom_product_tabs ( $tabs )
 
 	if ( !empty( $custom_product_excerpt ) )
 		$tabs[ 'custom_product_excerpt_tab' ] = array(
-			'title' => __( 'Custom Product Excerpt', 'woocommerce' ),
-			'priority' => 45,
-			'callback' => 'custom_product_excerpt_product_tab_content'
+			'title' 	=> __( 'Custom Product Excerpt', 'woocommerce' ),
+			'priority'	=> 45,
+			'callback'	=> 'custom_product_excerpt_product_tab_content'
 		);
 
 	return $tabs;
@@ -608,10 +608,10 @@ add_filter( 'woocommerce_get_availability_text', 'chess_get_woocommerce_get_avai
 function get_post_sidebar_categories ()
 {
 	$terms = get_terms( [
-		'taxonomy' => 'product_cat',
-		'hide_empty' => true,
-		'parent' => 0,
-		'number' => 9,
+		'taxonomy'		=> 'product_cat',
+		'hide_empty' 	=> true,
+		'parent' 		=> 0,
+		'number' 		=> 9,
 	] );
 
 	return $terms;
@@ -623,8 +623,8 @@ function get_post_sidebar_categories ()
 function get_sticky_posts ()
 {
 	$args = array(
-		'posts_per_page' => 3,
-		'post__in' => get_option( 'sticky_posts' ),
+		'posts_per_page'	=> 3,
+		'post__in'			=> get_option( 'sticky_posts' ),
 	);
 	$query = new WP_Query( $args );
 
