@@ -35,8 +35,6 @@ if ( empty( $product ) || !$product->is_visible() ) {
 					<?php echo $product->name; ?>
                 </p>
 
-
-                <?php var_dump($product_data->get_price()); ?>
                 <?php if ( $product_data->get_price() ) : ?>
                     <p class="mb-2 item-price">
                         <?php echo get_woocommerce_currency_symbol() . $product_data->get_price(); ?>
@@ -45,7 +43,7 @@ if ( empty( $product ) || !$product->is_visible() ) {
             </div>
         </a>
 
-		<?php $custom_product_excerpt = get_post_meta( $post->ID, '_chess-store_custom_product_excerpt_wysiwyg', true ); ?>
+		<?php $custom_product_excerpt = get_post_meta( $product->id, '_chess-store_custom_product_excerpt_wysiwyg', true ); ?>
 
 		<?php if ( $custom_product_excerpt ) : ?>
             <a href="<?php echo get_permalink( $product->id ) ?>" class="text-decoration-none black-links">
