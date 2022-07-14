@@ -51,14 +51,14 @@
 				<?php if ( get_theme_mod( 'topbar_options_phone_one' ) ) : ?>
                     <a href="tel:<?php echo get_theme_mod( 'topbar_options_phone_one' ); ?>"
                        class="white-links text-decoration-none white-links phone-numbers" target="_blank">
-                        <p class="mb-0"><?php echo get_theme_mod( 'topbar_options_phone_one' ); ?></p>
+                        <p class="mb-0 phone-numbers"><?php echo get_theme_mod( 'topbar_options_phone_one' ); ?></p>
                     </a>
 				<?php endif; ?>
 
 				<?php if ( get_theme_mod( 'topbar_options_phone_two' ) ) : ?>
                     <a href="tel:<?php echo get_theme_mod( 'topbar_options_phone_two' ); ?>"
-                       class="white-links text-decoration-none white-links phone-numbers" target="_blank">
-                        <p class="mb-0"><?php echo get_theme_mod( 'topbar_options_phone_two' ); ?></p>
+                       class="white-links text-decoration-none white-links" target="_blank">
+                        <p class="mb-0 phone-numbers" ><?php echo get_theme_mod( 'topbar_options_phone_two' ); ?></p>
                     </a>
 				<?php endif; ?>
             </div>
