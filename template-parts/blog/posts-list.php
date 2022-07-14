@@ -13,7 +13,7 @@
         while ($blog_posts->have_posts()) :
             $blog_posts->the_post(); ?>
 
-            <a href="<?php echo get_the_permalink($post->ID) ?>">
+            <a href="<?php echo get_the_permalink($post->ID) ?>" class="text-decoration-none">
                 <div class="blog-card d-flex align-items-center mb-25">
                     <div class="main-blog-recent-post d-inline-block">
                         <?php $image = wp_get_attachment_image_src(get_post_thumbnail_id($post->ID), 'single-post-thumbnail'); ?>
@@ -42,7 +42,7 @@
 
     else :
 
-        get_template_part('template-parts/content', 'none');
+        get_template_part( 'template-parts/content', 'none' );
 
     endif;
     wp_reset_postdata();
