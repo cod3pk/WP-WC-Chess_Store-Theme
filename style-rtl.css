@@ -82,7 +82,7 @@ body {
 }
 
 body, a, button {
-  font-family: 'Heebo', sans-serif;
+  font-family: 'Heebo', sans-serif !important;
 }
 
 /**
