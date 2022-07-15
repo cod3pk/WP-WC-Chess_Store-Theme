@@ -958,9 +958,20 @@ textarea {
 
 #header.menu li a {
 	text-align: right;
-	padding-right: 51px;
 }
 
 #header.menu .dropdown-toggle::after {
 	margin-right: 6px;
+}
+
+.sub-menu {
+	right: 50%;
+	left: 0;
+}
+
+@media (max-width: 992px) {
+	#header.menu li a {
+		text-align: right;
+		padding-right: 51px;
+	}
 }
