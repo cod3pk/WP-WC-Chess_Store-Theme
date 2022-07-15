@@ -2002,7 +2002,7 @@ a {
   }
 }
 
-.menu-footer-container #footer li a:active {
+.menu-footer-container #footer li a:visited {
   color: #0b55b1 !important;
 }
 

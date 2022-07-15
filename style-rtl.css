@@ -466,8 +466,7 @@ acronym {
 mark,
 ins {
 	background: #fff9c0;
-	text-decoration: none; */
-}
+	text-decoration: none;} */
 
 /* big {
 	font-size: 125%;
@@ -977,4 +976,22 @@ textarea {
 		text-align: right;
 		padding-right: 51px;
 	}
+
+	.hamburger {
+		margin: 0 !important;
+	}
+}
+
+@media (max-width: 783px) {
+	#header.menu {
+		top: 130px;
+	}
+}
+
+.breadcrumbs-links {
+	color: #0B55B1 !important;
+}
+
+.breadcrumbs-links > a {
+	color: #000 !important;
 }
