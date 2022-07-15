@@ -948,28 +948,19 @@ textarea {
 	direction: ltr !important;
 }
 
-@media screen and (min-width: 993px){
-	.sub-menu {
-		position: absolute;
-		top: 85px;
-		left: 50%;
-		transform: translateX(-50%);
-		right: -178%;
-		min-width: 370px;
-		background: #fff;
-		color: #000;
-		border-radius: 22px;
-		padding: 28px 30px;
-		z-index: 5555;
-		border: 1px solid #EFF0F7;
-		box-shadow: 0px 10px 14px rgb(74 58 255 / 1%), 0px 9px 26px rgb(23 15 73 / 5%);
-	}
-}
-
 .footer-contect-num p {
 	font-family: 'Heebo', sans-serif !important;
 }
 
 .footer-info-text ul li a {
 	font-family: 'Heebo', sans-serif !important;
+}
+
+#header.menu li a {
+	text-align: right;
+	padding-right: 51px;
+}
+
+#header.menu .dropdown-toggle::after {
+	margin-right: 6px;
 }
