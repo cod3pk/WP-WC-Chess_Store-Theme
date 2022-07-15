@@ -19,6 +19,10 @@
 if (!defined('ABSPATH')) {
 	exit; // Exit if accessed directly.
 }
+
+global $product;
+$product_subtitle = get_post_meta( $product->id,'product_subtitle_text' )[ 0 ];
+
 ?>
 
 <!-- Product Title -->
@@ -26,12 +30,11 @@ if (!defined('ABSPATH')) {
 	<?php the_title('<h1 class="product-title entry-title">', '</h1>'); ?>
 </div>
 
-<!-- Marketing Message -->
-<?php global $product; ?>
-<?php if ($product->is_on_sale()) : ?>
+<!-- Product Subtitle -->
+<?php if ( $product_subtitle ) : ?>
 	<div class="product-sub-heading">
 		<h2 class="p-sub-heading">
-			<?php echo __('On Sale', 'chess-store'); ?>
+			<?php echo $product_subtitle; ?>
 		</h2>
 	</div>
 <?php endif; ?>
