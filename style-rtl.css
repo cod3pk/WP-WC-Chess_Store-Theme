@@ -400,7 +400,7 @@ html {
 
 /* Typography
 --------------------------------------------- */
-body,
+/* body,
 button,
 input,
 select,
@@ -466,27 +466,27 @@ acronym {
 mark,
 ins {
 	background: #fff9c0;
-	text-decoration: none;
+	text-decoration: none; */
 }
 
-big {
+/* big {
 	font-size: 125%;
-}
+} */
 
 /* Elements
 --------------------------------------------- */
 body {
 	background: #fff;
 }
-
+/*
 hr {
 	background-color: #ccc;
 	border: 0;
 	height: 1px;
 	margin-bottom: 1.5em;
-}
+} */
 
-ul,
+/* ul,
 ol {
 	margin: 0 3em 1.5em 0;
 }
@@ -511,10 +511,12 @@ dt {
 
 dd {
 	margin: 0 1.5em 1.5em;
-}
+	}
+	*/
+
 
 /* Make sure embeds and iframes fit their containers. */
-embed,
+/* embed,
 iframe,
 object {
 	max-width: 100%;
@@ -532,10 +534,10 @@ figure {
 table {
 	margin: 0 0 1.5em;
 	width: 100%;
-}
+} */
 /* Forms
 --------------------------------------------- */
-button,
+/* button,
 input[type="button"],
 input[type="reset"],
 input[type="submit"] {
@@ -613,7 +615,7 @@ select {
 
 textarea {
 	width: 100%;
-}
+} */
 
 /*--------------------------------------------------------------
 # Layouts
@@ -940,8 +942,8 @@ textarea {
 
 .desktop-nav > div{
 	padding: 0 !important;
-    margin-right: 30px !important;
-    margin-left: 30px !important;
+	margin-right: 30px !important;
+	margin-left: 30px !important;
 }
 
 .phone-numbers{
