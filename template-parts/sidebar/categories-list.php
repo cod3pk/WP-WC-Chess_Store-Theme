@@ -14,7 +14,7 @@
         $image = wp_get_attachment_url($thumbnail_id);
     ?>
         <div class="col-4 position-relative">
-            <a href="<?php echo get_term_link($cat->term_id, 'product_cat') ?>">
+            <a href="<?php echo get_term_link($cat->term_id, 'product_cat') ?>" class="text-decoration-none">
                 <img src="<?php echo $image; ?>" alt="<?php echo $cat->name; ?>" class="sidebar-cat-img">
                 <p class="mb-0 blog-description">
                     <?php echo $cat->name ?>

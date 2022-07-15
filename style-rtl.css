@@ -965,3 +965,25 @@ textarea {
     margin-right: 30px !important;
     margin-left: 30px !important;
 }
+
+.phone-numbers{
+	direction: ltr !important;
+}
+
+@media screen and (min-width: 993px){
+	.sub-menu {
+		position: absolute;
+		top: 85px;
+		left: 50%;
+		transform: translateX(-50%);
+		right: -178%;
+		min-width: 370px;
+		background: #fff;
+		color: #000;
+		border-radius: 22px;
+		padding: 28px 30px;
+		z-index: 5555;
+		border: 1px solid #EFF0F7;
+		box-shadow: 0px 10px 14px rgb(74 58 255 / 1%), 0px 9px 26px rgb(23 15 73 / 5%);
+	}
+}

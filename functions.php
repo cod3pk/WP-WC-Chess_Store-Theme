@@ -96,10 +96,10 @@ function chess_store_setup ()
 	add_theme_support(
 		'custom-logo',
 		array(
-			'height' => 250,
-			'width' => 250,
-			'flex-width' => true,
-			'flex-height' => true,
+			'height' 		=> 250,
+			'width'			=> 250,
+			'flex-width'	=> true,
+			'flex-height'	=> true,
 		)
 	);
 
@@ -130,12 +130,12 @@ add_action( 'after_setup_theme', 'chess_store_content_width', 0 );
 function chess_store_widgets_init ()
 {
 	register_sidebar( array(
-		'name' => __( 'Blog Sidebar', 'chess-store' ),
-		'id' => 'sidebar-1',
-		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
-		'after_widget' => '</aside>',
-		'before_title' => '<h3 class="widget-title">',
-		'after_title' => '</h3>',
+		'name'			=> __( 'Blog Sidebar', 'chess-store' ),
+		'id'			=> 'sidebar-1',
+		'before_widget'	=> '<aside id="%1$s" class="widget %2$s">',
+		'after_widget'	=> '</aside>',
+		'before_title'	=> '<h3 class="widget-title">',
+		'after_title'	=> '</h3>',
 	) );
 }
 
@@ -146,10 +146,10 @@ add_action( 'widgets_init', 'chess_store_widgets_init' );
  */
 function chess_store_scripts ()
 {
-	wp_enqueue_style( 'chess-store-style', get_stylesheet_uri(), array() );
-	wp_enqueue_style( 'chess-store-main-style-extend', get_template_directory_uri() . '/css/style.css' );
-	wp_enqueue_style( 'chess-store-main-style', get_template_directory_uri() . '/css/main.css' );
-	wp_style_add_data( 'chess-store-rtl-style', 'rtl', 'style-rtl.css' );
+	wp_enqueue_style( 'chess-store-style', get_stylesheet_uri(), array(), '1.1' );
+	wp_enqueue_style( 'chess-store-main-style-extend', get_template_directory_uri() . '/css/style.css', '1.0' );
+	wp_style_add_data( 'chess-store-main-style-extend', 'rtl', get_template_directory_uri() . '/style-rtl.css' );
+	wp_enqueue_style( 'chess-store-main-style', get_template_directory_uri() . '/css/main.css', '1.0.1' );
 
 
 	wp_enqueue_script( 'chess-store-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '', true );
@@ -256,22 +256,22 @@ function get_products_in_category ()
 	$id = get_queried_object_id();
 
 	$args = array(
-		'post_type' => 'product',
-		'post_status' => 'publish',
-		'ignore_sticky_posts' => 1,
-		'posts_per_page' => '8',
+		'post_type'				=> 'product',
+		'post_status'			=> 'publish',
+		'ignore_sticky_posts'	=> 1,
+		'posts_per_page'		=> '8',
 		'tax_query' => array(
 			array(
-				'taxonomy' => 'product_cat',
-				'field' => 'term_id',
-				'terms' => $id,
-				'operator' => 'IN'
+				'taxonomy'	=> 'product_cat',
+				'field' 	=> 'term_id',
+				'terms' 	=> $id,
+				'operator' 	=> 'IN'
 			),
 			array(
-				'taxonomy' => 'product_visibility',
-				'field' => 'slug',
-				'terms' => 'exclude-from-catalog',
-				'operator' => 'NOT IN'
+				'taxonomy'	=> 'product_visibility',
+				'field'		=> 'slug',
+				'terms'		=> 'exclude-from-catalog',
+				'operator'	=> 'NOT IN'
 			)
 		),
 	);
@@ -287,10 +287,10 @@ function get_products_in_category ()
 function get_homepage_categories ()
 {
 	$terms = get_terms( [
-		'taxonomy' => 'product_cat',
-		'hide_empty' => true,
-		'parent' => 0,
-		'number' => 8,
+		'taxonomy'		=> 'product_cat',
+		'hide_empty'	=> true,
+		'parent'		=> 0,
+		'number'		=> 8,
 	] );
 
 	return $terms;
@@ -302,9 +302,9 @@ function get_homepage_categories ()
 function get_total_categories_num ()
 {
 	$terms = get_terms( [
-		'taxonomy' => 'product_cat',
-		'hide_empty' => true,
-		'parent' => 0,
+		'taxonomy'		=> 'product_cat',
+		'hide_empty' 	=> true,
+		'parent'		=> 0,
 	] );
 
 	return count( $terms );
@@ -320,11 +320,11 @@ function load_more_categories ()
 	$offset = ( isset( $_POST[ 'offset' ] ) ) ? $_POST[ 'offset' ] : 8;
 
 	$categories = get_terms( [
-		'taxonomy' => 'product_cat',
-		'hide_empty' => true,
-		'parent' => 0,
-		'number' => 8,
-		'offset' => $offset
+		'taxonomy' 		=> 'product_cat',
+		'hide_empty' 	=> true,
+		'parent' 		=> 0,
+		'number' 		=> 8,
+		'offset'		=> $offset
 	] );
 
 	$more_cat = '';
@@ -560,9 +560,9 @@ function custom_product_tabs ( $tabs )
 
 	if ( !empty( $custom_product_excerpt ) )
 		$tabs[ 'custom_product_excerpt_tab' ] = array(
-			'title' => __( 'Custom Product Excerpt', 'woocommerce' ),
-			'priority' => 45,
-			'callback' => 'custom_product_excerpt_product_tab_content'
+			'title' 	=> __( 'Custom Product Excerpt', 'woocommerce' ),
+			'priority'	=> 45,
+			'callback'	=> 'custom_product_excerpt_product_tab_content'
 		);
 
 	return $tabs;
@@ -608,10 +608,10 @@ add_filter( 'woocommerce_get_availability_text', 'chess_get_woocommerce_get_avai
 function get_post_sidebar_categories ()
 {
 	$terms = get_terms( [
-		'taxonomy' => 'product_cat',
-		'hide_empty' => true,
-		'parent' => 0,
-		'number' => 9,
+		'taxonomy'		=> 'product_cat',
+		'hide_empty' 	=> true,
+		'parent' 		=> 0,
+		'number' 		=> 9,
 	] );
 
 	return $terms;
@@ -623,8 +623,8 @@ function get_post_sidebar_categories ()
 function get_sticky_posts ()
 {
 	$args = array(
-		'posts_per_page' => 3,
-		'post__in' => get_option( 'sticky_posts' ),
+		'posts_per_page'	=> 3,
+		'post__in'			=> get_option( 'sticky_posts' ),
 	);
 	$query = new WP_Query( $args );
 

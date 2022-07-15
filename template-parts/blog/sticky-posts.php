@@ -7,7 +7,7 @@
             foreach ($sticky_posts as $post) :
             ?>
                 <div class="col-12 col-sm-12 col-md-12 col-lg-4 col-xl-4 col-xxl-4 col-xxxl-4">
-                    <a href="<?php echo get_the_permalink($post->ID) ?>">
+                    <a href="<?php echo get_the_permalink($post->ID) ?>" class="text-decoration-none">
                         <div class="blog-card">
                             <?php $image = wp_get_attachment_image_src(get_post_thumbnail_id($post->ID), 'single-post-thumbnail'); ?>
                             <img src="<?php echo $image[0]; ?>" alt="<?php echo get_the_title($post->ID) ?>" class="w-100 mb-2 blog-post-image">
