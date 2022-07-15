@@ -220,8 +220,7 @@ a:visited {
 }
 
 /* Footer Nav */
-.menu-footer-container > ul > li > a:hover,
-.menu-footer-container > ul > li > a:active {
+.menu-footer-container > ul > li > a:hover {
   color: #0B55B1 !important;
 }
 
@@ -1997,4 +1996,13 @@ a {
     padding: 30px 15px;
     font-size: 15px;
   }
+}
+
+.menu-footer-container #footer li a:active {
+  color: #0b55b1 !important;
+}
+
+.item-desc-2 {
+  max-height: 69px;
+  min-height: 69px;
 }
