@@ -439,7 +439,7 @@ a:visited {
 }
 
 .nav-top-num {
-  font-family: "Inter";
+  font-family: 'Inter', sans-serif;
   font-style: normal;
   font-weight: 400;
   font-size: 20px;
@@ -550,7 +550,7 @@ a:visited {
 }
 
 .footer-contect-num p {
-  font-family: "Inter";
+  font-family: 'Inter', sans-serif;
   font-style: normal;
   font-weight: 400;
   font-size: 16px;
@@ -565,7 +565,7 @@ a:visited {
 }
 
 .footer-info-text p {
-  font-family: "Inter";
+  font-family: 'Inter', sans-serif;
   font-style: normal;
   font-weight: 400;
   font-size: 20px;
@@ -591,7 +591,7 @@ a:visited {
 }
 
 .footer-bottom-link a {
-  font-family: "Inter";
+font-family: 'Inter', sans-serif;
   font-style: normal;
   font-weight: 400;
   font-size: 20px;
@@ -603,7 +603,7 @@ a:visited {
 
 .footer-info-text ul li a {
   text-decoration: none;
-  font-family: "Inter";
+font-family: 'Inter', sans-serif;
   font-style: normal;
   font-weight: 400;
   font-size: 16px;
@@ -862,7 +862,7 @@ a:visited {
   }
 
   .footer-nav-links ul li a {
-    font-family: "Inter";
+  font-family: 'Inter', sans-serif;
     font-style: normal;
     font-weight: 400;
     font-size: 20px;
