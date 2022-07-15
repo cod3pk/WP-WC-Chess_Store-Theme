@@ -2010,3 +2010,7 @@ a {
   max-height: 69px;
   min-height: 69px;
 }
+
+.breadcrumbs-links a{
+	text-decoration: none !important;
+}
