@@ -965,8 +965,9 @@ textarea {
 }
 
 .sub-menu {
-	right: -125%;
+	right: -50%;
 	left: 0;
+	transform: translateX(0%);
 }
 
 @media (max-width: 992px) {
