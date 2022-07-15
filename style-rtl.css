@@ -965,3 +965,11 @@ textarea {
 		box-shadow: 0px 10px 14px rgb(74 58 255 / 1%), 0px 9px 26px rgb(23 15 73 / 5%);
 	}
 }
+
+.footer-contect-num p {
+	font-family: 'Heebo', sans-serif !important;
+}
+
+.footer-info-text ul li a {
+	font-family: 'Heebo', sans-serif !important;
+}
