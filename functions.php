@@ -132,10 +132,22 @@ function chess_store_widgets_init ()
 	register_sidebar( array(
 		'name'			=> __( 'Blog Sidebar', 'chess-store' ),
 		'id'			=> 'sidebar-1',
+		'description'	=> __( 'This widget area holds the elements for all posts as well as the single blog post.', 'chess-store' ),
 		'before_widget'	=> '<aside id="%1$s" class="widget %2$s">',
 		'after_widget'	=> '</aside>',
 		'before_title'	=> '<h3 class="widget-title">',
 		'after_title'	=> '</h3>',
+	) );
+
+	// Register Sidebar for Topbar
+	register_sidebar( array(
+		'name'			=> __( 'Top Right bar', 'chess-store' ),
+		'id'			=> 'sidebar-2',
+		'description'	=> __( 'This widget holds the elements for the topbar right area.', 'chess-store' )
+		// 'before_widget'	=> '<aside id="%1$s" class="widget %2$s">',
+		// 'after_widget'	=> '</aside>',
+		// 'before_title'	=> '<h3 class="widget-title">',
+		// 'after_title'	=> '</h3>',
 	) );
 }
 

@@ -64,6 +64,7 @@
             </div>
         </div>
         <div class="nav-flag">
+            <?php dynamic_sidebar( 'sidebar-2' ); ?>
             <!-- <img src="./assets/imgs/united-kingdom.svg"> -->
         </div>
     </div>
