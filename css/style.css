@@ -2014,3 +2014,11 @@ a {
 .breadcrumbs-links a{
 	text-decoration: none !important;
 }
+
+.breadcrumbs-links {
+	color: #0B55B1 !important;
+}
+
+.breadcrumbs-links > a {
+	color: #000 !important;
+}
