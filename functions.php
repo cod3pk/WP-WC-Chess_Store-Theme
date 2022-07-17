@@ -143,11 +143,9 @@ function chess_store_widgets_init ()
 	register_sidebar( array(
 		'name'			=> __( 'Top Right bar', 'chess-store' ),
 		'id'			=> 'sidebar-2',
-		'description'	=> __( 'This widget holds the elements for the topbar right area.', 'chess-store' )
-		// 'before_widget'	=> '<aside id="%1$s" class="widget %2$s">',
-		// 'after_widget'	=> '</aside>',
-		// 'before_title'	=> '<h3 class="widget-title">',
-		// 'after_title'	=> '</h3>',
+		'description'	=> __( 'This widget holds the elements for the topbar right area.', 'chess-store' ),
+		'before_widget'	=> '<aside id="%1$s" class="nav-flag %2$s">',
+		'after_widget'	=> '</aside>'
 	) );
 }
 
@@ -661,4 +659,33 @@ add_shortcode( 'chess_sidebar_categories', 'get_sidebar_categories' );
 function get_sidebar_categories ()
 {
 	get_template_part( 'template-parts/sidebar/categories', 'list' );
+}
+
+/**
+ * Language Switcher for Topbar
+ */
+function chess_language_switcher() {
+
+	$current_language = get_bloginfo( "language" );
+
+	if ( $current_language == 'en-US' ) {
+		?>
+			<a href="<?php echo site_url(  ) . '/he'  ?>">
+				<img src="<?php echo get_template_directory_uri(  ). "/images/israel-flag.png" ?>">
+			</a>
+		<?php
+	} elseif ( $current_language == 'he-IL' ) {
+		?>
+			<a href="<?php echo site_url(  ); ?>">
+				<img src="<?php echo get_template_directory_uri(  ). "/images/english-flag.png" ?>">
+			</a>
+		<?php
+	} else {
+		?>
+			<a href="<?php echo site_url(  ) . '/he' ?>">
+				<img src="<?php echo get_template_directory_uri(  ). "/images/israel-flag.png" ?>">
+			</a>
+		<?php
+	}
+
 }
