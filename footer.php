@@ -60,7 +60,13 @@
 			wp_nav_menu( array(
 				'theme_location'    => 'footer',
 				'menu_id'           => 'footer',
-                'menu_class'        => 'd-flex align-items-center'
+                'menu_class'        => 'd-flex align-items-center',
+                'depth' => 1, // 1 = no dropdowns, 2 = with dropdowns.
+                'container' => 'div',
+                // 'menu_class' => 'menu',
+                'items_wrap' => '<ul id="%1$s" class="%2$s">%3$s</ul>',
+                'fallback_cb' => 'WP_Bootstrap_Navwalker::fallback',
+                'walker' => new WP_Bootstrap_Navwalker(),
 			) );
 			?>
         </div>

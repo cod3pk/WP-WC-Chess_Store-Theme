@@ -2002,10 +2002,6 @@ a {
   }
 }
 
-.menu-footer-container #footer li a:visited {
-  color: #0b55b1 !important;
-}
-
 .item-desc-2 {
   max-height: 69px;
   min-height: 69px;
@@ -2021,4 +2017,13 @@ a {
 
 .breadcrumbs-links > a {
 	color: #000 !important;
+}
+
+#footer li {
+  list-style: none;
+  background: inherit !important;
+}
+
+#footer li.active a {
+  color: #0B55B1;
 }
