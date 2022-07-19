@@ -81,4 +81,8 @@ body, a, button {
 
 .wp-block-latest-posts__post-excerpt {
 	margin-top: 0px !important;
-  }
+}
+
+#header li a:active{
+	color: #0d6efd !important;
+}
