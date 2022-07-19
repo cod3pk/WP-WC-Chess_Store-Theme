@@ -477,7 +477,7 @@ add_action( 'create_product_cat', 'custom_save_category_fields', 10, 2 );
 function woocommerce_template_single_excerpt ()
 {
 	global $post;
-	$custom_product_excerpt = get_post_meta( $post->ID, '_chess-store_custom_product_excerpt_wysiwyg', true ); ?>
+	$custom_product_excerpt = get_post_meta( $post->ID, '_chess_store_custom_product_excerpt_wysiwyg', true ); ?>
 
     <div class="product-right-para mb-4">
 		<?php echo $custom_product_excerpt; // WPCS: XSS ok.
@@ -529,7 +529,7 @@ add_action( 'save_post', 'save_custom_content_meta_box', 10, 1 );
 if ( !function_exists( 'save_custom_content_meta_box' ) ) {
 	function save_custom_content_meta_box ( $post_id )
 	{
-		$prefix = '_chess-store_';
+		$prefix = '_chess_store_';
 
 		// Check if our nonce is set.
 		if ( !isset( $_POST[ 'custom_product_field_nonce' ] ) ) {
@@ -566,7 +566,7 @@ add_filter( 'woocommerce_product_tabs', 'custom_product_tabs' );
 function custom_product_tabs ( $tabs )
 {
 	global $post;
-	$custom_product_excerpt = get_post_meta( $post->ID, '_chess-store_custom_product_excerpt_wysiwyg', true );
+	$custom_product_excerpt = get_post_meta( $post->ID, '_chess_store_custom_product_excerpt_wysiwyg', true );
 
 	if ( !empty( $custom_product_excerpt ) )
 		$tabs[ 'custom_product_excerpt_tab' ] = array(
@@ -586,13 +586,15 @@ function custom_product_tabs ( $tabs )
 function custom_product_excerpt_product_tab_content ()
 {
 	global $post;
-	$custom_product_excerpt = get_post_meta( $post->ID, '_chess-store_custom_product_excerpt_wysiwyg', true );
+	$custom_product_excerpt = get_post_meta( $post->ID, '_chess_store_custom_product_excerpt_wysiwyg', true );
 
 	if ( !empty( $custom_product_excerpt ) ) {
 		echo '<h2>' . __( 'Custom Product Excerpt', 'woocommerce' ) . '</h2>';
 		echo apply_filters( 'the_content', $custom_product_excerpt );
 	}
 }
+
+
 
 /**
  * Change Stock Message
