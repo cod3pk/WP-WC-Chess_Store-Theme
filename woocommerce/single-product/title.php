@@ -21,7 +21,7 @@ if (!defined('ABSPATH')) {
 }
 
 global $product;
-$product_subtitle = get_post_meta( $product->id,'product_subtitle_text' )[ 0 ];
+$product_subtitle = get_post_meta( $product->id, '_chess_store_product_subtitle' )[ 0 ];
 
 ?>
 

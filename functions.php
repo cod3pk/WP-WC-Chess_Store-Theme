@@ -594,7 +594,117 @@ function custom_product_excerpt_product_tab_content ()
 	}
 }
 
+// -----------------------------------------------------------------------//
 
+
+
+/**
+ * Adding a custom Meta container to admin products pages
+ */
+add_action( 'add_meta_boxes', 'register_product_subtitle' );
+
+if ( !function_exists( 'register_product_subtitle' ) ) {
+	function register_product_subtitle ()
+	{
+		add_meta_box(
+			'custom_product_subttitle',
+			__( 'Product Subtitle', 'cmb' ),
+			'add_product_subtitle_meta_box',
+			'product',
+			'normal',
+			'default'
+		);
+	}
+}
+
+/**
+ * Custom metabox content in admin product pages
+ */
+if ( !function_exists( 'add_product_subtitle_meta_box' ) ) {
+	function add_product_subtitle_meta_box ( $post )
+	{
+		$prefix = '_chess_store_'; // global $prefix;
+		$custom_product_excerpt = get_post_meta( $post->ID, $prefix . 'product_subtitle', true ) ? get_post_meta( $post->ID, $prefix . 'product_subtitle', true ) : '';
+		$args[ 'textarea_rows' ] = 2;
+
+		wp_editor( $custom_product_excerpt, 'product_subtitle', $args );
+		echo '<input type="hidden" name="product_subtitle_nonce" value="' . wp_create_nonce() . '">';
+	}
+}
+
+/**
+ * Save the data of the Meta field
+ */
+add_action( 'save_post', 'save_product_subtitle', 10, 1 );
+
+if ( !function_exists( 'save_product_subtitle' ) ) {
+	function save_product_subtitle ( $post_id )
+	{
+		$prefix = '_chess_store_';
+
+		// Check if our nonce is set.
+		if ( !isset( $_POST[ 'product_subtitle_nonce' ] ) ) {
+			return $post_id;
+		}
+		$nonce = $_REQUEST[ 'product_subtitle_nonce' ];
+
+		// Verify that the nonce is valid.
+		if ( !wp_verify_nonce( $nonce ) ) {
+			return $post_id;
+		}
+		// If this is an autosave, our form has not been submitted, so we don't want to do anything.
+		if ( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE ) {
+			return $post_id;
+		}
+		// Check the user's permissions.
+		if ( 'product' == $_POST[ 'post_type' ] ) {
+			if ( !current_user_can( 'edit_product', $post_id ) )
+				return $post_id;
+		} else {
+			if ( !current_user_can( 'edit_post', $post_id ) )
+				return $post_id;
+		}
+		// Sanitize user input and update the meta field in the database.
+		update_post_meta( $post_id, $prefix . 'product_subtitle', wp_kses_post( $_POST[ 'product_subtitle' ] ) );
+	}
+}
+
+/**
+ * Create custom tabs in product single pages
+ */
+add_filter( 'woocommerce_product_tabs', 'product_subtitle_tab' );
+
+function product_subtitle_tab ( $tabs )
+{
+	global $post;
+	$product_subtitle = get_post_meta( $post->ID, '_chess_store_product_subtitle', true );
+
+	if ( !empty( $product_subtitle ) )
+		$tabs[ 'product_subtitle_tab' ] = array(
+			'title' 	=> __( 'Product Subtitle', 'woocommerce' ),
+			'priority'	=> 45,
+			'callback'	=> 'product_subtitle_tab_content'
+		);
+
+	return $tabs;
+}
+
+/**
+ * Add content to Product Subutle Tabs
+ * in product single pages
+ *
+ * @return void
+ */
+function product_subtitle_tab_content ()
+{
+	global $post;
+	$product_subtitle = get_post_meta( $post->ID, '_chess_store_product_subtitle', true );
+
+	if ( !empty( $product_subtitle ) ) {
+		echo '<h2>' . __( 'Product Subtitle', 'woocommerce' ) . '</h2>';
+		echo apply_filters( 'the_content', $product_subtitle );
+	}
+}
 
 /**
  * Change Stock Message
