@@ -2037,3 +2037,9 @@ a {
   -webkit-transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out;
   transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out;
 }
+
+.widget-area h2{
+  border-bottom: 1px solid #c8c9ca;
+  padding-bottom: 10px;
+  margin-bottom: 22px !important;
+}

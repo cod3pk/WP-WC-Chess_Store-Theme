@@ -1,6 +1,5 @@
 <!-- Categories -->
 <h2 class="m-0 recent-blog-title fs-5 pt-4"><?php echo __('Categories', 'chess-store') ?></h2>
-<hr class="border-line border-line-2">
 
 <div class="row">
     <?php
