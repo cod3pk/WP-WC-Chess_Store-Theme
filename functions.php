@@ -625,7 +625,12 @@ if ( !function_exists( 'add_product_subtitle_meta_box' ) ) {
 	{
 		$prefix = '_chess_store_'; // global $prefix;
 		$custom_product_excerpt = get_post_meta( $post->ID, $prefix . 'product_subtitle', true ) ? get_post_meta( $post->ID, $prefix . 'product_subtitle', true ) : '';
-		$args[ 'textarea_rows' ] = 2;
+
+		$args = array(
+				'media_buttons'	=> false,
+				'textarea_rows' => get_option( 'default_post_edit_rows', 1 ),
+				'quicktags'		=> false,
+			);
 
 		wp_editor( $custom_product_excerpt, 'product_subtitle', $args );
 		echo '<input type="hidden" name="product_subtitle_nonce" value="' . wp_create_nonce() . '">';
@@ -690,7 +695,7 @@ function product_subtitle_tab ( $tabs )
 }
 
 /**
- * Add content to Product Subutle Tabs
+ * Add content to Product Subtitle Tabs
  * in product single pages
  *
  * @return void
