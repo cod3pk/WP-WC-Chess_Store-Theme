@@ -71,3 +71,9 @@ body, a, button {
 .main-blog-recent-post{
 	margin-left: 20px;
 }
+
+.wp-block-latest-posts__featured-image.alignleft {
+    margin-left: 1em;
+    float: right;
+    height: 100%;
+}
