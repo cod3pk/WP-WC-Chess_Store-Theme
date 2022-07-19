@@ -74,6 +74,11 @@ body, a, button {
 
 .wp-block-latest-posts__featured-image.alignleft {
     margin-left: 1em;
+	margin-right: 0 !important;
     float: right;
     height: 100%;
 }
+
+.wp-block-latest-posts__post-excerpt {
+	margin-top: 0px !important;
+  }
