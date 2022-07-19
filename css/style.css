@@ -8,6 +8,10 @@ body, a, button {
   font-family: 'Heebo', sans-serif !important;
 }
 
+a{
+  text-decoration: none !important;
+}
+
 .qty{
   background: #EFEFEF;
   padding: 13.5px 3px !important;
