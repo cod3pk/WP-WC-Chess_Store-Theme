@@ -83,10 +83,6 @@ body, a, button {
 	margin-top: 0px !important;
 }
 
-/* #header a:active{
-	color: #0d6efd !important;
-} */
-
-/* #header .sub-menu li a:active{
-	color: #0d6efd !important;
-} */
+#header.menu li.active > a:active{
+	color: #0B55B1 !important;
+}
