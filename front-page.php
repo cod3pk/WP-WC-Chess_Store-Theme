@@ -8,7 +8,7 @@
                 <img class="header-bg-img-top" src="<?php echo wp_get_attachment_image_src( 98, 'full' )[ 0 ] ?>">
             </div>
             <div class="header-text">
-                <p class="header-title-text"><?php echo __( 'Lorem ipsum dolor sit amet', 'chess-store' ); ?></p>
+                <p class="header-title-text"><?php the_title(  ); ?></p>
             </div>
             <div class="header-img-bottom">
                 <img class="header-bg-img-bm" src="<?php echo wp_get_attachment_image_src( 101, 'full' )[ 0 ] ?>">
