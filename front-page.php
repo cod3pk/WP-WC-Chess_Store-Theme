@@ -2,7 +2,7 @@
 
     <!-- Hero Section -->
     <section class="header container-fluid mb-5"
-             style="background: url(<?php echo wp_get_attachment_image_src( 79, 'full' )[ 0 ] ?>) no-repeat;">
+             style="background: url(<?php echo wp_get_attachment_image_src( 79, 'full' )[ 0 ] ?>) no-repeat center;">
         <div class="header-content d-flex flex-column align-items-center">
             <div class="header-top-img">
                 <img class="header-bg-img-top" src="<?php echo wp_get_attachment_image_src( 98, 'full' )[ 0 ] ?>">

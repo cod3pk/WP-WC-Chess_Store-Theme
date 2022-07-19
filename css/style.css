@@ -2027,3 +2027,12 @@ a {
 #footer li.active a {
   color: #0B55B1;
 }
+
+#footer .nav-link {
+  display: block;
+  padding: 0rem !important;
+  /* color: #0d6efd; */
+  text-decoration: none;
+  -webkit-transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out;
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out;
+}
