@@ -28,7 +28,6 @@ get_header();
 		?>
 
     </main><!-- #main -->
-	<aside>Just testing</aside>
 
 <?php
 get_footer();
