@@ -40,7 +40,7 @@
 
 		<!-- Sidebar -->
 		<div class="col-12 col-sm-12 col-md-12 col-xl-4 col-xxl-4 col-xxxl-4 mt-4">
-			<?php get_sidebar(  ); ?>
+			<?php get_sidebar( 'page' ); ?>
 		</div>
 	</div>
 
