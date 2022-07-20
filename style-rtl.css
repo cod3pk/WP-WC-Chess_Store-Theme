@@ -82,7 +82,3 @@ body, a, button {
 .wp-block-latest-posts__post-excerpt {
 	margin-top: 0px !important;
 }
-
-#header.menu li.active > a:active{
-	color: #0B55B1 !important;
-}

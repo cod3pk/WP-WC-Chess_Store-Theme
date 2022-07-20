@@ -596,8 +596,6 @@ function custom_product_excerpt_product_tab_content ()
 
 // -----------------------------------------------------------------------//
 
-
-
 /**
  * Adding a custom Meta container to admin products pages
  */
@@ -623,16 +621,19 @@ if ( !function_exists( 'register_product_subtitle' ) ) {
 if ( !function_exists( 'add_product_subtitle_meta_box' ) ) {
 	function add_product_subtitle_meta_box ( $post )
 	{
-		$prefix = '_chess_store_'; // global $prefix;
+		$prefix = '_chess_store_';
 		$custom_product_excerpt = get_post_meta( $post->ID, $prefix . 'product_subtitle', true ) ? get_post_meta( $post->ID, $prefix . 'product_subtitle', true ) : '';
+		?>
 
-		$args = array(
-				'media_buttons'	=> false,
-				'textarea_rows' => get_option( 'default_post_edit_rows', 1 ),
-				'quicktags'		=> false,
-			);
+		<div class="row">
+			<div class="fields">
+				<textarea rows="2" style="width: 100%" name="product_subtitle">
+					<?php echo $custom_product_excerpt; ?>
+				</textarea>
+			</div>
+		</div>
 
-		wp_editor( $custom_product_excerpt, 'product_subtitle', $args );
+		<?php
 		echo '<input type="hidden" name="product_subtitle_nonce" value="' . wp_create_nonce() . '">';
 	}
 }
