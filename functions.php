@@ -638,9 +638,7 @@ if ( !function_exists( 'add_product_subtitle_meta_box' ) ) {
 
 		<div class="row">
 			<div class="fields">
-				<textarea rows="2" style="width: 100%" name="product_subtitle">
-					<?php echo $custom_product_excerpt; ?>
-				</textarea>
+				<input type="text" style="width: 100%" name="product_subtitle" value="<?php echo $custom_product_excerpt; ?>">
 			</div>
 		</div>
 
