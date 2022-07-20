@@ -49,46 +49,7 @@
 
 				<!-- Sidebar -->
 				<div class="col-12 col-sm-12 col-md-12 col-xl-4 col-xxl-4 col-xxxl-4 mt-4">
-
-					<!-- Subscription Form -->
-					<div class="subscription p-3">
-						<img src="<?php echo get_template_directory_uri() . '/images/email-message.jpeg' ?>" alt="email" class="mb-4" width="50px">
-						<p>
-							<?php echo __('Subscribe to our Newsletter', 'chess-store'); ?>
-						</p>
-						<form action="#" class="pb-3">
-							<input class="bg-white p-2 w-100 fs-5 mb-3 subscription-input" type="email" name="email" id="email" placeholder="<?php echo __('Enter your Email', 'chess-store'); ?>">
-							<button class="p-2 px-5 subscription-btn">
-								<?php echo __('Subscribe', 'chess-store') ?>
-							</button>
-						</form>
-					</div>
-
-					<!-- Categories -->
-					<h2 class="m-0 recent-blog-title fs-5 pt-4"><?php echo __('Categories', 'chess-store') ?></h2>
-					<hr class="border-line border-line-2">
-
-					<div class="row">
-						<?php
-						$cats = get_post_sidebar_categories();
-
-						foreach ($cats as $cat) :
-							// get the thumbnail id using the queried category term_id
-							$thumbnail_id = get_term_meta($cat->term_id, 'thumbnail_id', true);
-
-							// get the image URL
-							$image = wp_get_attachment_url($thumbnail_id);
-						?>
-							<div class="col-4 position-relative">
-								<a href="<?php echo get_term_link($cat->term_id, 'product_cat') ?>" class="text-decoration-none">
-									<img src="<?php echo $image; ?>" alt="<?php echo $cat->name; ?>" class="sidebar-cat-img">
-									<p class="mb-0 blog-description">
-										<?php echo $cat->name ?>
-									</p>
-								</a>
-							</div>
-						<?php endforeach; ?>
-					</div>
+					<?php get_sidebar(  ); ?>
 				</div>
 			</div>
 	</section>

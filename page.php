@@ -16,7 +16,7 @@
 get_header();
 ?>
 
-    <main id="primary" class="site-main header container mt-5">
+    <main id="primary" class="site-main header about-container mt-5">
 
 		<?php
 		while ( have_posts() ) :
@@ -28,6 +28,7 @@ get_header();
 		?>
 
     </main><!-- #main -->
+	<aside>Just testing</aside>
 
 <?php
 get_footer();

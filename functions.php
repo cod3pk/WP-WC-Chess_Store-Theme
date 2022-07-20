@@ -147,6 +147,17 @@ function chess_store_widgets_init ()
 		'before_widget'	=> '<aside id="%1$s" class="nav-flag %2$s">',
 		'after_widget'	=> '</aside>'
 	) );
+
+	// Register Sidebar for Pages
+	register_sidebar( array(
+		'name'			=> __( 'Page Sidebar', 'chess-store' ),
+		'id'			=> 'sidebar-3',
+		'description'	=> __( 'This sidebar holds the elements for the single page sidebar.', 'chess-store' ),
+		'before_widget'	=> '<aside id="%1$s" class="widget %2$s">',
+		'after_widget'	=> '</aside>',
+		'before_title'	=> '<h3 class="widget-title">',
+		'after_title'	=> '</h3>',
+	) );
 }
 
 add_action( 'widgets_init', 'chess_store_widgets_init' );
