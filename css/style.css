@@ -1118,6 +1118,10 @@ font-family: 'Inter', sans-serif;
   color: #fff;
 }
 
+.chess-price h1{
+  color: black !important;
+}
+
 .chess-item-title {
   font-size: 36px;
   line-height: 52px;

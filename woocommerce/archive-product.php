@@ -134,7 +134,7 @@ $cat_header_subtitle = get_term_meta( $current_cat_id, 'header_subtitle', true )
             <div class="row">
                 <div class="col-12 pb-3 text-center product-title mbl-padding">
                     <h1 class="h1 chess-item-title">
-						<?php echo woocommerce_page_title() . " " . __( 'Products', 'chess-store' ); ?>
+						<?php echo woocommerce_page_title() . " " . __( 'Products', 'woocommerce' ); ?>
                     </h1>
                 </div>
             </div>
