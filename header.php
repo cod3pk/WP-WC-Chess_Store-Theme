@@ -64,7 +64,7 @@
             </div>
         </div>
         <div class="nav-flag">
-            <?php  ?>
+            <?php get_sidebar( 'topbar' ); ?>
         </div>
     </div>
     <!-- End Topbar -->

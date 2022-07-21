@@ -457,9 +457,8 @@ a:visited {
   height: 20px;
 }
 
-.nav-flag {
-  width: 23px;
-  height: 23px;
+.wpml-ls-legacy-list-horizontal{
+  padding: 0px !important;
 }
 
 .nav-flag img {
