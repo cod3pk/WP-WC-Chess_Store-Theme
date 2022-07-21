@@ -787,32 +787,3 @@ function get_sidebar_categories ()
 {
 	get_template_part( 'template-parts/sidebar/categories', 'list' );
 }
-
-/**
- * Language Switcher for Topbar
- */
-function chess_language_switcher() {
-
-	$current_language = get_bloginfo( "language" );
-
-	if ( $current_language == 'en-US' ) {
-		?>
-			<a href="<?php echo site_url(  ) . '/he'  ?>">
-				<img src="<?php echo get_template_directory_uri(  ). "/images/israel-flag.png" ?>">
-			</a>
-		<?php
-	} elseif ( $current_language == 'he-IL' ) {
-		?>
-			<a href="<?php echo site_url(  ); ?>">
-				<img src="<?php echo get_template_directory_uri(  ). "/images/english-flag.png" ?>">
-			</a>
-		<?php
-	} else {
-		?>
-			<a href="<?php echo site_url(  ) . '/he' ?>">
-				<img src="<?php echo get_template_directory_uri(  ). "/images/israel-flag.png" ?>">
-			</a>
-		<?php
-	}
-
-}

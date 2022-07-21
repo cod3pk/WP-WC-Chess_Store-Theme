@@ -64,7 +64,7 @@
             </div>
         </div>
         <div class="nav-flag">
-            <?php chess_language_switcher(); ?>
+            <?php  ?>
         </div>
     </div>
     <!-- End Topbar -->
@@ -118,20 +118,16 @@
 			<?php the_custom_logo(); ?>
         </ul>
 		<?php
-		// wp_nav_menu(array(
-		// 	'theme_location' => 'header',
-		// 	'menu_id' => 'header'
-		// ));
 
 		wp_nav_menu( array(
-			'theme_location' => 'header',
-			'depth' => 3, // 1 = no dropdowns, 2 = with dropdowns.
-			'container' => 'div',
-			'menu_class' => 'menu',
-			'menu_id' => 'header',
-			'items_wrap' => '<ul id="%1$s" class="%2$s">%3$s</ul>',
-			'fallback_cb' => 'WP_Bootstrap_Navwalker::fallback',
-			'walker' => new WP_Bootstrap_Navwalker(),
+			'theme_location'    => 'header',
+			'depth'             => 3,
+			'container'         => 'div',
+			'menu_class'        => 'menu',
+			'menu_id'           => 'header',
+			'items_wrap'        => '<ul id="%1$s" class="%2$s">%3$s</ul>',
+			'fallback_cb'       => 'WP_Bootstrap_Navwalker::fallback',
+			'walker'            => new WP_Bootstrap_Navwalker(),
 		) );
 		?>
 
@@ -141,7 +137,6 @@
         </ul>
 
         <ul class="ils-wrapper ul pe-3 flx-order-3 d-flex align-items-center mb-0 ms-0 ps-0">
-
 
 			<?php if ( WC()->cart->get_cart_contents_count() != 0 ) : ?>
                 <a class=" text-decoration-none " href="<?php echo wc_get_cart_url(); ?>">
@@ -164,6 +159,7 @@
                 <span class="vertical-line ps-3">|</span>
                 <span class="nav-ils-text fs-4">ILS</span>
 			<?php endif; ?>
+
         </ul>
     </div>
 </nav>
