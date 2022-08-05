@@ -1790,6 +1790,7 @@ a {
     left: 50%;
     transform: translate(-50%, -50%);
     display: none;
+    z-index: 54545;
   }
 
   #header.menu {
@@ -1797,7 +1798,7 @@ a {
     position: absolute;
     background: #fff;
     width: 100%;
-    top: 160px;
+    top: 135px !important;
     left: 0;
     right: 0;
     max-width: 95%;
@@ -1828,6 +1829,7 @@ a {
     border-radius: 0 !important;
     border: none !important;
     z-index: 55555;
+    padding-block: 40px !important;
   }
 
   .sub-menu > li {
