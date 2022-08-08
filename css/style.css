@@ -2083,11 +2083,11 @@ a {
 
 @media (max-width: 500px) {
   .swiper {
-    height: 400px !important;
+    height: 420px !important;
   }
 
   .swiper-wrapper {
-    height: 85% !important;
+    height: 90% !important;
   }
 
   .swiper-button-next:after, .swiper-rtl .swiper-button-prev:after,
@@ -2095,9 +2095,10 @@ a {
     font-size: 16px !important;
   }
 
-  .product-description-wrapper > p {
-    min-height: 50px;
-    max-height: 50px;
+  .product-description-wrapper > .item-desc-1 {
+    min-height: 96px;
+    /* min-height: 69px; */
+    max-height: 100%;
   }
 }
 
