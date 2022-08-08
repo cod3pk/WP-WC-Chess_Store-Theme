@@ -2017,7 +2017,7 @@ a {
     color: #000;
     font-size: 30px !important;
   }
-/* 
+/*
   .product-description-wrapper{
     min-height: 70px;
     max-height: 70px;
@@ -2026,6 +2026,19 @@ a {
 /*
   .chess-items > a > img {
   } */
+
+  .footer-info-text ul {
+    padding: 0 !important;
+  }
+
+  .footer-info-text ul {
+    margin-right: 0 !important;
+    text-align: left !important;
+  }
+
+  .footer-info-text ul li a {
+    text-align: left;
+  }
 }
 
 @media (min-width: 993px) and (max-width: 1116px) {
