@@ -132,7 +132,7 @@
 		?>
 
         <ul class="hamburger mb-0 ms-0 ps-0">
-            <button class="hamburger-btn"><img src="<?php echo wp_get_attachment_image_src( 100 )[ 0 ] ?>" alt="Menu">
+            <button class="hamburger-btn"><img src="<?php echo get_template_directory_uri(); ?>/images/hamburger.png ?>" alt="Menu">
             </button>
         </ul>
 
