@@ -2002,6 +2002,24 @@ a {
     overflow: none;
     visibility: hidden;
   }
+
+  .product-chess-price {
+    margin-bottom: 0 !important;
+  }
+
+  .chess-price > div > .row > div {
+    padding: 0 !important;
+  }
+
+  .swiper-button-next:after, .swiper-rtl .swiper-button-prev:after,
+  .swiper-button-prev:after, .swiper-rtl .swiper-button-next:after {
+    color: #000;
+    font-size: 30px !important;
+  }
+
+/*
+  .chess-items > a > img {
+  } */
 }
 
 @media (min-width: 993px) and (max-width: 1116px) {
@@ -2055,4 +2073,19 @@ a {
   border-bottom: 1px solid #c8c9ca;
   padding-bottom: 10px;
   margin-bottom: 22px !important;
+}
+
+@media (max-width: 500px) {
+  .swiper {
+    height: 480px !important;
+  }
+
+  .swiper-wrapper {
+    height: 85% !important;
+  }
+
+  .swiper-button-next:after, .swiper-rtl .swiper-button-prev:after,
+  .swiper-button-prev:after, .swiper-rtl .swiper-button-next:after {
+    font-size: 16px !important;
+  }
 }

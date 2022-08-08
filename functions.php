@@ -407,7 +407,7 @@ function get_promoted_products ()
 	?>
 
 	<!-- Desktop -->
-    <section class="chess-price">
+    <section class="chess-price product-chess-price">
         <div class="row">
 
 			<?php foreach ( $products->posts as $product ) : ?>
