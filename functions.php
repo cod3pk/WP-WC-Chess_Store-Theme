@@ -405,6 +405,8 @@ function get_promoted_products ()
 
 	$products = new WP_Query( $args );
 	?>
+
+	<!-- Desktop -->
     <section class="chess-price">
         <div class="row">
 
@@ -416,11 +418,37 @@ function get_promoted_products ()
 				setup_postdata( $GLOBALS[ 'post' ] = &$post_object );
 
 				wc_get_template_part( 'content', 'product' );
-				?>
 
+				?>
 			<?php endforeach; ?>
         </div>
     </section>
+
+	<!-- Mobile Slider -->
+	<div class="mobile-slider hide-on-desktop">
+		<div class="swiper">
+			<div class="swiper-wrapper">
+
+				<?php foreach ( $products->posts as $product ) : ?>
+
+					<?php
+					$post_object = get_post( $product->ID );
+
+					setup_postdata( $GLOBALS[ 'post' ] = &$post_object );
+
+					wc_get_template_part( 'content', 'mobile-slider-items' );
+
+					?>
+				<?php endforeach; ?>
+
+			</div>
+			<!-- Add Pagination -->
+				<div class="swiper-pagination"></div>
+				<!-- Add Navigation -->
+				<div class="swiper-button-prev"></div>
+				<div class="swiper-button-next"></div>
+			</div>
+		</div>
 
 	<?php
 	wp_reset_postdata();

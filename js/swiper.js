@@ -58,6 +58,8 @@ function myPlugin({ swiper, extendParams, on }) {
 var swiper = new Swiper('.swiper', {
     // Install Plugin To Swiper
     modules: [myPlugin],
+    slidesPerView: 2,
+    spaceBetween: 10,
     loop: true,
     loopFillGroupWithBlank: true,
     pagination: {
