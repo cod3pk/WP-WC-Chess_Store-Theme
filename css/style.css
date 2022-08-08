@@ -254,6 +254,10 @@ a:visited {
   .desktop-nav > div > .hamburger > button {
     padding: 0 !important;
   }
+
+  .hide-on-mobile{
+    display: none !important;
+  }
 }
 
 .Chess-wrapper {

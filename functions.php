@@ -172,10 +172,13 @@ function chess_store_scripts ()
 	wp_style_add_data( 'chess-store-main-style-extend', 'rtl', get_template_directory_uri() . '/style-rtl.css' );
 	wp_enqueue_style( 'chess-store-main-style', get_template_directory_uri() . '/css/main.css', '1.0.1' );
 
-
 	wp_enqueue_script( 'chess-store-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '', true );
 	wp_enqueue_script( 'chess-store-loadmore', get_template_directory_uri() . '/js/loadmore.js', array( 'jquery' ) );
 	wp_enqueue_script( 'chess-store-slider', get_template_directory_uri() . '/js/slider.js', array( 'jquery' ), '', true );
+
+	wp_enqueue_script( 'chess-store-swiper-js', 'https://unpkg.com/swiper@8/swiper-bundle.min.js', array( 'jquery' ), '', true );
+	wp_enqueue_style( 'chess-store-swiper-css', 'https://unpkg.com/swiper@8/swiper-bundle.min.css', '1.0' );
+	wp_enqueue_script( 'chess-store-product-swiper', get_template_directory_uri() . '/js/swiper.js', array( 'jquery' ), '', true );
 
 	/**
 	 * Localizing AJAX for Load more
