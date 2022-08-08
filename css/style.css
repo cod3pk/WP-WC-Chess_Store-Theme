@@ -2009,7 +2009,7 @@ a {
   }
 
   .chess-price > div > .row > div {
-    padding: 0 !important;
+    padding-bottom: 0 !important;
   }
 
   .swiper-button-next:after, .swiper-rtl .swiper-button-prev:after,
@@ -2087,12 +2087,17 @@ a {
   }
 
   .swiper-wrapper {
-    height: 100% !important;
+    height: 85% !important;
   }
 
   .swiper-button-next:after, .swiper-rtl .swiper-button-prev:after,
   .swiper-button-prev:after, .swiper-rtl .swiper-button-next:after {
     font-size: 16px !important;
+  }
+
+  .product-description-wrapper > p {
+    min-height: 50px;
+    max-height: 50px;
   }
 }
 
