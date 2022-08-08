@@ -1181,10 +1181,6 @@ a {
     border: 1px solid #EFF0F6;
   }
 
-  .list-hidden {
-    display: none !important;
-  }
-
   a {
     text-decoration: none;
     color: inherit;
@@ -2038,6 +2034,10 @@ a {
 
   .footer-info-text ul li a {
     text-align: left;
+  }
+
+  .chess-material-container .list-hidden {
+    display: none !important;
   }
 }
 

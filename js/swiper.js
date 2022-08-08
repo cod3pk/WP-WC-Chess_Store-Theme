@@ -1,11 +1,14 @@
-const thumbs = document.querySelector(".thumb-img").children;
-function changeImage(event) {
-    document.querySelector(".pro-img").src = event.children[0].src
-    for (let i = 0; i < thumbs.length; i++) {
-        thumbs[i].classList.remove("active-slider");
-    }
-    event.classList.add("active-slider");
-};
+let something;
+if (something) {
+    const thumbs = document.querySelector(".thumb-img").children;
+    function changeImage(event) {
+        document.querySelector(".pro-img").src = event.children[0].src
+        for (let i = 0; i < thumbs.length; i++) {
+            thumbs[i].classList.remove("active-slider");
+        }
+        event.classList.add("active-slider");
+    };
+}
 
 function myPlugin({ swiper, extendParams, on }) {
     extendParams({

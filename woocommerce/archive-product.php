@@ -72,7 +72,7 @@ $cat_header_subtitle = get_term_meta( $current_cat_id, 'header_subtitle', true )
         <div class="container-lg chess-material-container">
             <div class="row">
                 <div class="col-12">
-                    <div class="chess-pieces-wrapper d-flex text-center justify-content-center flex-wrap">
+                    <div class="chess-pieces-wrapper d-flex text-center justify-content-center flex-wrap list-hidden">
 
 						<?php if ( get_term( $current_cat_id )->parent ) : ?>
 

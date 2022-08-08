@@ -11,9 +11,11 @@ hamburger.addEventListener('click', function () {
 const hamburgerList = document.querySelector('.hamburger-list');
 const list = document.querySelector('.chess-pieces-wrapper');
 
-if (hamburgerList) {
-  list.classList.add('list-hidden');
+// if (screen.width < '992px') {
+//   list.className = 'list-hidden';
+// }
 
+if (hamburgerList) {
   hamburgerList.addEventListener('click', function (e) {
     e.preventDefault();
     if (!e.target.classList.contains('list-hidden')) {
