@@ -55,15 +55,14 @@
         </div>
 
         <!-- Footer Navigation -->
-        <div class="footer-info-text d-flex align-self-end align-items-center">
+        <div class="footer-info-text d-flex align-self-end">
 			<?php
 			wp_nav_menu( array(
 				'theme_location'    => 'footer',
 				'menu_id'           => 'footer',
                 'menu_class'        => 'd-flex align-items-center',
-                'depth' => 1, // 1 = no dropdowns, 2 = with dropdowns.
+                'depth' => 1,
                 'container' => 'div',
-                // 'menu_class' => 'menu',
                 'items_wrap' => '<ul id="%1$s" class="%2$s">%3$s</ul>',
                 'fallback_cb' => 'WP_Bootstrap_Navwalker::fallback',
                 'walker' => new WP_Bootstrap_Navwalker(),
