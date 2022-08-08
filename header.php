@@ -73,33 +73,33 @@
     <div class="nav-top-section-mobile nav-top-mobile container-fluid">
         <div class="nav-top-mobile-content d-flex justify-content-between">
             <div class="nav-mobile-cart d-flex align-items-center">
-                <!-- <img src="./assets/imgs/united-kingdom.svg"> -->
+                <img src="<?php echo get_template_directory_uri(); ?>/images/iflag.png ?>">
             </div>
             <!-- <span class="top-nav-ver-line"></span> -->
             <div class="nav-mobile-social-links d-flex align-items-center">
 
 				<?php if ( get_theme_mod( 'topbar_options_insta' ) ) : ?>
                     <a href="<?php echo get_theme_mod( 'topbar_options_insta' ); ?>" target="_blank">
-                        <img src="<?php echo wp_get_attachment_image_src( 81 )[ 0 ] ?>" alt="Instagram">
+                        <img src="<?php echo get_template_directory_uri(); ?>/images/instagram.png ?>" alt="Instagram">
                     </a>
 				<?php endif; ?>
 
 				<?php if ( get_theme_mod( 'topbar_options_facebook' ) ) : ?>
                     <a href="<?php echo get_theme_mod( 'topbar_options_facebook' ); ?>" target="_blank">
-                        <img src="<?php echo wp_get_attachment_image_src( 78 )[ 0 ] ?>" alt="Facebook">
+                        <img src="<?php echo get_template_directory_uri(); ?>/images/facebook.png ?>" alt="Facebook">
                     </a>
 				<?php endif; ?>
 
 				<?php if ( get_theme_mod( 'topbar_options_whatsapp' ) ) : ?>
                     <a href="https://wa.me/<?php echo get_theme_mod( 'topbar_options_whatsapp' ); ?>" target="_blank" class ="header-whatsapp-link">
-                        <img src="<?php echo wp_get_attachment_image_src( 102 )[ 0 ] ?>" alt="Whatsapp">
+                        <img src="<?php echo get_template_directory_uri(); ?>/images/whatsapp.png ?>" alt="Whatsapp">
                     </a>
 				<?php endif; ?>
 
                 <div class="top-nav-line"></div>
 				<?php if ( get_theme_mod( 'topbar_options_phone_one' ) ) : ?>
                     <a class="telephone-img" href="tel:<?php echo get_theme_mod( 'topbar_options_phone_one' ); ?>">
-                        <img src="<?php echo wp_get_attachment_image_src( 84 )[ 0 ] ?>" alt="Phone">
+                        <img src="<?php echo get_template_directory_uri(); ?>/images/phone.png ?>" alt="Phone">
                     </a>
 				<?php endif; ?>
             </div>

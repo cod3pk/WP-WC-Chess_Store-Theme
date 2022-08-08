@@ -20,19 +20,19 @@
         <div class="footer-social-links desktop-social-links d-flex align-self-end">
 			<?php if ( get_theme_mod( 'topbar_options_insta' ) ) : ?>
                 <a href="<?php echo get_theme_mod( 'topbar_options_insta' ); ?>" target="_blank">
-                    <img src="<?php echo wp_get_attachment_image_src( 81 )[ 0 ] ?>" alt="<?php echo __( 'Instagram', 'chess-store' ) ?>">
+                    <img src="<?php echo get_template_directory_uri(); ?>/images/instagram.png ?>" alt="<?php echo __( 'Instagram', 'chess-store' ) ?>">
                 </a>
 			<?php endif; ?>
 
 			<?php if ( get_theme_mod( 'topbar_options_facebook' ) ) : ?>
                 <a href="<?php echo get_theme_mod( 'topbar_options_facebook' ); ?>" target="_blank">
-                    <img src="<?php echo wp_get_attachment_image_src( 78 )[ 0 ] ?>" alt="<?php echo __( 'Facebook', 'chess-store' ) ?>">
+                    <img src="<?php echo get_template_directory_uri(); ?>/images/facebook.png ?>" alt="<?php echo __( 'Facebook', 'chess-store' ) ?>">
                 </a>
 			<?php endif; ?>
 
 			<?php if ( get_theme_mod( 'topbar_options_whatsapp' ) ) : ?>
                 <a href="https://wa.me/<?php echo get_theme_mod( 'topbar_options_whatsapp' ); ?>" target="_blank">
-                    <img src="<?php echo wp_get_attachment_image_src( 102 )[ 0 ] ?>" alt="<?php echo __( 'Whatsapp', 'chess-store' ) ?>">
+                    <img src="<?php echo get_template_directory_uri(); ?>/images/whatsapp.png ?>" alt="<?php echo __( 'Whatsapp', 'chess-store' ) ?>">
                 </a>
 			<?php endif; ?>
         </div>
