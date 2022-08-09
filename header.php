@@ -23,26 +23,26 @@
 
     <section class="nav-top-section nav-top-desktop container-fluid">
 
-        <!-- Topbar -->
+        <!-- Desktop Topbar -->
         <div class="nav-top-content d-flex justify-content-between">
             <div class="nav-top-left-side d-flex justify-content-between">
                 <div class="nav-top-social-links d-flex justify-content-between">
 
                     <?php if (get_theme_mod('topbar_options_insta')) : ?>
                         <a href="<?php echo get_theme_mod('topbar_options_insta'); ?>" target="_blank">
-                            <img src="<?php echo wp_get_attachment_image_src(81)[0] ?>" alt="Instagram">
+                            <img src="<?php echo get_template_directory_uri() ?>/images/instagram.png" alt="Instagram">
                         </a>
                     <?php endif; ?>
 
                     <?php if (get_theme_mod('topbar_options_facebook')) : ?>
                         <a href="<?php echo get_theme_mod('topbar_options_facebook'); ?>" target="_blank">
-                            <img src="<?php echo wp_get_attachment_image_src(78)[0] ?>" alt="Facebook">
+                            <img src="<?php echo get_template_directory_uri() ?>/images/facebook.png" alt="Facebook">
                         </a>
                     <?php endif; ?>
 
                     <?php if (get_theme_mod('topbar_options_whatsapp')) : ?>
                         <a href="https://wa.me/<?php echo get_theme_mod('topbar_options_whatsapp'); ?>" target="_blank">
-                            <img src="<?php echo wp_get_attachment_image_src(102)[0] ?>" alt="Whatsapp">
+                            <img src="<?php echo get_template_directory_uri() ?>/images/whatsapp.png" alt="Whatsapp">
                         </a>
                     <?php endif; ?>
 
@@ -61,18 +61,8 @@
                     <?php endif; ?>
                 </div>
             </div>
-            <div class="nav-flag hide-on-mobile">
+            <div class="nav-flag">
                 <?php get_sidebar('topbar'); ?>
-            </div>
-            <div class="nav-flag hide-on-desktop">
-                <!-- Mobile Topbar elements -->
-                <ul class="ils-wrapper ul pe-3 flx-order-3 d-flex align-items-center mb-0 ms-0 ps-0">
-                    <a class=" text-decoration-none " href="<?php echo wc_get_cart_url(); ?>">
-                        <img class="shopping-cart align-bottom" src="<?php echo get_template_directory_uri() . '/images/cart.png' ?>" alt="Cart">
-                    </a>
-                    <span class="vertical-line ps-3">|</span>
-                    <span class="nav-ils-text fs-4">ILS</span>
-                </ul>
             </div>
         </div>
         <!-- End Topbar -->
@@ -80,40 +70,46 @@
         <!-- Header -->
         <div class="nav-top-section-mobile nav-top-mobile container-fluid">
             <div class="nav-top-mobile-content d-flex justify-content-between">
+
+                <!-- Need to do fixes here from Line#78 - line#89 @Daud -->
+
+                <!-- Cart and Languguage Identifier DIV -->
                 <div class="nav-mobile-cart d-flex align-items-center">
-                    <ul class="ils-wrapper ul pe-3 flx-order-3 d-flex align-items-center mb-0 ms-0 ps-0">
-                        <a class=" text-decoration-none " href="<?php echo wc_get_cart_url(); ?>">
-                            <img class="shopping-cart align-bottom" src="<?php echo get_template_directory_uri() . '/images/cart.png' ?>" alt="Cart">
-                        </a>
-                        <span class="vertical-line ps-3">|</span>
-                        <span class="nav-ils-text fs-4">ILS</span>
-                    </ul>
+                    <!-- Add Cart Code -->
+                    <a class="text-decoration-none" href="<?php echo wc_get_cart_url(); ?>">
+                        <img class="shopping-cart align-bottom" src="<?php echo get_template_directory_uri() ?>/images/cart.png" alt="Cart">
+                    </a>
+                    <!-- Divider -->
+                    <div class="top-nav-line"></div>
+                    <!-- Add Lanaguage Identiter here -->
+                    <span class="nav-ils-text fs-4 text-white">ILS</span>
                 </div>
+
                 <!-- <span class="top-nav-ver-line"></span> -->
                 <div class="nav-mobile-social-links d-flex align-items-center">
 
                     <?php if (get_theme_mod('topbar_options_insta')) : ?>
                         <a href="<?php echo get_theme_mod('topbar_options_insta'); ?>" target="_blank">
-                            <img src="<?php echo get_template_directory_uri(); ?>/images/instagram.png ?>" alt="Instagram">
+                            <img src="<?php echo get_template_directory_uri() ?>/images/instagram.png" alt="Instagram">
                         </a>
                     <?php endif; ?>
 
                     <?php if (get_theme_mod('topbar_options_facebook')) : ?>
                         <a href="<?php echo get_theme_mod('topbar_options_facebook'); ?>" target="_blank">
-                            <img src="<?php echo get_template_directory_uri(); ?>/images/facebook.png ?>" alt="Facebook">
+                            <img src="<?php echo get_template_directory_uri() ?>/images/facebook.png" alt="Facebook">
                         </a>
                     <?php endif; ?>
 
                     <?php if (get_theme_mod('topbar_options_whatsapp')) : ?>
                         <a href="https://wa.me/<?php echo get_theme_mod('topbar_options_whatsapp'); ?>" target="_blank" class="header-whatsapp-link">
-                            <img src="<?php echo get_template_directory_uri(); ?>/images/whatsapp.png ?>" alt="Whatsapp">
+                            <img src="<?php echo get_template_directory_uri() ?>/images/whatsapp.png" alt="Whatsapp">
                         </a>
                     <?php endif; ?>
 
                     <div class="top-nav-line"></div>
                     <?php if (get_theme_mod('topbar_options_phone_one')) : ?>
                         <a class="telephone-img" href="tel:<?php echo get_theme_mod('topbar_options_phone_one'); ?>">
-                            <img src="<?php echo get_template_directory_uri(); ?>/images/phone.png ?>" alt="Phone">
+                            <img src="<?php echo get_template_directory_uri(); ?>/images/phone.png" alt="Phone">
                         </a>
                     <?php endif; ?>
                 </div>
@@ -131,8 +127,8 @@
             <ul class="ul flx-order-2 nav-logo-wrapper ms-0">
                 <?php the_custom_logo(); ?>
             </ul>
-            <?php
 
+            <?php
             wp_nav_menu(array(
                 'theme_location'    => 'header',
                 'depth'             => 3,
@@ -146,15 +142,17 @@
             ?>
 
             <ul class="hamburger mb-0 ms-0 ps-0">
-                <button class="hamburger-btn"><img src="<?php echo get_template_directory_uri(); ?>/images/hamburger.png ?>" alt="Menu">
+                <button class="hamburger-btn"><img src="<?php echo get_template_directory_uri(); ?>/images/hamburger.png" alt="Menu">
                 </button>
             </ul>
 
+            <!-- Add Hide class for Mobile here -->
+            <!-- Desktop Menu -->
             <ul class="ils-wrapper ul pe-3 flx-order-3 d-flex align-items-center mb-0 ms-0 ps-0">
 
                 <?php if (WC()->cart->get_cart_contents_count() != 0) : ?>
                     <a class=" text-decoration-none " href="<?php echo wc_get_cart_url(); ?>">
-                        <img class="shopping-cart pe-3 align-bottom" src="<?php echo wp_get_attachment_image_src(75)[0] ?>" alt="Cart">
+                        <img class="shopping-cart pe-3 align-bottom" src="<?php echo get_template_directory_uri() ?>/images/blue-cart.png" alt="Cart">
                     </a>
                     <a class="cart-customlocation" href="<?php echo wc_get_cart_url(); ?>" title="<?php _e('View your shopping cart'); ?>">
                         <?php echo sprintf(_n('%d item', '%d items', WC()->cart->get_cart_contents_count()), WC()->cart->get_cart_contents_count()); ?>
@@ -165,12 +163,18 @@
                     <span class="nav-ils-text fs-4">ILS</span>
                 <?php else : ?>
                     <a class=" text-decoration-none " href="<?php echo wc_get_cart_url(); ?>">
-                        <img class="shopping-cart align-bottom" src="<?php echo wp_get_attachment_image_src(75)[0] ?>" alt="Cart">
+                        <img class="shopping-cart align-bottom" src="<?php echo get_template_directory_uri() ?>/images/blue-cart.png" alt="Cart">
                     </a>
                     <span class="vertical-line ps-3">|</span>
                     <span class="nav-ils-text fs-4">ILS</span>
                 <?php endif; ?>
 
+            </ul>
+
+            <!-- Add hide class for desktop here -->
+            <!-- Mobile Menu -->
+            <ul class="ils-wrapper ul pe-3 flx-order-3 d-flex align-items-center mb-0 ms-0 ps-0">
+                <?php get_sidebar('topbar'); ?>
             </ul>
         </div>
     </nav>

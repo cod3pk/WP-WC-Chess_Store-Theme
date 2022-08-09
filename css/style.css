@@ -17,6 +17,10 @@ a{
   padding: 13.5px 3px !important;
 }
 
+.text-white{
+  color: #fff !important;
+}
+
 .cat-child-chess-active{
   background: #7DB8FF !important;
 }
@@ -953,6 +957,11 @@ font-family: 'Inter', sans-serif;
 }
 
 @media screen and (max-width: 768px) {
+
+  .hide-section-on-mobile{
+    display: none !important;
+  }
+
   .nav-top-section .nav-top-content {
     display: none !important;
   }
@@ -1037,7 +1046,10 @@ font-family: 'Inter', sans-serif;
     width: 100% !important;
     padding: 0 !important;
   }
+
+
 }
+
 
 @media (max-width: 575px) {
   .nav-logo-wrapper {
@@ -1951,6 +1963,7 @@ a {
 }
 
 @media (max-width: 768px) {
+
   .blog-card {
     align-items: flex-start !important;
     flex-direction: column;
