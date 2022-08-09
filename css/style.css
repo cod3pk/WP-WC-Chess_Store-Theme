@@ -1000,6 +1000,7 @@ font-family: 'Inter', sans-serif;
   .nav-mobile-cart img {
     width: 28px;
     height: 28px;
+    max-width: inherit;
   }
 
   .top-nav-ver-line {
