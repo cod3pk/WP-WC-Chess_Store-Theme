@@ -982,13 +982,24 @@ font-family: 'Inter', sans-serif;
 
   .nav-mobile-cart {
     width: 28px;
-    height: 28px;
-    margin: 8px 0 8px 12px;
+    height: 45px;
+  }
+
+  .nav-top-section {
+    padding: 0 !important;
+  }
+
+  .top-nav-line {
+    margin: 0 15px !important;
+  }
+
+  .header-whatsapp-link {
+    margin: 0 !important;
   }
 
   .nav-mobile-cart img {
-    width: 100%;
-    height: 100%;
+    width: 28px;
+    height: 28px;
   }
 
   .top-nav-ver-line {
@@ -1046,8 +1057,6 @@ font-family: 'Inter', sans-serif;
     width: 100% !important;
     padding: 0 !important;
   }
-
-
 }
 
 

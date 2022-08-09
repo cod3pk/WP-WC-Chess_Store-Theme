@@ -78,7 +78,7 @@
                         <img class="shopping-cart align-bottom" src="<?php echo get_template_directory_uri() ?>/images/cart.png" alt="Cart">
                     </a>
                     <!-- Divider -->
-                    <div class="top-nav-line"></div>
+                    <div class="top-nav-line top-nav-divider">|</div>
                     <!-- Add Lanaguage Identiter here -->
                     <span class="nav-ils-text fs-4 text-white">
                         <?php chess_language_detector(); ?>
