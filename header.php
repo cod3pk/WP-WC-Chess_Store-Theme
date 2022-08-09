@@ -83,12 +83,7 @@
                     <div class="top-nav-line"></div>
                     <!-- Add Lanaguage Identiter here -->
                     <span class="nav-ils-text fs-4 text-white">
-                        <?php if (get_locale() == 'en_US') :
-                            echo __('USD', 'chess-store');
-                        else :
-                            echo __('ILS', 'chess-store');
-                        endif;
-                        ?>
+                        <?php chess_language_detector(); ?>
                     </span>
                 </div>
 
@@ -168,12 +163,7 @@
                     </a>
                     <span class="vertical-line ms-2">|</span>
                     <span class="nav-ils-text fs-4">
-                        <?php if (get_locale() == 'en_US') :
-                            echo __('USD', 'chess-store');
-                        else :
-                            echo __('ILS', 'chess-store');
-                        endif;
-                        ?>
+                        <?php chess_language_detector(); ?>
                     </span>
                 <?php else : ?>
                     <a class=" text-decoration-none " href="<?php echo wc_get_cart_url(); ?>">
@@ -181,12 +171,7 @@
                     </a>
                     <span class="vertical-line ps-3">|</span>
                     <span class="nav-ils-text fs-4">
-                        <?php if (get_locale() == 'en_US') :
-                            echo __('USD', 'chess-store');
-                        else :
-                            echo __('ILS', 'chess-store');
-                        endif;
-                        ?>
+                        <?php chess_language_detector(); ?>
                     </span>
                 <?php endif; ?>
 
