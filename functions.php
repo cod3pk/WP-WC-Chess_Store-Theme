@@ -823,9 +823,9 @@ function get_sidebar_categories ()
  * Langugae Detector
  */
 function chess_language_detector() {
-	if (get_locale() == 'en_US') :
-		echo __('USD', 'chess-store');
+	if ( get_locale() == 'en_US' ) :
+		echo __( 'USD', 'chess-store' );
 	else :
-		echo __('ILS', 'chess-store');
+		echo __( 'ILS', 'chess-store' );
 	endif;
 }

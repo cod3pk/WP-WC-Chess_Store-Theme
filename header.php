@@ -1,11 +1,9 @@
 <?php
-
 /**
  * Section: Header
  *
  * @package chess_store
  */
-
 ?>
 
 <!doctype html>
