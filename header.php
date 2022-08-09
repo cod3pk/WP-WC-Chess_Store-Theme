@@ -82,7 +82,14 @@
                     <!-- Divider -->
                     <div class="top-nav-line"></div>
                     <!-- Add Lanaguage Identiter here -->
-                    <span class="nav-ils-text fs-4 text-white">ILS</span>
+                    <span class="nav-ils-text fs-4 text-white">
+                        <?php if (get_locale() == 'en_US') :
+                            echo __('USD', 'chess-store');
+                        else :
+                            echo __('ILS', 'chess-store');
+                        endif;
+                        ?>
+                    </span>
                 </div>
 
                 <!-- <span class="top-nav-ver-line"></span> -->
@@ -160,13 +167,27 @@
                         <?php echo WC()->cart->get_cart_total(); ?>
                     </a>
                     <span class="vertical-line ms-2">|</span>
-                    <span class="nav-ils-text fs-4">ILS</span>
+                    <span class="nav-ils-text fs-4">
+                        <?php if (get_locale() == 'en_US') :
+                            echo __('USD', 'chess-store');
+                        else :
+                            echo __('ILS', 'chess-store');
+                        endif;
+                        ?>
+                    </span>
                 <?php else : ?>
                     <a class=" text-decoration-none " href="<?php echo wc_get_cart_url(); ?>">
                         <img class="shopping-cart align-bottom" src="<?php echo get_template_directory_uri() ?>/images/blue-cart.png" alt="Cart">
                     </a>
                     <span class="vertical-line ps-3">|</span>
-                    <span class="nav-ils-text fs-4">ILS</span>
+                    <span class="nav-ils-text fs-4">
+                        <?php if (get_locale() == 'en_US') :
+                            echo __('USD', 'chess-store');
+                        else :
+                            echo __('ILS', 'chess-store');
+                        endif;
+                        ?>
+                    </span>
                 <?php endif; ?>
 
             </ul>
