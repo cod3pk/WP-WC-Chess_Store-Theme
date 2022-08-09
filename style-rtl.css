@@ -82,3 +82,23 @@ body, a, button {
 .wp-block-latest-posts__post-excerpt {
 	margin-top: 0px !important;
 }
+
+nav > div > .mobo-flag-wrapper {
+  display: none !important;
+}
+
+@media (max-width: 768px) {
+  nav .ils-wrapper {
+    padding: 0 !important;
+    display: none !important;
+  }
+
+  nav > div > .mobo-flag-wrapper {
+    display: block !important;
+    order: 1;
+  }
+
+  .hamburger {
+    order: 3;
+  }
+}
