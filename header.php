@@ -178,8 +178,7 @@
             <!-- Add hide class for desktop here -->
             <!-- Mobile Menu -->
             <ul class="ils-wrapper mobo-flag-wrapper ul pe-3 flx-order-3 d-flex align-items-center mb-0 ms-0 ps-0">
-                <?php get_sidebar('topbar'); ?>
-                <h1>something</h1>
+                <?php dynamic_sidebar( 'sidebar-2' ); ?>
             </ul>
         </div>
     </nav>
