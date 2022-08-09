@@ -95,10 +95,66 @@ nav > div > .mobo-flag-wrapper {
 
   nav > div > .mobo-flag-wrapper {
     display: block !important;
-    order: 1;
+    order: 3;
   }
 
   .hamburger {
-    order: 3;
+    order: 1;
   }
+
+	.nav-top-mobile-content {
+		flex-direction: row-reverse;
+	}
+
+	.nav-ils-text {
+		order: 1;
+	}
+
+	.top-nav-divider {
+		order: 2;
+	}
+
+	.nav-mobile-cart > a {
+		order: 3;
+	}
+
+	.desktop-nav > div {
+		margin-left: 10px !important;
+  }
+
+	.nav-top-mobile-content {
+		max-width: 100%;
+	}
+
+	.nav-mobile-social-links > a:nth-child(5) {
+		order: 1;
+	}
+
+	.nav-mobile-social-links > div {
+		order: 2;
+	}
+
+	.nav-mobile-social-links > a:nth-child(3) {
+		order: 3;
+	}
+	.nav-mobile-social-links > a:nth-child(2) {
+		order: 4;
+	}
+
+	.nav-mobile-social-links > a:nth-child(1) {
+		order: 5;
+	}
+}
+
+@media (max-width: 992px) {
+	.menu-header-hebrew-container {
+		position: absolute;
+		background: transparent;
+		width: 100%;
+		top: 0;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		display: none;
+		z-index: 54545;
+	}
 }
