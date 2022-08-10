@@ -28,6 +28,8 @@ a{
 .about-container{
   max-width: 1170px;
   margin: auto;
+  padding-right: 25px;
+  padding-left: 25px;
 }
 
 .quantity{
