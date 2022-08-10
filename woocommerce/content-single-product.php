@@ -65,7 +65,7 @@ $attachment_ids = $product->get_gallery_image_ids();
 
         <!-- Additional Info -->
         <div class="product-icons d-flex flex-direction flex-column">
-            <a class="text-decoration-none" href="#">
+            <a class="text-decoration-none" href="<?php echo site_url(  ) ?>/shipping-and-returns/">
                 <div class="product-shipping d-flex align-items-center">
                     <img src="<?php echo wp_get_attachment_image_src( 96 )[ 0 ]; ?>">
                     <p>
@@ -73,7 +73,7 @@ $attachment_ids = $product->get_gallery_image_ids();
                     </p><span> > </span>
                 </div>
             </a>
-            <a class="text-decoration-none" href="#">
+            <a class="text-decoration-none" href="<?php echo site_url(  ) ?>/terms-and-conditions-of-use/">
                 <div class="product-lock d-flex align-items-center">
                     <img src="<?php echo wp_get_attachment_image_src( 95 )[ 0 ]; ?>">
                     <p>
