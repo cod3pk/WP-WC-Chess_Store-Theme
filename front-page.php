@@ -55,7 +55,7 @@
 			<?php if ( get_total_categories_num() > 8 ) : ?>
                 <div class="slider text-center">
                     <div id="cat_load_more_btn">
-                        <img class="pe-3" src="<?php echo get_template_directory_uri() . "/images/load-more.png" ?>"
+                        <img class="pe-3" src="<?php echo get_template_directory_uri() . "/images/load-more.svg" ?>"
                              alt="Load">
                         <span>
                         <?php echo __( 'Load More', 'chess-store' ); ?>

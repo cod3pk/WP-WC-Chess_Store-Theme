@@ -28,19 +28,19 @@
 
                     <?php if (get_theme_mod('topbar_options_insta')) : ?>
                         <a href="<?php echo get_theme_mod('topbar_options_insta'); ?>" target="_blank">
-                            <img src="<?php echo get_template_directory_uri() ?>/images/instagram.png" alt="Instagram">
+                            <img src="<?php echo get_template_directory_uri() ?>/images/instagram.svg" alt="Instagram">
                         </a>
                     <?php endif; ?>
 
                     <?php if (get_theme_mod('topbar_options_facebook')) : ?>
                         <a href="<?php echo get_theme_mod('topbar_options_facebook'); ?>" target="_blank">
-                            <img src="<?php echo get_template_directory_uri() ?>/images/facebook.png" alt="Facebook">
+                            <img src="<?php echo get_template_directory_uri() ?>/images/facebook.svg" alt="Facebook">
                         </a>
                     <?php endif; ?>
 
                     <?php if (get_theme_mod('topbar_options_whatsapp')) : ?>
                         <a href="https://wa.me/<?php echo get_theme_mod('topbar_options_whatsapp'); ?>" target="_blank">
-                            <img src="<?php echo get_template_directory_uri() ?>/images/whatsapp.png" alt="Whatsapp">
+                            <img src="<?php echo get_template_directory_uri() ?>/images/whatsapp.svg" alt="Whatsapp">
                         </a>
                     <?php endif; ?>
 
@@ -75,7 +75,7 @@
                 <div class="nav-mobile-cart d-flex align-items-center">
                     <!-- Add Cart Code -->
                     <a class="text-decoration-none" href="<?php echo wc_get_cart_url(); ?>">
-                        <img class="shopping-cart align-bottom" src="<?php echo get_template_directory_uri() ?>/images/cart.png" alt="Cart">
+                        <img class="shopping-cart align-bottom" src="<?php echo get_template_directory_uri() ?>/images/cart.svg" alt="Cart">
                     </a>
                     <!-- Divider -->
                     <div class="top-nav-line top-nav-divider">|</div>
@@ -90,26 +90,26 @@
 
                     <?php if (get_theme_mod('topbar_options_insta')) : ?>
                         <a href="<?php echo get_theme_mod('topbar_options_insta'); ?>" target="_blank">
-                            <img src="<?php echo get_template_directory_uri() ?>/images/instagram.png" alt="Instagram">
+                            <img src="<?php echo get_template_directory_uri() ?>/images/instagram.svg" alt="Instagram">
                         </a>
                     <?php endif; ?>
 
                     <?php if (get_theme_mod('topbar_options_facebook')) : ?>
                         <a href="<?php echo get_theme_mod('topbar_options_facebook'); ?>" target="_blank">
-                            <img src="<?php echo get_template_directory_uri() ?>/images/facebook.png" alt="Facebook">
+                            <img src="<?php echo get_template_directory_uri() ?>/images/facebook.svg" alt="Facebook">
                         </a>
                     <?php endif; ?>
 
                     <?php if (get_theme_mod('topbar_options_whatsapp')) : ?>
                         <a href="https://wa.me/<?php echo get_theme_mod('topbar_options_whatsapp'); ?>" target="_blank" class="header-whatsapp-link">
-                            <img src="<?php echo get_template_directory_uri() ?>/images/whatsapp.png" alt="Whatsapp">
+                            <img src="<?php echo get_template_directory_uri() ?>/images/whatsapp.svg" alt="Whatsapp">
                         </a>
                     <?php endif; ?>
 
                     <div class="top-nav-line"></div>
                     <?php if (get_theme_mod('topbar_options_phone_one')) : ?>
                         <a class="telephone-img" href="tel:<?php echo get_theme_mod('topbar_options_phone_one'); ?>">
-                            <img src="<?php echo get_template_directory_uri(); ?>/images/phone.png" alt="Phone">
+                            <img src="<?php echo get_template_directory_uri(); ?>/images/phone.svg" alt="Phone">
                         </a>
                     <?php endif; ?>
                 </div>
@@ -142,7 +142,7 @@
             ?>
 
             <ul class="hamburger mb-0 ms-0 ps-0">
-                <button class="hamburger-btn"><img src="<?php echo get_template_directory_uri(); ?>/images/hamburger.png" alt="Menu">
+                <button class="hamburger-btn"><img src="<?php echo get_template_directory_uri(); ?>/images/hamburger.svg"Menu">
                 </button>
             </ul>
 
@@ -152,7 +152,7 @@
 
                 <?php if (WC()->cart->get_cart_contents_count() != 0) : ?>
                     <a class=" text-decoration-none " href="<?php echo wc_get_cart_url(); ?>">
-                        <img class="shopping-cart pe-3 align-bottom" src="<?php echo get_template_directory_uri() ?>/images/blue-cart.png" alt="Cart">
+                        <img class="shopping-cart pe-3 align-bottom" src="<?php echo get_template_directory_uri() ?>/images/blue-cart.svg" alt="Cart">
                     </a>
                     <a class="cart-customlocation" href="<?php echo wc_get_cart_url(); ?>" title="<?php _e('View your shopping cart'); ?>">
                         <?php echo sprintf(_n('%d item', '%d items', WC()->cart->get_cart_contents_count()), WC()->cart->get_cart_contents_count()); ?>
@@ -165,7 +165,7 @@
                     </span>
                 <?php else : ?>
                     <a class=" text-decoration-none " href="<?php echo wc_get_cart_url(); ?>">
-                        <img class="shopping-cart align-bottom" src="<?php echo get_template_directory_uri() ?>/images/blue-cart.png" alt="Cart">
+                        <img class="shopping-cart align-bottom" src="<?php echo get_template_directory_uri() ?>/images/blue-cart.svg" alt="Cart">
                     </a>
                     <span class="vertical-line ps-3">|</span>
                     <span class="nav-ils-text fs-4">

@@ -121,7 +121,7 @@ ins {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  background-image: url(../images/menu-dropdown-icon.png);
+  background-image: url(../images/menu-dropdown.svg);
   background-repeat: no-repeat;
   background-size: contain;
   width: 12px;
@@ -804,7 +804,6 @@ font-family: 'Inter', sans-serif;
 
 
   .header {
-    background: url(../assets/imgs/hero-tab-img.png) no-repeat center;
     background-size: cover;
   }
 
@@ -1109,7 +1108,6 @@ font-family: 'Inter', sans-serif;
 }
 
 .category-hero {
-  background: url('../assets/imgs/category-hero.png') no-repeat center;
   width: 100%;
   height: auto;
 }
