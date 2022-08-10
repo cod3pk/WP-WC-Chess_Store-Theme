@@ -312,7 +312,7 @@ function get_homepage_categories ()
 {
 	$terms = get_terms( [
 		'taxonomy'		=> 'product_cat',
-		'hide_empty'	=> true,
+		'hide_empty'	=> false,
 		'parent'		=> 0,
 		'number'		=> 8,
 	] );

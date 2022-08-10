@@ -91,13 +91,14 @@ $attachment_ids = $product->get_gallery_image_ids();
 
 <section class="sub-category-detail container-lg container-md">
     <div class="detail-heading">
-        <h3><?php echo __( 'Details', 'chess-store' ); ?></h3>
+        <h3>
+            <?php echo __( 'Details', 'chess-store' ); ?>
+        </h3>
     </div>
 
     <div class="detail-content">
         <div class="detail-content-info d-flex">
 			<?php echo $product->short_description; ?>
-
         </div>
     </div>
 
