@@ -67,7 +67,7 @@ $attachment_ids = $product->get_gallery_image_ids();
         <div class="product-icons d-flex flex-direction flex-column">
             <a class="text-decoration-none" href="<?php echo site_url(  ) ?>/shipping-and-returns/">
                 <div class="product-shipping d-flex align-items-center">
-                    <img src="<?php echo wp_get_attachment_image_src( 96 )[ 0 ]; ?>">
+                    <img src="<?php echo get_template_directory_uri(  ) ?>/images/shipping.svg">
                     <p>
 						<?php echo __( 'Shipping', 'chess-store' ); ?>
                     </p><span> > </span>
@@ -75,7 +75,7 @@ $attachment_ids = $product->get_gallery_image_ids();
             </a>
             <a class="text-decoration-none" href="<?php echo site_url(  ) ?>/terms-and-conditions-of-use/">
                 <div class="product-lock d-flex align-items-center">
-                    <img src="<?php echo wp_get_attachment_image_src( 95 )[ 0 ]; ?>">
+                    <img src="<?php echo get_template_directory_uri(  ) ?>/images/terms.svg">
                     <p>
 						<?php echo __( 'Secure', 'chess-store' ) ?>
                     </p>
