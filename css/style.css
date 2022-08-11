@@ -2139,9 +2139,9 @@ a {
   }
 
   .product-description-wrapper > .item-desc-1 {
-    min-height: 96px;
+    min-height: 120px;
     /* min-height: 69px; */
-    max-height: 100%;
+    max-height: 120px;
   }
 }
 
@@ -2170,5 +2170,11 @@ nav > div > .mobo-flag-wrapper {
 
   .nav-mobile-cart {
     width: inherit !important;
+  }
+}
+
+@media (max-width: 390px) {
+  .sub-menu {
+    min-width: 100%;
   }
 }
