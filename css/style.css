@@ -2061,6 +2061,11 @@ a {
   .chess-material-container .list-hidden {
     display: none !important;
   }
+
+  .product-description-wrapper > .item-desc-1 {
+    min-height: 69px;
+    max-height: 69px;
+  }
 }
 
 @media (min-width: 993px) and (max-width: 1070px) {
