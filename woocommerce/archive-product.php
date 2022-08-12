@@ -170,6 +170,40 @@ $cat_header_subtitle = get_term_meta( $current_cat_id, 'header_subtitle', true )
                         </div>
                     </div>
                 </section>
+
+                <!-- Mobile Slider -->
+                <div class="mobile-slider hide-on-desktop">
+                    <div class="swiper">
+                        <div class="swiper-wrapper">
+
+                            <?php
+                            while ( have_posts() ) :
+
+								the_post();
+
+								do_action( 'woocommerce_shop_loop' );
+
+								global $product;
+
+								$post_object = get_post( $product->ID );
+
+								setup_postdata( $GLOBALS[ 'post' ] = &$post_object );
+
+                                wc_get_template_part( 'content', 'mobile-slider-items' );
+
+							endwhile;
+                            ?>
+
+                        </div>
+                        <!-- Add Pagination -->
+                            <div class="swiper-pagination"></div>
+                            <!-- Add Navigation -->
+                            <div class="swiper-button-prev"></div>
+                            <div class="swiper-button-next"></div>
+                        </div>
+                    </div>
+                </div>
+
 			<?php }
 
 			woocommerce_product_loop_end();
