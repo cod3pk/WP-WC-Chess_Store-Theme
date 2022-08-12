@@ -40,6 +40,33 @@ if ( count( $related_products ) == 4 ) : ?>
 			</div>
 		</section>
 
+		<!-- Mobile Slider -->
+		<div class="mobile-slider hide-on-desktop">
+			<div class="swiper">
+				<div class="swiper-wrapper">
+
+					<?php foreach ( $related_products as $related_product ) : ?>
+
+						<?php
+						$post_object = get_post( $related_product->get_id(  ) );
+
+						setup_postdata( $GLOBALS[ 'post' ] = &$post_object );
+
+						wc_get_template_part( 'content', 'mobile-slider-items' );
+
+						?>
+					<?php endforeach; ?>
+
+				</div>
+				<!-- Add Pagination -->
+					<div class="swiper-pagination"></div>
+					<!-- Add Navigation -->
+					<div class="swiper-button-prev"></div>
+					<div class="swiper-button-next"></div>
+				</div>
+			</div>
+		</div>
+
 	</section>
 <?php
 
@@ -77,7 +104,7 @@ if ( $child_term->parent > 0 ){
 
 				<?php
 
-				$post_object = get_post( $related_product->ID );
+				$post_object = get_post( $related_product->get_id(  ) );
 
 				setup_postdata( $GLOBALS[ 'post' ] = &$post_object ); 
 
@@ -87,6 +114,33 @@ if ( $child_term->parent > 0 ){
 			<?php endforeach; ?>
 		</div>
 	</section>
+
+	<!-- Mobile Slider -->
+	<div class="mobile-slider hide-on-desktop">
+		<div class="swiper">
+			<div class="swiper-wrapper">
+
+				<?php foreach ( $related_products as $related_product ) : ?>
+
+					<?php
+					$post_object = get_post( $related_product->ID );
+
+					setup_postdata( $GLOBALS[ 'post' ] = &$post_object );
+
+					wc_get_template_part( 'content', 'mobile-slider-items' );
+
+					?>
+				<?php endforeach; ?>
+
+			</div>
+			<!-- Add Pagination -->
+				<div class="swiper-pagination"></div>
+				<!-- Add Navigation -->
+				<div class="swiper-button-prev"></div>
+				<div class="swiper-button-next"></div>
+			</div>
+		</div>
+	</div>
 
 	</section>
 
