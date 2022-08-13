@@ -172,7 +172,7 @@ $cat_header_subtitle = get_term_meta( $current_cat_id, 'header_subtitle', true )
                 </section>
 
                 <!-- Mobile Slider -->
-                <div class="mobile-slider hide-on-desktop">
+                <div class="mobile-slider hide-on-desktop archive-page-slider">
                     <div class="swiper">
                         <div class="swiper-wrapper">
 

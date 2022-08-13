@@ -1241,6 +1241,7 @@ a {
     background: #10386F;
     margin: 0 auto;
     text-align: center;
+    flex-direction: row-reverse;
   }
 
   .category-mbl-hamburger > p {
@@ -2066,6 +2067,11 @@ a {
     min-height: 69px;
     max-height: 69px;
   }
+
+  .archive-page-slider > div {
+    padding: 0 15px;
+    height: 750px;
+  }
 }
 
 @media (min-width: 993px) and (max-width: 1070px) {
@@ -2182,4 +2188,35 @@ nav > div > .mobo-flag-wrapper {
   .sub-menu {
     min-width: 100%;
   }
+}
+
+
+@media (max-width: 900px) {
+  .archive-page-slider > div {
+    height: 650px;
+  }
+}
+
+@media (max-width: 768px) {
+  .archive-page-slider > div {
+    height: 600px;
+  }
+}
+
+@media (max-width: 650px) {
+  .archive-page-slider > div {
+    height: 550px;
+  }
+}
+
+@media (max-width: 500px) {
+  .archive-page-slider > div {
+    height: 500px !important;
+}
+}
+
+@media (max-width: 450px) {
+  .archive-page-slider > div {
+    height: 450px !important;
+}
 }

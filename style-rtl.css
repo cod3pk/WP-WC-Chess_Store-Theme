@@ -158,3 +158,10 @@ nav > div > .mobo-flag-wrapper {
 		z-index: 54545;
 	}
 }
+
+@media (max-width: 600px) {
+	.detail-heading h3,
+	.more-details-heading h3 {
+		text-align: right;
+	}
+}
