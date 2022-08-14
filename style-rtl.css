@@ -13,6 +13,10 @@ body, a, button {
   font-family: 'Heebo', sans-serif !important;
 }
 
+.load-more-icon{
+	transform: rotate(0) !important;
+}
+
 .desktop-nav > div{
 	padding: 0 !important;
 	margin-right: 30px !important;

@@ -58,7 +58,7 @@
                         <span>
                             <?php echo __( 'Load More', 'chess-store' ); ?>
                         </span>
-                        <img class="pe-3" src="<?php echo get_template_directory_uri() . "/images/load-more.svg" ?>" alt="Load">
+                        <img class="load-more-icon pe-3" src="<?php echo get_template_directory_uri() . "/images/load-more.svg" ?>" alt="Load">
                     </div>
                 </div>
 			<?php endif; ?>

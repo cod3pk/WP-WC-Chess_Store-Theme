@@ -12,6 +12,10 @@ a{
   text-decoration: none !important;
 }
 
+.load-more-icon{
+	transform: rotate(180deg) !important;
+}
+
 .qty{
   background: #EFEFEF;
   padding: 13.5px 3px !important;
