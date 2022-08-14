@@ -148,7 +148,7 @@ $cat_header_subtitle = get_term_meta( $current_cat_id, 'header_subtitle', true )
 			if ( wc_get_loop_prop( 'total' ) ) { ?>
 
                 <!-- Category Products -->
-                <section class="chess-price">
+                <section class="chess-price hide-on-mobile">
                     <div class="container-sm">
                         <div class="row">
 
