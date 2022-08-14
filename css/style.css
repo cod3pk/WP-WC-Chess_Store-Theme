@@ -2078,7 +2078,12 @@ a {
   }
 
   .swiper-slide > div > a {
-    height: 100vh;
+    display: flex;
+    height: 100%;
+  }
+
+  .swiper-slide > div > a img{
+    height: 100%;
   }
 }
 
