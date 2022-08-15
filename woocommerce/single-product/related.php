@@ -106,7 +106,7 @@ if ( $child_term->parent > 0 ){
 
 				$post_object = get_post( $related_product->ID );
 
-				setup_postdata( $GLOBALS[ 'post' ] = &$post_object ); 
+				setup_postdata( $GLOBALS[ 'post' ] = &$post_object );
 
 				wc_get_template_part( 'content', 'product' );
 				?>
