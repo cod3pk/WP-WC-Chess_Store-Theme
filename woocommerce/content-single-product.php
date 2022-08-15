@@ -121,7 +121,7 @@ $attachment_ids = $product->get_gallery_image_ids();
 <section class="chess-price">
     <div class="container-sm">
         <div class="row">
-			<?php woocommerce_output_related_products(); ?>
+			<?php // woocommerce_output_related_products(); ?>
         </div>
     </div>
 </section>
