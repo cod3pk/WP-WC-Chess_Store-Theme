@@ -526,6 +526,7 @@ function woocommerce_template_single_excerpt ()
 		?>
     </div>
 <?php }
+
 add_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_excerpt', 20 );
 
 /**
@@ -553,7 +554,7 @@ if ( !function_exists( 'create_custom_meta_box' ) ) {
 if ( !function_exists( 'add_custom_content_meta_box' ) ) {
 	function add_custom_content_meta_box ( $post )
 	{
-		$prefix = '_chess_store_';
+		$prefix = '_chess-store_'; // global $prefix;
 		$custom_product_excerpt = get_post_meta( $post->ID, $prefix . 'custom_product_excerpt_wysiwyg', true ) ? get_post_meta( $post->ID, $prefix . 'custom_product_excerpt_wysiwyg', true ) : '';
 		$args[ 'textarea_rows' ] = 2;
 
@@ -663,12 +664,12 @@ if ( !function_exists( 'add_product_subtitle_meta_box' ) ) {
 	function add_product_subtitle_meta_box ( $post )
 	{
 		$prefix = '_chess_store_';
-		$custom_product_subtitle = get_post_meta( $post->ID, $prefix . 'product_subtitle', true ) ? get_post_meta( $post->ID, $prefix . 'product_subtitle', true ) : '';
+		$custom_product_excerpt = get_post_meta( $post->ID, $prefix . 'product_subtitle', true ) ? get_post_meta( $post->ID, $prefix . 'product_subtitle', true ) : '';
 		?>
 
 		<div class="row">
 			<div class="fields">
-				<input type="text" style="width: 100%" name="product_subtitle" value="<?php echo $custom_product_subtitle; ?>">
+				<input type="text" style="width: 100%" name="product_subtitle" value="<?php echo $custom_product_excerpt; ?>">
 			</div>
 		</div>
 
