@@ -40,7 +40,7 @@
                             <a href="<?php echo get_term_link( $cat->term_id, 'product_cat' ) ?>"
                                class="text-decoration-none">
                                 <div class="Chess-wrapper Chess-wrapper-2 position-relative text-center"
-                                     style="background: url(<?php echo $image; ?>) no-repeat;border-radius: 20px; background-size: cover; background-position: center;height: auto;">
+                                     style="background: url(<?php echo $image; ?>) no-repeat;border-radius: 20px; background-size: cover; background-position: center right;height: auto;">
                                     <h1 class="w-100 align-items-center d-flex justify-content-center flex-wrap chess-title px-2">
 										<?php echo __( $cat->name, 'chess-store' ); ?>
                                     </h1>
