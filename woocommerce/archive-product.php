@@ -4,15 +4,18 @@
  * The Template for displaying product archives, including the main shop page which is a post type archive
  */
 
-get_header();
+get_header(  );
 
 defined( 'ABSPATH' ) || exit;
 
 // Sanitized Description
-$archive_description = substr( get_the_archive_description(), 3 );
+$archive_description = substr( get_the_archive_description(  ), 3 );
 $archive_description = substr( $archive_description, 0, -5 );
 
-$current_cat_id = get_queried_object_id();
+$current_cat_id = get_queried_object_id(  );
+
+$products_count = get_archive_product_count( $current_cat_id );
+
 $terms = get_terms( [
 	'taxonomy' => 'product_cat',
 	'hide_empty' => false,
@@ -127,27 +130,26 @@ $cat_header_subtitle = get_term_meta( $current_cat_id, 'header_subtitle', true )
         </div>
     </section>
 
-
     <!-- Page Content -->
     <section class="chess-price mt-4">
         <div class="container-sm">
             <div class="row">
                 <div class="col-12 pb-3 text-center product-title mbl-padding">
                     <h1 class="h1 chess-item-title">
-						<?php echo woocommerce_page_title() . " " . __( 'Products', 'woocommerce' ); ?>
+						<?php echo woocommerce_page_title(  ) . " " . __( 'Products', 'woocommerce' ); ?>
                     </h1>
                 </div>
             </div>
         </div>
 
 		<?php
-		if ( woocommerce_product_loop() ) {
+		if ( woocommerce_product_loop(  ) ) {
 
-			woocommerce_product_loop_start();
+			woocommerce_product_loop_start(  );
 
 			if ( wc_get_loop_prop( 'total' ) ) { ?>
 
-                <!-- Category Products -->
+                <!-- Desktop Products -->
                 <section class="chess-price hide-on-mobile">
                     <div class="container-sm">
                         <div class="row">
@@ -171,42 +173,70 @@ $cat_header_subtitle = get_term_meta( $current_cat_id, 'header_subtitle', true )
                     </div>
                 </section>
 
-                <!-- Mobile Slider -->
-                <div class="mobile-slider hide-on-desktop archive-page-slider">
-                    <div class="swiper">
-                        <div class="swiper-wrapper">
+                <?php if ( $products_count > 2 ) : ?>
+                    <!-- Mobile Slider -->
+                    <div class="mobile-slider hide-on-desktop archive-page-slider">
+                        <div class="swiper">
+                            <div class="swiper-wrapper">
 
-                            <?php
-                            while ( have_posts() ) :
+                                <?php
+                                while ( have_posts() ) :
 
-								the_post();
+                                    the_post();
 
-								do_action( 'woocommerce_shop_loop' );
+                                    do_action( 'woocommerce_shop_loop' );
 
-								global $product;
+                                    global $product;
 
-								$post_object = get_post( $product->ID );
+                                    $post_object = get_post( $product->ID );
 
-								setup_postdata( $GLOBALS[ 'post' ] = &$post_object );
+                                    setup_postdata( $GLOBALS[ 'post' ] = &$post_object );
 
-                                wc_get_template_part( 'content', 'mobile-slider-items' );
+                                    wc_get_template_part( 'content', 'mobile-slider-items' );
 
-							endwhile;
-                            ?>
+                                endwhile;
+                                ?>
 
-                        </div>
-                        <!-- Add Pagination -->
-                            <div class="swiper-pagination"></div>
-                            <!-- Add Navigation -->
-                            <div class="swiper-button-prev"></div>
-                            <div class="swiper-button-next"></div>
+                            </div>
+                            <!-- Add Pagination -->
+                                <div class="swiper-pagination"></div>
+                                <!-- Add Navigation -->
+                                <div class="swiper-button-prev"></div>
+                                <div class="swiper-button-next"></div>
+                            </div>
                         </div>
                     </div>
-                </div>
 
-			<?php }
+                <?php elseif ( $products_count < 3 ) : ?>
+                    <!-- If product is single -->
+                    <section class="chess-price hide-on-desktop">
+                        <div class="container-sm">
+                            <div class="row">
 
-			woocommerce_product_loop_end();
+                                <?php while ( have_posts() ) :
+
+                                    the_post();
+
+                                    do_action( 'woocommerce_shop_loop' );
+
+                                    global $product;
+
+                                    $post_object = get_post( $product->ID );
+
+                                    setup_postdata( $GLOBALS[ 'post' ] = &$post_object );
+
+                                    wc_get_template_part( 'content', 'single-product-archive' );
+
+                                endwhile; ?>
+                            </div>
+                        </div>
+                    </section>
+
+                <?php endif;
+
+            }
+
+			woocommerce_product_loop_end(  );
 			/**
 			 * Hook: woocommerce_after_shop_loop.
 			 *
@@ -224,20 +254,21 @@ $cat_header_subtitle = get_term_meta( $current_cat_id, 'header_subtitle', true )
 
     </section>
 
-<?php if ( get_the_archive_description() ) : ?>
-    <!-- Category Long Description -->
-    <section>
-        <div class="container-sm mb-4">
-            <div class="row">
-                <div class="col-12 ">
-                    <h1 class="h1 mb-2">
-						<?php echo __( 'Description', 'chess-store' ); ?>
-                    </h1>
-                    <p class="lh-base"><?php echo get_the_archive_description(); ?></p>
+    <!-- Archive Description -->
+    <?php if ( get_the_archive_description(  ) ) : ?>
+        <!-- Category Long Description -->
+        <section>
+            <div class="container-sm mb-4">
+                <div class="row">
+                    <div class="col-12 ">
+                        <h1 class="h1 mb-2">
+                            <?php echo __( 'Description', 'chess-store' ); ?>
+                        </h1>
+                        <p class="lh-base"><?php echo $archive_description; ?></p>
+                    </div>
                 </div>
             </div>
-        </div>
-    </section>
-<?php endif; ?>
+        </section>
+    <?php endif; ?>
 
-<?php get_footer(); ?>
+<?php get_footer(  ); ?>
