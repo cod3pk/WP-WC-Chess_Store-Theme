@@ -29,7 +29,7 @@ if ( count( $related_products ) == 4 ) : ?>
 				<?php foreach ( $related_products as $related_product ) : ?>
 
 					<?php
-					$post_object = get_post( $related_product->ID );
+					$post_object = get_post( $related_product->get_id(  ) );
 
 					setup_postdata( $GLOBALS[ 'post' ] = &$post_object ); // phpcs:ignore WordPress.WP.GlobalVariablesOverride.Prohibited, Squiz.PHP.DisallowMultipleAssignments.Found
 
@@ -48,7 +48,7 @@ if ( count( $related_products ) == 4 ) : ?>
 					<?php foreach ( $related_products as $related_product ) : ?>
 
 						<?php
-						$post_object = get_post( $related_product->ID );
+						$post_object = get_post( $related_product->get_id(  ) );
 
 						setup_postdata( $GLOBALS[ 'post' ] = &$post_object );
 
@@ -104,9 +104,9 @@ if ( $child_term->parent > 0 ){
 
 				<?php
 
-				$post_object = get_post( $related_product->ID );
+				$post_object = get_post( $related_product->get_id(  ) );
 
-				setup_postdata( $GLOBALS[ 'post' ] = &$post_object );
+				setup_postdata( $GLOBALS[ 'post' ] = &$post_object ); 
 
 				wc_get_template_part( 'content', 'product' );
 				?>
