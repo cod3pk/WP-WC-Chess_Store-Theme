@@ -548,7 +548,7 @@ if ( !function_exists( 'create_custom_meta_box' ) ) {
 }
 
 /**
- * Custom metabox content in admin product pages
+ * Custom metabox content in product admin pages
  */
 if ( !function_exists( 'add_custom_content_meta_box' ) ) {
 	function add_custom_content_meta_box ( $post )
