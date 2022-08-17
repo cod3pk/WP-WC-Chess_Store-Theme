@@ -830,3 +830,30 @@ function chess_language_detector() {
 	endif;
 }
 
+/**
+ * Returns the total number of products in the current category
+ *
+ * @param int $cat_id
+ * @return void
+ */
+function get_archive_product_count( $cat_id ) {
+	$get_products_num_in_cat = new WP_Query( [
+		'post_type' => 'product',
+		'tax_query'             => array(
+			array(
+				'taxonomy'      => 'product_cat',
+				'field' => 'term_id',
+				'terms'         => $cat_id,
+				'operator'      => 'IN'
+			),
+			array(
+				'taxonomy'      => 'product_visibility',
+				'field'         => 'slug',
+				'terms'         => 'exclude-from-catalog',
+				'operator'      => 'NOT IN'
+			)
+		)
+	] );
+
+	return ( count( $get_products_num_in_cat->posts ) );
+}

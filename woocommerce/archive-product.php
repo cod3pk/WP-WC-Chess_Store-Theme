@@ -19,6 +19,8 @@ $terms = get_terms( [
 	'parent' => $current_cat_id,
 ] );
 
+$products_count = get_archive_product_count( $current_cat_id );
+
 $thumbnail_id = get_term_meta( $current_cat_id, 'thumbnail_id', true );
 $image = wp_get_attachment_url( $thumbnail_id );
 
@@ -127,7 +129,6 @@ $cat_header_subtitle = get_term_meta( $current_cat_id, 'header_subtitle', true )
         </div>
     </section>
 
-
     <!-- Page Content -->
     <section class="chess-price mt-4">
         <div class="container-sm">
@@ -147,7 +148,7 @@ $cat_header_subtitle = get_term_meta( $current_cat_id, 'header_subtitle', true )
 
 			if ( wc_get_loop_prop( 'total' ) ) { ?>
 
-                <!-- Category Products -->
+                <!-- Desktop Products -->
                 <section class="chess-price hide-on-mobile">
                     <div class="container-sm">
                         <div class="row">
@@ -171,7 +172,8 @@ $cat_header_subtitle = get_term_meta( $current_cat_id, 'header_subtitle', true )
                     </div>
                 </section>
 
-                <!-- Mobile Slider -->
+                <?php if ( $products_count > 2 ) : ?>
+                <!-- Mobile Mobile -->
                 <div class="mobile-slider hide-on-desktop archive-page-slider">
                     <div class="swiper">
                         <div class="swiper-wrapper">
@@ -204,6 +206,35 @@ $cat_header_subtitle = get_term_meta( $current_cat_id, 'header_subtitle', true )
                     </div>
                 </div>
 
+                <?php elseif ( $products_count < 3 ) : ?>
+
+                 <!-- Desktop Products -->
+                <section class="chess-price hide-on-desktop">
+                    <div class="container-sm">
+                        <div class="row">
+
+							<?php while ( have_posts() ) :
+
+								the_post();
+
+								do_action( 'woocommerce_shop_loop' );
+
+								global $product;
+
+								$post_object = get_post( $product->ID );
+
+								setup_postdata( $GLOBALS[ 'post' ] = &$post_object );
+
+								wc_get_template_part( 'content', 'single-product-archive' );
+
+							endwhile; ?>
+                        </div>
+                    </div>
+                </section>
+
+                <?php endif; ?>
+
+
 			<?php }
 
 			woocommerce_product_loop_end();
@@ -224,20 +255,21 @@ $cat_header_subtitle = get_term_meta( $current_cat_id, 'header_subtitle', true )
 
     </section>
 
-<?php if ( get_the_archive_description() ) : ?>
-    <!-- Category Long Description -->
-    <section>
-        <div class="container-sm mb-4">
-            <div class="row">
-                <div class="col-12 ">
-                    <h1 class="h1 mb-2">
-						<?php echo __( 'Description', 'chess-store' ); ?>
-                    </h1>
-                    <p class="lh-base"><?php echo get_the_archive_description(); ?></p>
+    <!-- Archive Description -->
+    <?php if ( get_the_archive_description() ) : ?>
+        <!-- Category Long Description -->
+        <section>
+            <div class="container-sm mb-4">
+                <div class="row">
+                    <div class="col-12 ">
+                        <h1 class="h1 mb-2">
+                            <?php echo __( 'Description', 'chess-store' ); ?>
+                        </h1>
+                        <p class="lh-base"><?php echo get_the_archive_description(); ?></p>
+                    </div>
                 </div>
             </div>
-        </div>
-    </section>
-<?php endif; ?>
+        </section>
+    <?php endif; ?>
 
 <?php get_footer(); ?>
