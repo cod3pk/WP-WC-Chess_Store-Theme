@@ -829,3 +829,4 @@ function chess_language_detector() {
 		echo __( 'ILS', 'chess-store' );
 	endif;
 }
+
