@@ -554,7 +554,7 @@ if ( !function_exists( 'create_custom_meta_box' ) ) {
 if ( !function_exists( 'add_custom_content_meta_box' ) ) {
 	function add_custom_content_meta_box ( $post )
 	{
-		$prefix = '_chess-store_'; // global $prefix;
+		$prefix = '_chess_store_'; // global $prefix;
 		$custom_product_excerpt = get_post_meta( $post->ID, $prefix . 'custom_product_excerpt_wysiwyg', true ) ? get_post_meta( $post->ID, $prefix . 'custom_product_excerpt_wysiwyg', true ) : '';
 		$args[ 'textarea_rows' ] = 2;
 
