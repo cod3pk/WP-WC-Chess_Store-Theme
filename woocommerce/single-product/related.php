@@ -1,37 +1,37 @@
 <?php
-
 /**
  * Related Products
  *
- * @see         https://docs.woocommerce.com/document/template-structure/
- * @package     WooCommerce\Templates
- * @version     3.9.0
- */
+ * This template can be overridden by copying it to yourtheme/woocommerce/single-product/related.php.
+ *
+*/
 
-if ( !defined( 'ABSPATH' ) ) {
+if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-if ( count( $related_products ) == 4 ) : ?>
+if ( $related_products ) : ?>
 
 	<section class="related products">
 
 		<?php
-		$heading = apply_filters( 'woocommerce_product_related_products_heading', __( 'Similar Products', 'chess-store' ) );
+		$heading = apply_filters( 'woocommerce_product_related_products_heading', __( 'Similar products', 'chess-store' ) );
 
 		if ( $heading ) :
-		?>
+			?>
 			<h2><?php echo esc_html( $heading ); ?></h2>
 		<?php endif; ?>
+
+		<?php woocommerce_product_loop_start(); ?>
 
 		<section class="chess-price">
 			<div class="row">
 				<?php foreach ( $related_products as $related_product ) : ?>
 
 					<?php
-					$post_object = get_post( $related_product->ID );
+					$post_object = get_post( $related_product->get_id() );
 
-					setup_postdata( $GLOBALS[ 'post' ] = &$post_object ); // phpcs:ignore WordPress.WP.GlobalVariablesOverride.Prohibited, Squiz.PHP.DisallowMultipleAssignments.Found
+					setup_postdata( $GLOBALS['post'] =& $post_object ); // phpcs:ignore WordPress.WP.GlobalVariablesOverride.Prohibited, Squiz.PHP.DisallowMultipleAssignments.Found
 
 					wc_get_template_part( 'content', 'product' );
 					?>
@@ -39,114 +39,10 @@ if ( count( $related_products ) == 4 ) : ?>
 				<?php endforeach; ?>
 			</div>
 		</section>
-
-		<!-- Mobile Slider -->
-		<div class="mobile-slider hide-on-desktop">
-			<div class="swiper">
-				<div class="swiper-wrapper">
-
-					<?php foreach ( $related_products as $related_product ) : ?>
-
-						<?php
-						$post_object = get_post( $related_product->ID );
-
-						setup_postdata( $GLOBALS[ 'post' ] = &$post_object );
-
-						wc_get_template_part( 'content', 'mobile-slider-items' );
-
-						?>
-					<?php endforeach; ?>
-
-				</div>
-				<!-- Add Pagination -->
-					<div class="swiper-pagination"></div>
-					<!-- Add Navigation -->
-					<div class="swiper-button-prev"></div>
-					<div class="swiper-button-next"></div>
-				</div>
-			</div>
-		</div>
+		<?php woocommerce_product_loop_end(); ?>
 
 	</section>
-<?php
-
-else:
-
-global $product;
-$product_cat_id = $product->category_ids[ 0 ];
-$child_term = get_term( $product_cat_id, 'product_cat' );
-
-if ( $child_term->parent > 0 ){
-	$parent_term = get_term( $child_term->parent, 'product_cat' );
-
-	$parent_products = new WP_Query( [
-		'post_type'			=> 'product',
-		'posts_per_page'	=> 4,
-		'term_id'			=> $child_term->parent
-	] );
-
-	$related_products = $parent_products->posts;
-	?>
-
-	<section class="related products">
-
 	<?php
-	$heading = apply_filters( 'woocommerce_product_related_products_heading', __( 'Similar Products', 'chess-store' ) );
-
-	if ( $heading ) :
-	?>
-		<h2><?php echo esc_html( $heading ); ?></h2>
-	<?php endif; ?>
-
-	<section class="chess-price">
-		<div class="row">
-			<?php foreach ( $related_products as $related_product ) : ?>
-
-				<?php
-
-				$post_object = get_post( $related_product->ID );
-
-				setup_postdata( $GLOBALS[ 'post' ] = &$post_object ); 
-
-				wc_get_template_part( 'content', 'product' );
-				?>
-
-			<?php endforeach; ?>
-		</div>
-	</section>
-
-	<!-- Mobile Slider -->
-	<div class="mobile-slider hide-on-desktop">
-		<div class="swiper">
-			<div class="swiper-wrapper">
-
-				<?php foreach ( $related_products as $related_product ) : ?>
-
-					<?php
-					$post_object = get_post( $related_product->ID );
-
-					setup_postdata( $GLOBALS[ 'post' ] = &$post_object );
-
-					wc_get_template_part( 'content', 'mobile-slider-items' );
-
-					?>
-				<?php endforeach; ?>
-
-			</div>
-			<!-- Add Pagination -->
-				<div class="swiper-pagination"></div>
-				<!-- Add Navigation -->
-				<div class="swiper-button-prev"></div>
-				<div class="swiper-button-next"></div>
-			</div>
-		</div>
-	</div>
-
-	</section>
-
-	<?php
-	wp_reset_postdata(  );
-
-}
-
 endif;
+
+wp_reset_postdata();
