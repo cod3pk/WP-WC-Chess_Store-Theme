@@ -9,6 +9,8 @@ global $product;
 
 do_action( 'woocommerce_before_single_product' );
 
+echo "ITs working";
+
 woocommerce_breadcrumb( array(
 	'delimiter'     => ' > ',
 	'wrap_before'   => '<section class="product-top-heading breadcrumbs-links pt-3 ps-3 mx-4">',
