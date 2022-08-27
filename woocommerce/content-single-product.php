@@ -1,5 +1,4 @@
 <?php
-
 /**
  * Template: Content Single
  */
@@ -35,11 +34,10 @@ $attachment_ids = $product->get_gallery_image_ids();
 				<?php } ?>
             </div>
 
-			<?php $prod_image = wp_get_attachment_image_src( get_post_thumbnail_id( $product->id ), 'single-post-thumbnail' ); ?>
+			<?php $prod_image = wp_get_attachment_image_src( get_post_thumbnail_id( $product->id ), 'single-post-thumbnail' )[ 0 ]; ?>
 
             <div class="product-main-img">
-                <img src="<?php echo $prod_image[ 0 ]; ?>" id="single-product-image" class="pro-img"
-                     alt="Product Image"/>
+                <img src="<?php echo $prod_image; ?>" id="single-product-image" class="pro-img" alt="Product Image"/>
             </div>
         </div>
     </div>
@@ -47,21 +45,7 @@ $attachment_ids = $product->get_gallery_image_ids();
     <!-- Product Information -->
     <div class="product-right-side col-12">
 
-		<?php
-		/**
-		 * Hook: woocommerce_single_product_summary.
-		 *
-		 * @hooked woocommerce_template_single_title - 5
-		 * @hooked woocommerce_template_single_rating - 10
-		 * @hooked woocommerce_template_single_price - 10
-		 * @hooked woocommerce_template_single_excerpt - 20
-		 * @hooked woocommerce_template_single_add_to_cart - 30
-		 * @hooked woocommerce_template_single_meta - 40
-		 * @hooked woocommerce_template_single_sharing - 50
-		 * @hooked WC_Structured_Data::generate_product_data() - 60
-		 */
-		do_action( 'woocommerce_single_product_summary' );
-		?>
+		<?php  do_action( 'woocommerce_single_product_summary' ); ?>
 
         <!-- Additional Info -->
         <div class="product-icons d-flex flex-direction flex-column">
@@ -98,7 +82,7 @@ $attachment_ids = $product->get_gallery_image_ids();
 
     <div class="detail-content">
         <div class="detail-content-info d-flex">
-			<?php echo $product->short_description; ?>
+            <?php get_template_part( '/woocommerce/single-product/short', 'description' ) ?>
         </div>
     </div>
 
