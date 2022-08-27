@@ -7,8 +7,6 @@ defined( 'ABSPATH' ) || exit;
 
 global $product;
 
-var_dump('Working');
-
 do_action( 'woocommerce_before_single_product' );
 
 woocommerce_breadcrumb( array(
