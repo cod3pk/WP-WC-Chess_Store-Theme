@@ -1,0 +1,5 @@
+---
+deployment:
+  tasks:
+    - export DEPLOYPATH=/home/techjayy/chess.techgebagency.website/wp-content/themes/chess-store
+    - /bin/cp * $DEPLOYPATH
