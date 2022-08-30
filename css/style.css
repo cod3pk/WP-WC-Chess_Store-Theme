@@ -1549,9 +1549,13 @@ a {
   font-style: normal;
   font-weight: 400;
   font-size: 16px;
-  line-height: 27px;
+  line-height: 1.7;
   color: #000000;
   margin: 0;
+}
+
+.detail-content-info br {
+  display: none;
 }
 
 .more-details {

@@ -16,6 +16,6 @@ if (!$short_description) {
 }
 
 ?>
-<div class="detail-content-info d-flex">
-	<?php echo $short_description; ?>
+<div class="detail-content-info">
+	<?php echo nl2br($short_description); ?>
 </div>
