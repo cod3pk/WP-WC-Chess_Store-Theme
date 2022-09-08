@@ -23,6 +23,8 @@ $attachment_ids = $product->get_gallery_image_ids();
     <!-- Product Gallery -->
     <div class="product-left-side">
         <div class="product-img-row d-flex">
+
+            <!-- Image Thumbnails -->
             <div class="thumb-img">
 				<?php foreach ( $attachment_ids as $attachment_id ) {
 					$image_link = wp_get_attachment_image_src( ( $attachment_id ), 'single-post-thumbnail' );
@@ -36,9 +38,11 @@ $attachment_ids = $product->get_gallery_image_ids();
 
 			<?php $prod_image = wp_get_attachment_image_src( get_post_thumbnail_id( $product->id ), 'single-post-thumbnail' )[ 0 ]; ?>
 
+            <!-- Main Image -->
             <div class="product-main-img">
                 <img src="<?php echo $prod_image; ?>" id="single-product-image" class="pro-img" alt="Product Image"/>
             </div>
+
         </div>
     </div>
 
@@ -68,6 +72,7 @@ $attachment_ids = $product->get_gallery_image_ids();
         </div>
 
     </div>
+
 </section>
 
 

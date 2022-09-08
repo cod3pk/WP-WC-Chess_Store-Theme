@@ -1,7 +1,0 @@
----
-deployment:
-  tasks:
-    - echo "Starting to Deploy from master branch"
-    - export DEPLOYPATH=/home/techjayy/chess.techgebagency.website/wp-content/themes/chess-store
-    - /bin/cp * $DEPLOYPATH
-    - echo "Successfully Deployed"
